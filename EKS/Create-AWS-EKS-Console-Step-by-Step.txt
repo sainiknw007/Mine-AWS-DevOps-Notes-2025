@@ -1,0 +1,167 @@
+Awesome—here’s a clear, end-to-end, step-by-step guide to:
+
+Create an EKS (Kubernetes) cluster from the AWS Console, and
+
+Connect to it from an EC2 server using kubectl.
+
+1) Create an EKS cluster (AWS Console)
+Prereqs: (once per account)
+
+IAM roles:
+
+Cluster role with policy AmazonEKSClusterPolicy (often named eksClusterRole).
+
+Node group role with policies:
+
+AmazonEKSWorkerNodePolicy
+
+AmazonEKS_CNI_Policy
+
+AmazonEC2ContainerRegistryReadOnly
+
+VPC with at least 2 subnets in different AZs (Console can create one for you).
+
+A. Create the cluster control plane
+
+Console → EKS → Add cluster → Create.
+
+Name: e.g., demo-eks.
+
+Kubernetes version: choose current default.
+
+Cluster service role: select your cluster role (with AmazonEKSClusterPolicy).
+
+Networking:
+
+Pick a VPC and at least two subnets in different AZs.
+
+Cluster endpoint access: choose Public (simplest).
+Optional but recommended: restrict public access to your EC2’s public IP/CIDR.
+
+(Optional) Enable control plane logging.
+
+Click Create and wait until Active.
+
+B. Add a managed node group (worker nodes)
+
+In your cluster → Compute → Add node group.
+
+Name: e.g., ng-1.
+
+Node IAM role: select your node group role (with 3 policies above).
+
+AMI family: Amazon Linux 2 (simple choice).
+
+Instance type: e.g., t3.medium (adjust as needed).
+
+Scaling: Desired 2 (or as needed).
+
+Subnets: select the same subnets as the cluster.
+
+Create and wait until the node group is Active (nodes Ready).
+
+2) Connect from an EC2 server with kubectl
+Prereqs on the EC2 instance
+
+The EC2 needs internet egress (NAT/IGW) to reach EKS public endpoint (if you chose Public).
+
+An IAM principal on the EC2 that can call eks:DescribeCluster
+
+Easiest: attach an instance profile role with AmazonEKSReadOnlyAccess (or a custom policy allowing eks:DescribeCluster).
+
+Important (cluster RBAC):
+The IAM user/role that created the cluster automatically has admin access.
+If you’ll run kubectl from an EC2 instance profile role, you must grant that role access to the cluster (see “Grant cluster access to the EC2 role” below).
+
+A. Install AWS CLI & kubectl
+
+Amazon Linux 2023 / 2
+
+sudo dnf -y install awscli || sudo yum -y install awscli
+curl -LO "https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+kubectl version --client
+
+
+Ubuntu
+
+sudo apt update && sudo apt -y install awscli curl
+curl -LO "https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+kubectl version --client
+
+B. Confirm AWS identity on EC2
+aws sts get-caller-identity
+
+
+You should see the Account, UserId, and Arn (of your EC2 role or your configured user).
+
+C. Pull cluster credentials into kubeconfig
+aws eks update-kubeconfig --name demo-eks --region <your-region>
+
+
+This writes/updates ~/.kube/config to point at your EKS cluster.
+
+D. Test access
+kubectl get nodes
+kubectl get ns
+
+
+You should see your worker nodes and namespaces.
+
+Grant cluster access to the EC2 role (if you get “forbidden”)
+
+If kubectl says Forbidden or Unauthorized, the EC2’s IAM role isn’t authorized at the Kubernetes (RBAC) layer yet.
+
+You have two ways:
+
+Option 1: EKS Access Entries (newer, via Console)
+
+EKS → your cluster → Access (or Configuration → Authentication/Access).
+
+Create access entry → Select the EC2 instance role.
+
+Attach a cluster role (e.g., admin), or pick a suitable profile.
+
+Save. Try kubectl get nodes again from EC2.
+
+Option 2: Legacy aws-auth ConfigMap
+
+From a principal that already has admin (e.g., the user that created the cluster):
+
+kubectl edit configmap aws-auth -n kube-system
+
+
+Under mapRoles, add your EC2 role:
+
+mapRoles:
+  - rolearn: arn:aws:iam::<account-id>:role/<EC2-Instance-Role>
+    username: ec2-admin
+    groups:
+      - system:masters
+
+
+Save and retry from EC2:
+
+kubectl get nodes
+
+
+Note: Granting system:masters is full admin. For production, map to more restrictive groups/ClusterRoles.
+
+Quick Troubleshooting
+
+update-kubeconfig fails → Ensure EC2 IAM principal has eks:DescribeCluster; verify region/cluster name.
+
+kubectl Forbidden → Grant access (Access entries or aws-auth).
+
+Nodes NotReady → Check node group subnets, security groups, and that nodes have route to the internet for pulling images (or private registry setup).
+
+Private endpoint chosen → Ensure EC2 is in the same VPC with correct routing and security to the EKS endpoint.
+
+Summary
+
+Console: Create EKS cluster → Add managed node group.
+
+EC2: Install awscli + kubectl → aws eks update-kubeconfig → kubectl get nodes.
+
+If blocked: grant EC2 role RBAC access (Access entry or aws-auth).

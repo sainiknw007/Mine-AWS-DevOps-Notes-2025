@@ -1,0 +1,173 @@
+	9). to convert Binary into Hexadecimal
+
+>>> x=0b1101 #binary
+>>> hex(x)
+0xd
+
+	10). to convert Hexadecimal into Binary
+
+>>> y=0x2c #hexadecimal
+>>> bin(y)
+0b101100
+
+	11). to convert Octal into Hexadecimal
+
+>>> x=0o37 #octal
+>>> hex(x)
+0x1f
+
+	12). to convert Hexadecimal into Octal
+
+>>> y=0x2c #hexadecimal
+>>> oct(y)
+0o54
+
+
+Objects:
+--------
+in python, everything we are treated as on objects.
+
+	Scenario-1: based on insertion order is preserved
+	------------
+	Sequence objects
+	Non-Sequence objects
+
+
+	Scenario-2: based iterations
+	-----------
+	Iterable Objects
+	Non-Iterable Objects
+
+	Scenario-3: based on mutation/mutability
+	----------
+	Mutable objects
+	Immutable objects
+
+Sequence objects:
+------------------
+Any object which follow the insertion order is preserved concept i.e., both input order and output order will be same, that type of objects are called Sequence objects.
+
+	ex: str,list,tuple,dict(3.4+ versions onwards),range,....
+
+ex1:
+----
+>>> x=[4,2,7,12]
+>>> x
+[4, 2, 7, 12]
+>>> type(x)
+<class 'list'>
+
+ex2:
+-----
+>>> y=(4,12,9,2)
+>>> y
+(4, 12, 9, 2)
+>>> type(y)
+<class 'tuple'>
+
+Non-Sequence objects:
+------------------
+Any object which don't follow the insertion order is preserved concept i.e., both input order and output order some time's will not be same, that type of objects are called Non-Sequence objects.
+
+	ex: set,frozenset
+
+ex1:
+---
+>>> a={5,12,9,21}
+>>> a
+{9, 5, 12, 21}
+>>> type(a)
+<class 'set'>
+
+ex2:
+---
+>>> b=frozenset([5,21,34,67])
+>>> b
+frozenset({21, 67, 34, 5})
+>>> type(b)
+<class 'frozenset'>
+
+Iterable Objects:
+-----------------
+we can use any object as a repeated purpose, that type of objects are called Iterable objects.
+
+	(or)
+
+any object which allow the iterations, that type of objects are called Iterable objects.
+
+	ex: str,list,tuple,set,frozenset,dict,range,....
+
+ex:
+---
+>>> msg="hello siva"
+>>> x=[5,3,7,2]
+>>> for i in x:
+       print(msg)
+
+hello siva
+hello siva
+hello siva
+hello siva
+
+Non-Iterable Objects:
+---------------------
+we can't use any object as a repeated purpose, that type of objects are called Non-Iterable objects.
+
+	(or)
+
+any object which don't allow the iterations, that type of objects are called Non-Iterable objects.
+
+	ex: int,float,complex,bool
+
+ex:
+---
+>>> msg="hello siva"
+>>> x=56345
+>>> for i in x:
+       print(msg)
+
+TypeError: 'int' object is not iterable
+
+Mutable objects:
+----------------
+any object which allows to modify(insert,delete,update) the data, that type of objects are called Mutable objects.
+
+	ex: list,set,dict,bytearray,...
+
+ex:
+---
+>>> x=[5,3,7,9]
+>>> x
+[5, 3, 7, 9]
+>>> type(x)
+<class 'list'>
+>>> id(x)
+2220848870400
+>>> x[1]
+3
+>>> x[1]=30
+>>> x
+[5, 30, 7, 9]
+>>> id(x)
+2220848870400
+
+Immutable objects:
+----------------
+any object which don't allows to modify(insert,delete,update) the data, that type of objects are called Immutable objects.
+
+	ex: int,float,complex,bool,str,tuple,frozenset,bytes,range,...
+
+ex:
+---
+>>> y=(5,3,7,9)
+>>> y
+(5, 3, 7, 9)
+>>> type(y)
+<class 'tuple'>
+>>> id(y)
+2220850181552
+>>> y[1]
+3
+>>> y[1]=30
+TypeError: 'tuple' object does not support item assignment
+	

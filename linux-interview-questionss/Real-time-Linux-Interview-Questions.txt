@@ -1,0 +1,5 @@
+Q1.how to get Linux shell script performance monitor on CloudWatch
+Q2.how to give user permission in Linux
+Q3.Write a shell script to check the process for my app is running or not.
+Q4.Write a script to check Linux syste performance.
+Q5.Write a script to check webserver nginx health check and check site is working or not?

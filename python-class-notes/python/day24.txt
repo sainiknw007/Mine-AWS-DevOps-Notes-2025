@@ -1,0 +1,242 @@
+Match case:
+-----------
+these concept is introduced from python3.10 versions onwards.
+
+we can implement the Match Case concept by using soft keywords.
+
+this concept is similar to switch case concept in C programming.
+
+syntax:
+--------
+	in c programming		in python programming
+	----------------		----------------------
+switch (expression) {			match expression:
+  case 1:					case 1:	
+    // code block				   stmt_1
+    break;					   ......
+  case 2:					case 2:
+    // code block                                  stmt_1
+    break;                                         ......
+  default:					------
+    // code block				------
+}						case _:
+						    stmt_1
+						    ......
+
+ex: if elif ladder
+----
+
+	demo.py
+	-------
+pet=input("enter your pet: ")
+if pet=='dog':
+    print("your pet is dog")
+elif pet=='cat':
+    print("your pet is cat")
+elif pet=='lion':
+    print("your pet is lion")
+else:
+    print("None")
+
+ex: match case
+---
+	demo.py
+	-------
+pet=input("enter your pet: ")
+match pet:
+    case 'dog':
+        print("your pet is dog")
+    case 'cat':
+        print("your pet is cat")
+    case 'lion':
+        print("your pet is lion")
+    case _:
+        print("None")
+
+output1:
+-------
+enter your pet: cat
+your pet is cat
+
+output2:
+-------
+enter your pet: lion
+your pet is lion
+
+output3:
+-------
+enter your pet: dog
+your pet is dog
+
+output4:
+-------
+enter your pet: 
+None
+
+Looping/Iterative statements:
+-----------------------------
+the Looping/Iterative statements are used to execute the block of statements repeatedly or repeated no.of times.
+
+the python supported Looping/Iterative statements are
+	
+	while loop
+	while else
+	for loop
+	for else
+
+while loop:
+-----------
+the while loop is used to execute the block of statements repeatedly until while condition become fail/false.
+
+the while loop can be categorized into 2 type's, they are
+
+	1). finite while loop
+
+	2). Infinite while loop
+
+finite while loop:
+------------------
+the finite while loop means at any one point of time, our while condition become Fail/False.
+
+	syntax
+	------
+	while condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+
+flowchart:
+----------
+	ref fig: while block flowchart
+
+ex1:
+----
+write a python program to print 1 to N natural numbers?
+
+sample input:
+	N=10
+
+expected output:
+	1
+	2
+	3
+	4
+	5
+	6
+	7
+	8
+	9
+	10
+
+	demo.py
+	-------
+N=int(input("enter your number: "))
+i=1
+while i<=N:
+    print(i)
+    i+=1 #i=i+1
+
+ex2:
+----
+write a python program to print 1 to N natural numbers?
+
+sample input:
+	N=10
+
+expected output:
+	1 2 3 4 5 6 7 8 9 10
+
+	demo.py
+	--------
+N=int(input("enter your number: "))
+i=1
+while i<=N:
+    print(i,end=" ")
+    i+=1 #i=i+1
+
+ex3:
+---
+write a python program to print the sum of 1 to N natural numbers?
+
+sample input:
+	N=10
+
+expected output:
+	55
+
+	demo.py
+	-------
+N=int(input("enter your number: "))
+i=1
+s=0
+while i<=N:
+    s+=i #s=s+i
+    i+=1 #i=i+1
+print(s)
+
+ex4:
+----
+write a python program to print even numbers from 1 to N natural numbers?
+
+sample input:
+	N=10
+
+expected output:
+	2
+	4
+	6
+	8
+	10
+
+	demo.py
+	-------
+N=int(input("enter your number: "))
+i=1
+while i<=N:
+    if i%2==0:
+        print(i)
+    i+=1
+
+Assignment-1:
+-------------
+write a python program to print the sum of odd numbers from 1 to N natural numbers?
+
+sample input:
+	N=10
+
+expected output:
+	25
+
+Assignment-2:
+--------------
+write a python program to print the factor's/Divisible's of the given number?
+
+sample input:
+	N=6
+
+expected output:
+	1
+	2
+	3
+	6
+
+Assignment-3:
+-------------
+write a python program to check whether given string is palindrom string or not, without using slicing notation and reversed() function?
+
+Assignment-4:
+-------------
+write a python program to print the multiplication table of the given number?
+
+sample input:
+	N=5
+
+expected output:
+	5 x 1 = 5
+	5 x 2 = 10
+	5 x 3 = 15
+	....
+	....
+	5 x 10 = 50
+

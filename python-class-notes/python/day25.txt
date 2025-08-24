@@ -1,0 +1,163 @@
+ex:
+----
+write a python program to print fibonacci sequence upto N?
+
+sample input:
+	N=100
+
+expected output:
+
+	0 1 1 2 3 5 8 13 21 34 55 89
+
+	demo.py
+	--------
+N=int(input("enter your number: "))
+i,j=0,1
+while i<=N:
+    print(i,end=" ")
+    i,j=j,i+j
+
+ex2:
+----
+write a python program to print N numbers from the fibonacci sequence?
+
+scenario-1
+----------
+sample input
+	N=5
+
+expected output:
+	0 1 1 2 3
+
+scenario-2:
+------------
+sample input:
+	N=10
+
+expected output:
+	0 1 1 2 3 5 8 13 21 34
+
+	demo.py
+	-------
+N=int(input("enter your number: "))
+i,j,c=0,1,0
+while c<N:
+    print(i,end=" ")
+    i,j,c=j,i+j,c+1
+
+ex3:
+----
+write a python program to check whether given number is Prime number or Not?
+
+A prime number (or a prime) is a natural number greater than 1, number that has only two factors, that is, 1 and the number itself.
+
+input		factors		no_of_factors		result
+------		----------	-------------		--------
+2		1,2		   2			prime number
+3		1,3		   2			prime number
+9		1,3,9		   3			not a prime number
+15		1,3,5,15	   4			not a prime number
+21		1,3,7,21	   4			not a prime number
+12		1,2,3,4,6,12	   6			not a prime number
+23		1,23		   2			prime number	
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+if num>1:
+    i=1
+    div_count=0
+    while i<=num:
+        if num%i==0:
+            div_count+=1
+        i+=1
+    if div_count==2:
+        print("Given Number is a Prime Number")
+    else:
+        print("Given Number is a Not a Prime Number")
+elif num==0 or num==1:
+    print("Given Number is a Not a Prime Number")
+else:
+    print("Enter Positive Integers only")
+        
+
+ex4:
+----
+write a python program to check whether given number is Armstrong number or not?
+
+An Amrstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
+
+input   no_of_digits   sum of the digits with the	result
+		       power of no_of_digits
+-----   ------------   ---------------------------      -----------
+5	    1          5**1				5	yes
+
+12	    2          1**2+2**2		
+		       1+4				5	no
+
+145	    3	       1**3+4**3+5**3
+		       1+64+125				190	no
+
+153	    3          1**3+5**3+3**3
+		       1+125+27				153	yes
+
+1634	    4	       1**4+6**4+3**4+4**4
+		       1+1296+81+256			1634	yes
+	
+	demo.py
+	-------
+num=int(input("enter your number: "))
+num_of_dig=len(str(num))
+temp=num
+s=0
+while num>=1:
+    dig=num%10
+    s+=dig**num_of_dig #s=s+dig**num_of_dig
+    num//=10 #num=num//10
+if temp==s:
+    print("Given number is a Armstrong number")
+else:
+    print("Given number is not a Armstrong number")
+        
+ex5:
+-----
+write a python program to check whether given number is palindrom or not?
+
+Palindrome number in Python is a number that remains the same when its digits are reversed. It reads the same forwards and backwards.
+
+input		reverse_order		result
+-----		--------------		--------
+5			5		palindrom number
+
+12			21		not a palindrom number
+
+121			121		palindrom number
+
+11			11		palindrom number
+
+123			321		not a palindrom number
+
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+temp=num
+rev=0
+while num>=1:
+    dig=num%10
+    rev=rev*10+dig
+    num//=10 #num=num//10
+if temp==rev:
+    print("Given number is a Palindrom number")
+else:
+    print("Given number is not a Palindrom number")
+
+
+assignment-1:
+-------------
+write a python program to check whether given number is strong number or not
+
+assignment-2:
+--------------
+write a python program to check whether given number is perfect number or not
+

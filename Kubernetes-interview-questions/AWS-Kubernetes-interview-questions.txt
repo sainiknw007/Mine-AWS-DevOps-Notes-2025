@@ -1,0 +1,5 @@
+how will you do autoscaling in AWS EKS: HPA 
+how to manage Kubernetes secrets
+how to deployment.yaml file in Kubernetes.
+how to deploy in aws EKS
+create image and deploy

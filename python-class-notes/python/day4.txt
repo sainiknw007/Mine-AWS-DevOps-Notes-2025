@@ -1,0 +1,163 @@
+IDE's(Integrated Development Environment's)
+-------------------------------------------
+the IDE's are Tools which will provides Good Environment to Fatser Development of the applications.
+
+the IDE's support automatic Debugging concept
+
+the python supported IDE's are idle
+			       pycharm
+			       vs code
+			       Jupyter notebook
+			       Spyder
+			       pydev
+			       atom
+			       eclipse
+			       netbeans
+				....
+				....
+
+
+idle
+----
+the idle is a one default python IDE but it is not a standard IDE.
+
+the idle support both Interactive and Batch Mode
+
+working with Interactive Mode in idle?
+--------------------------------------
+	goto search and by typing idle
+		     |
+	to select any one idle in our computer
+	
+
+working with Batch Mode in idle?
+---------------------------------
+	goto search and by typing idle
+		     |
+	to select any one idle in our computer
+		     |
+	goto file menu and to select new file
+		     |
+	to write one or more python statements into that file
+		     |
+	to save that file with .py extension
+
+
+how to run python file/script/module in idle?
+----------------------------------------------
+	goto run menu
+	      |
+	click on run module
+
+		(or)
+
+	to press F5      or      Fn+F5
+
+
+note:
+-----
+except idle,if we want to working with any another IDE  in that case first we need to download and install that particular IDE.
+
+how to download Pycharm IDE?
+-----------------------------
+	goto www.jetbrains.com
+		|
+	goto developer tools menu
+	        |
+	goto IDE's section
+		|
+	click on pycharmIDE
+		|
+	click on download option
+		|
+	to select our operating system and
+	to download any one file(community edition/professional edition)
+
+how to install Pycharm IDE?
+---------------------------
+	double click on pycharm IDE downloaded file
+			|
+		click on yes
+			|
+		click on next
+			|
+	to select/choose the installation location and click on next
+			|
+	to enable the desktop shortcut icon and click on next
+			|
+	to select the start menu folder name and click on install
+			|
+		click on finish
+
+
+how to working with Pycharm IDE?
+---------------------------------
+	double click on pycharm IDE shortcut icon
+			|
+	click on create new project
+			|
+	to select project location,environment,interpreter and click on create
+			|
+	right click on our project -> goto new -> to select python file
+			|
+	to set the filename and to press enter key
+			|
+	to write the one or more python statements into that file
+
+
+how to run python file/script in Pycharm IDE?
+---------------------------------------------
+	goto main menu
+		|
+	goto run menu
+		|
+	click on run
+		|
+	to confirm our file
+
+
+how to download microsoft visual studio(vs) code IDE?
+-------------------------------------------------------
+	goto https://code.visualstudio.com/download
+				|
+		to select our operating system
+			   (windows)
+				|
+	to download user installer for our operating system bit number
+
+how to install VS code IDE?
+---------------------------
+	double click on VS Code IDE downloaded file
+			|
+	to accept the license aggrement and click on next
+			|
+	to select the installation location and click on next
+			|
+	to select start menu folder name and click on next
+			|
+	to enable the desktop shortcut icon and click on next
+			|
+		click on install
+			|
+		click on finish
+
+
+working with VS Code IDE?
+---------------------------
+	if we want to run python programs in VS Code IDE, in that case we need to install python extension for VS Code IDE.
+
+	select new file
+		|
+	to set the file name with .py extension
+		|
+	to write the one or more python statements into that file
+
+
+how to run python file in VS Code IDE?
+---------------------------------------
+	goto run menu
+	     |
+	to select any one option(run without debugging/start debugging)
+					|		    |
+				    ctrl+F5                 F5
+

@@ -1,0 +1,280 @@
+bitwise negation(~) example:
+-----------------------------
+>>> x=10
+>>> ~x
+-11
+
+	10
+	| to convert Decimal into Binary
+       1010
+	| to apply the 1's compliment i.e. to change 0 to 1 and vice versa
+       0101
+	| to padding 1 bit at left side
+      10101
+	| to convert binary into decimal and
+	| the padding bit result is always negative
+       -1*2**4+0*2**3+1*2**2+0*2**1+1*2**0
+	|
+	-1*16+0*8+1*4+0*2+1*1
+	|
+	-16+0+4+0+1
+	|
+	-11
+
+note:
+-----
+the even no.of negations always to return the same number as a output.
+
+>>> x=5
+>>> ~~x
+5
+
+>>> y=12
+>>> ~~~~y
+12
+
+>>> z=-3
+>>> ~~~~~~z
+-3
+
+the odd no.of neagtions always to return the output as -(num+1)
+
+>>> x=5
+>>> ~x
+-6
+
+>>> y=12
+>>> ~~~y
+-13
+
+>>> z=-3
+>>> ~~~~~z
+2
+
+Bitwise leftshift(<<) example:
+------------------------------
+>>> x=10
+>>> x<<2
+40
+
+	10
+	| to convert decimal into binary
+       1010
+	| to move 2 bit's at left side and
+        | to padding 2 zero's at right side
+     101000
+	| the moveing bit's are included
+     101000
+	| to convert binary into decimal
+     1*2**5+0*2**4+1*2**3+0*2**2+0*2**1+0*2**0
+     1*32+0*16+1*8+0*4+0*2+0*1
+     32+0+8+0+0+0
+     40
+
+Bitwise Rightshift(>>) example:
+-------------------------------
+>>> x=10
+>>> x>>2
+2
+
+	10
+	| to convert decimal into binary
+       1010
+	| to move 2 bit's at right side and
+        | to padding 2 zero's at left side
+       001010
+	| the moveing bit's are excluded
+       0010
+	| to convert binary into decimal
+   0*2**3+0*2**2+1*2**1+0*2**0
+   0*8+0*4+1*2+0*1
+   0+0+2+0
+   2
+
+Assignment Operator's:
+----------------------
+the Assignment Operator's are used to assign the values to the variables.
+
+in python, the Assignment Operator's can be categorized into 3 type's, they are
+
+	1).Normal Assignment Operator
+
+	2).Shorthand Assignment Operator's
+
+	3).Walrus Assignment Operator
+
+Normal Assignment Operator:
+---------------------------
+the single-equal too(=) operator is a Normal Assignment Operator.
+
+this operator is used to assign the R-value to the L-value.
+
+ex:
+---
+>>> x=10
+>>> x
+10
+
+>>> y=x
+>>> y
+10
+
+>>> a,b=10,20
+>>> a
+10
+>>> b
+20
+
+>>> c=1,2,3
+>>> c
+(1, 2, 3)
+
+Shorthand Assignment Operator's:
+---------------------------------
+the normal assignment operator(=) which contains prefix with any other operator like arithmetic(+,-,*,/,//,%,**) and bitwise(&,|,^,~,<<,>>) operators, that type of Normal Assignment Operator's are called Shorthand Assignment Operator's.
+
+ex:
+---
+x,y=10,3
+
+x+=y	--> x=x+y	--> x=13
+x-=y	--> x=x-y	--> x=7
+x*=y	--> x=x*y	--> x=30
+x&=y	--> x=x&y	--> x=2
+x|=y	--> x=x|y	--> x=11
+
+note:
+----
+python dont support both increment(++) and decrement(--) operators concept but we can achive that concept indirectly by using shorthand assignment operators concept.
+
+	   C/C++/Java			   Python
+	   -----------			   -------
+	i++	--> i=i+1		i+=1	--> i=i+1
+	i--	--> i=i-1		i-=1	--> i=i-1
+
+
+Walrus Assignment Operator:
+---------------------------
+in python, := is a Walrus Assignment Operator, this operator concept is introduced from python3.7 versions onwards.
+
+the Walrus Assignment Operator is used to perform both initialization and evalution at a time.
+
+ex:
+---
+	demo.py
+	-------
+x=10
+print(x)
+y=20
+print(y)
+print(x+y)
+
+	output
+	-------
+10
+20
+30
+
+ex2:
+----
+	demo.py
+	-------
+print(x:=10)
+print(y:=20)
+print(x+y)
+
+	output
+	-------
+10
+20
+30
+
+Identity Operators:
+------------------
+the Identity Operators are used to identify an object i.e., to compare the address of the objects.
+
+the python supported Identity Operators are is, is not
+
+if address are equal the is operator to return True otherwise the is operator to return False.
+
+if address are not equal the is not operator to return True otherwise the is not operator to return False.
+
+ex1:
+---
+>>> x=10
+>>> y=10
+>>> x==y
+True
+>>> x is y
+True
+>>> x is not y
+False
+>>> id(x)
+140719812111064
+>>> id(y)
+140719812111064
+
+ex2:
+----
+>>> a=[1,2,3]
+>>> b=[1,2,3]
+>>> a==b
+True
+>>> a is b
+False
+>>> a is not b
+True
+>>> id(a)
+2989352489344
+>>> id(b)
+2989355529472
+
+Membership Operators:
+---------------------
+the Membership Operators are used to searching/finding an element/charecter/substr in a given iterable object.
+
+the python supported Membership Operators are in, not in
+
+if char/substr/element is match/find in the given iterable object,in that case the in operator to return True otherwise the in operator to return False.
+
+if char/substr/element is not match/find in the given iterable object,in that case the not in operator to return True otherwise the not in operator to return False.
+
+ex1:
+---
+>>> x=[5,3,7,9]
+>>> x
+[5, 3, 7, 9]
+>>> 3 in x
+True
+>>> 9 not in x
+False
+>>> 8 in x
+False
+>>> 2 not in x
+True
+
+ex2:
+----
+>>> y="hai siva krishna hai"
+>>> y
+'hai siva krishna hai'
+>>> 'a' in y
+True
+>>> 'b' in y
+False
+>>> 'k' not in y
+False
+>>> 'j' not in y
+True
+>>> 'hai' in y
+True
+>>> 'haI' in y
+False
+>>> 'haI' not in y
+True
+>>> 'haI'.casefold() not in y
+False
+>>> 'haI'.casefold() in y
+True
+
+

@@ -1,0 +1,296 @@
+Operator Presidency:
+-------------------
+whenever our expression contains multiple operators, in that case we need to identify which operator is executed first,which operator is executed second,..., which operator is executed last by using operator presidency concept.
+
+in our expression, the multiple operators haveing the same priority, in that case we are follow the left to right associativity.
+
+in arithmetic operators, we are follow the PEMDAS rule
+
+	P	--> ()
+	E	--> **
+	MD	--> *,/,//,%
+	AS	--> +,-
+
+EX:
+---
+>>> x=3+2*3**2-(4-2)%3//2
+>>> x
+20
+
+	3+2*3**2-(4-2)%3//2
+	3+2*3**2-2%3//2
+	3+2*9-2%3//2
+	3+18-2%3//2
+	3+18-2//2
+	3+18-1
+	21-1
+	20
+
+in logical operators, we are follow the and,or,not
+
+ex:
+---
+>>> a,b,c=False,True,not False
+>>> y=a and b or c and not a and c or not b and not c or not a
+>>> y
+True
+
+	a and b or c and not a and c or not b and not c or not a
+	False or c and not a and c or not b and not c or not a
+	False or True and c or not b and not c or not a
+	False or True or not b and not c or not a
+	False or True or False or not a
+	True or False or not a
+	True or not a
+	True
+
+in bitwise operators, we are follow the ~,<< or >>,&,^,|
+
+ex:
+---
+>>> z=3^3<<2|4&2
+>>> z
+15
+
+	3^3<<2|4&2
+	3^12|4&2
+	3^12|0
+	15|0
+	15
+
+note:
+----
+the arithmetic operators are having the highest priority when compared to bitwise operators.
+
+ex:
+---
+>>> a=3+2&3*(4-2)|2**2^3//2-3
+>>> a
+-2
+
+	3+2&3*(4-2)|2**2^3//2-3
+	3+2&3*2|2**2^3//2-3
+	3+2&3*2|4^3//2-3
+	3+2&6|4^1-3
+	5&6|4^-2
+	4|4^-2
+	4|-6
+	-2
+
+
+Control flow Statements:
+-----------------------
+the control flow statements are used to control the flow of the program execution.
+
+why we need to control the flow of the program execution?
+---------------------------------------------------------
+in any programming language program, by default all the statements are executed at only once.
+
+the python program execution is always starts from the first statement onwards.
+
+if we want to skip the execution of block of statements or if we want to execute block of statements repeatedly i.e., repeated no.of times, in these two scenario's we need to control the flow of the program execution.
+
+how to control the flow of the program execution?
+-------------------------------------------------
+by using control flow statements we can control the flow of the program execution.
+
+the control flow statements can be categorized into 3 type's, they are
+
+	1).Conditional/Sequential Statement's
+
+	2).Looping/Iterative Statement's
+
+	3).Jumping/Transform Statement's
+
+Conditional/Sequential Statement's:
+------------------------------------
+the Conditional/Sequential Statement's are used to execute the block of statements or to skip the execution of block of statements or to execute one block of statements among from multiple blocks of statements.
+
+the python supported Conditional/Sequential Statement's are
+
+	if
+	if else
+	if elif else
+	elif ladder
+	nested if
+	match case
+
+if statement
+-------------
+	syntax
+	------
+	if condition: stmt
+
+		(or)
+
+	if condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+
+		(or)
+
+	if(condition):
+		stmt_1
+		stmt_2
+		.....
+		stmt_n
+
+flowchart:
+----------
+	ref fig: if flowchart
+
+ex1:
+---
+	demo.py
+	-------
+print("hai")
+num=int(input("enter your number: "))
+if num>5:print("siva")
+print("bye")
+
+	output1
+	-------
+hai
+enter your number: 4
+bye
+
+	output2
+	-------
+hai
+enter your number: 7
+siva
+bye
+
+
+ex2:
+----
+	demo.py
+	-------
+print("hai")
+time=int(input("enter time in Hours: "))
+if time>12:
+    print("siva")
+    print("Good afternoon")
+print("bye")
+
+	output1
+	-------
+hai
+enter time in Hours: 13
+siva
+Good afternoon
+bye
+
+	output2
+	-------
+hai
+enter time in Hours: 11
+bye
+	
+if else statement
+-----------------
+	syntax
+	-------
+	if condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	else:
+	    stmt_1
+	    stmt_2
+	    ......
+	    stmt_n
+
+flowchart:
+----------
+	ref fig: if else flowchart
+
+ex:
+---
+	demo.py
+	-------
+print("hai")
+time=int(input("enter time in Hours: "))
+if time>=12:
+    print("siva")
+    print("Good afternoon")
+else:
+    print("siva")
+    print("Good morning")
+print("bye")
+
+	output1
+	-------
+hai
+enter time in Hours: 12
+siva
+Good afternoon
+bye
+
+	output2
+	-------
+hai
+enter time in Hours: 11
+siva
+Good morning
+bye
+
+assignment-1:
+-------------
+write a python program to check whether that particular person is eligible for voter registration or not based on age?
+
+	Person 		age		result
+	------------------------------------------
+	siva		13		sorry siva
+					you are not eligible for voter reg
+
+	rama		21		congratulations rama
+					you are eligible for voter reg
+
+assignment-2:
+--------------
+write a python program to check whether given number is either even or odd?
+
+	number			result
+	-------------------------------
+	5			odd
+
+	12			even
+
+assignment-3:
+--------------
+write a python program to check whether given string object is palindrom string or not?
+
+A string is said to be palindrome if it remains the same on reading from both ends. It means that when you reverse a given string, it should be the same as the original string.
+
+	input		reverse_order		result
+	-----------------------------------------------
+	siva		avis			not a palindrom
+
+	madam		madam			palindrom
+
+	level		level			palindrom
+
+	malayALAM	MALAyalam		not a palindrom
+
+
+assignment-4:
+--------------
+write a python program to check whether given string object is palindrom string or not with ignore the cases?
+
+A string is said to be palindrome if it remains the same on reading from both ends. It means that when you reverse a given string, it should be the same as the original string.
+
+	input		reverse_order		result
+	-----------------------------------------------
+	siva		avis			not a palindrom
+
+	madam		madam			palindrom
+
+	level		level			palindrom
+
+	malayALAM	MALAyalam		palindrom	
+
+		

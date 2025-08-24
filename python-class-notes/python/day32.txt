@@ -1,0 +1,269 @@
+ex1:
+----
+write a python program to print lowercase alphabets in a square pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+a b c d e
+a b c d e
+a b c d e
+a b c d e
+a b c d e
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num):
+        print(chr(97+c),end=" ")
+    print()
+
+ex2:
+-----
+write a python program to print uppercase alphabets in a square pattern?
+
+sample input:
+	num=5
+
+expected output:
+	
+A A A A A
+B B B B B 
+C C C C C
+D D D D D
+E E E E E
+
+	demo.py
+	--------
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num):
+        print(chr(65+r),end=" ")
+    print()
+
+ex3:
+----
+write a python program to print lowercase alphabets in a right angle triangle pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+a
+b b
+c c c
+d d d d
+e e e e e
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(r+1):
+        print(chr(97+r),end=" ")
+    print()
+
+ex4:
+----
+write a python program to print uppercase alphabets in a right angle triangle pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+A
+A B
+A B C
+A B C D
+A B C D E
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(r+1):
+        print(chr(65+c),end=" ")
+    print()
+
+ex5:
+----
+write a python script/program to print lowercase alphabets in a inverted right angle triangle pattern?
+
+sample input:
+
+	num=5
+
+expected output:
+
+a a a a a
+b b b b
+c c c
+d d
+e
+
+	demo.py
+	--------
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r):
+        print(chr(97+r),end=" ")
+    print()
+
+ex6:
+----
+write a python script/program to print uppercase alphabets in a inverted right angle triangle pattern?
+
+sample input:
+
+	num=5
+
+expected output:
+
+A B C D E
+A B C D
+A B C
+A B
+A
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r):
+        print(chr(65+c),end=" ")
+    print()
+
+ex7:
+----
+write a python script/program to print lowercase alphabets in a floyd's triangle pattern?
+
+sample input:
+	num=5
+
+expected output:
+    a
+   a b
+  a b c
+ a b c d
+a b c d e
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r-1):
+        print(" ",end="")
+    for c in range(r+1):
+        print(chr(97+c),end=" ")
+    print()
+
+
+ex8:
+----
+write a python script/program to print uppercase alphabets in a floyd's diamond pattern?
+
+sample input:
+	num=5
+
+expected output:
+    A
+   B B
+  C C C
+ D D D D
+E E E E E
+ D D D D
+  C C C
+   B B
+    A
+
+	demo.py
+	--------
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r-1):
+        print(" ",end="")
+    for c in range(r+1):
+        print(chr(65+r),end=" ")
+    print()
+for r in range(num-1,0,-1):
+    for c in range(num-r):
+        print(" ",end="")
+    for c in range(r):
+        print(chr(65+r-1),end=" ")
+    print()
+
+ex9:
+----
+write a python program to print lowercase alphabets in a pyramid pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+        a
+      b a b
+    c b a b c
+  d c b a b c d
+e d c b a b c d e
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r-1):
+        print(" ",end=" ")
+    for c in range(r,-1,-1):
+        print(chr(97+c),end=" ")
+    for c in range(1,r+1):
+        print(chr(97+c),end=" ")
+    print()
+
+ex10:
+-----
+write a python program to print uppercase alphabets in a pyramid diamond pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+        A
+      B B B
+    C C C C C
+  D D D D D D D
+E E E E E E E E E
+  D D D D D D D
+    C C C C C
+      B B B 
+        A
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(num):
+    for c in range(num-r-1):
+        print(" ",end=" ")
+    for c in range(r,-1,-1):
+        print(chr(65+r),end=" ")
+    for c in range(1,r+1):
+        print(chr(65+r),end=" ")
+    print()
+for r in range(num-1,-1,-1):
+    for c in range(num-r):
+        print(" ",end=" ")
+    for c in range(r,0,-1):
+        print(chr(65+r-1),end=" ")
+    for c in range(r-1):
+        print(chr(65+r-1),end=" ")
+    print()
+
+
+
+
+

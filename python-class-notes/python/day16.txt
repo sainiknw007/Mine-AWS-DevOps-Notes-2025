@@ -1,0 +1,279 @@
+find()
+-----
+Return the lowest index in the string where substring/char is found,such that substr/char is contained within strobj[start:end].
+
+Optional arguments start and end are interpreted as in slice notation,Return -1 on failure.
+
+	strobj.find(char/substr,[start,stop])
+
+ex:
+---
+>>> x="hai siva krishna hai"
+>>> x
+'hai siva krishna hai'
+>>> x.find('a')
+1
+>>> x.find('a',4,16)
+7
+>>> x.find('a',8,14)
+-1
+>>> x.find('a',8,16)
+15
+>>> x.find('hai')
+0
+>>> x.find('haI')
+-1
+>>> x.find('b')
+-1
+
+rfind()
+-------
+Return the highest index in the String where substring/char is found,such that substr/char is contained within Stringobj[start:end].
+
+Optional arguments start and end are interpreted as in slice notation,Return -1 on failure.
+
+	strobj.rfind(char/substr,[start,stop])
+
+ex:
+---
+>>> x="hai siva krishna hai"
+>>> x
+'hai siva krishna hai'
+>>> x.rfind('a')
+18
+>>> x.rfind('a',4,16)
+15
+>>> x.rfind('a',8,14)
+-1
+>>> x.rfind('a',8,16)
+15
+>>> x.rfind('hai')
+17
+>>> x.rfind('haI')
+-1
+>>> x.rfind('b')
+-1
+
+index()
+-------
+Return the highest index in the String where substring/char is found,such that substr/char is contained within Stringobj[start:end].
+
+Optional arguments start and end are interpreted as in slice notation,Raises ValueError when the substring is not found.
+
+	strobj.index(char/substr,[start,stop])
+
+ex:
+---
+>>> x="hai siva krishna hai"
+>>> x
+'hai siva krishna hai'
+>>> x.index('a')
+1
+>>> x.index('a',8,16)
+15
+>>> x.index('a',4,16)
+7
+>>> x.index('a',8,14)
+ValueError: substring not found
+>>> x.index('hai')
+0
+>>> x.index('haI')
+ValueError: substring not found
+>>> x.index('b')
+ValueError: substring not found
+
+rindex()
+--------
+Return the highest index in the String where substring/char is found,such that substr/char is contained within Stringobj[start:end].
+
+Optional arguments start and end are interpreted as in slice notation,Raises ValueError when the substring is not found.
+
+	strobj.rindex(char/substr,[start,stop])
+
+ex:
+---
+>>> x="hai siva krishna hai"
+>>> x
+'hai siva krishna hai'
+>>> x.rindex('a')
+18
+>>> x.rindex('a',8,16)
+15
+>>> x.rindex('a',4,16)
+15
+>>> x.rindex('a',8,14)
+ValueError: substring not found
+>>> x.rindex('hai')
+17
+>>> x.rindex('haI')
+ValueError: substring not found
+>>> x.rindex('b')
+ValueError: substring not found
+
+strip()
+-------
+Return a copy of the string with leading and trailing whitespace removed,If chars is given and not None, remove characters in chars instead.
+
+	strobj.strip(chars)
+
+ex1:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x.strip('s')
+'iva krishna'
+>>> x
+'siva krishna'
+>>> x.strip('a')
+'siva krishn'
+>>> x
+'siva krishna'
+>>> x.strip('siva')
+' krishn'
+>>> x
+'siva krishna'
+
+ex2:
+----
+>>> y="madam"
+>>> y
+'madam'
+>>> y.strip('m')
+'ada'
+>>> y
+'madam'
+>>> y.strip('am')
+'d'
+>>> y
+'madam'
+>>> y.strip('dma')
+''
+>>> y
+'madam'
+>>> y.strip('d')
+'madam'
+>>> y
+'madam'
+>>> y.strip('k')
+'madam'
+
+ex3:
+----
+>>> z=" siva "
+>>> z
+' siva '
+>>> z.strip()
+'siva'
+>>> z
+' siva '
+
+ex4:
+----
+>>> a="\n \tsiva\n \t"
+>>> a
+'\n \tsiva\n \t'
+>>> a.strip()
+'siva'
+>>> a
+'\n \tsiva\n \t'
+
+lstrip()
+--------
+Return a copy of the string with leading whitespace removed,If chars is given and not None, remove characters in chars instead.
+
+	strobj.lstrip(chars)
+
+ex1:
+---
+>>> y="madam"
+>>> y.lstrip('m')
+'adam'
+>>> y
+'madam'
+>>> y.lstrip('am')
+'dam'
+>>> y
+'madam'
+>>> y.lstrip('dma')
+''
+>>> y
+'madam'
+>>> y.lstrip('d')
+'madam'
+>>> y.lstrip('a')
+'madam'
+>>> y.lstrip('k')
+'madam'
+
+ex2:
+----
+>>> z=" siva "
+>>> z
+' siva '
+>>> z.lstrip()
+'siva '
+>>> z
+' siva '
+
+ex3:
+----
+>>> a="\n \tsiva\n \t"
+>>> a
+'\n \tsiva\n \t'
+>>> a.lstrip()
+'siva\n \t'
+>>> a
+'\n \tsiva\n \t'
+
+rstrip()
+-------
+Return a copy of the string with trailing whitespace removed,If chars is given and not None, remove characters in chars instead.
+
+	strobj.rstrip(chars)
+
+ex1:
+---
+>>> y="madam"
+>>> y
+'madam'
+>>> y.rstrip('m')
+'mada'
+>>> y
+'madam'
+>>> y.rstrip('a')
+'madam'
+>>> y
+'madam'
+>>> y.rstrip('am')
+'mad'
+>>> y
+'madam'
+>>> y.rstrip('dma')
+''
+>>> y
+'madam'
+>>> y.rstrip('d')
+'madam'
+>>> y
+'madam'
+
+ex2:
+----
+>>> z=" siva "
+>>> z
+' siva '
+>>> z.rstrip()
+' siva'
+>>> z
+' siva '
+
+ex3:
+-----
+>>> a="\n \tsiva\n \t"
+>>> a
+'\n \tsiva\n \t'
+>>> a.rstrip()
+'\n \tsiva'
+>>> a
+'\n \tsiva\n \t'

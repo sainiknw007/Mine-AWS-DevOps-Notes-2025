@@ -1,0 +1,265 @@
+ex:
+---
+>>> x="siva"
+>>> list(x)
+['s', 'i', 'v', 'a']
+>>> tuple(x)
+('s', 'i', 'v', 'a')
+>>> set(x)
+{'v', 's', 'a', 'i'}
+>>> frozenset(x)
+frozenset({'v', 's', 'a', 'i'})
+
+ex2:
+----
+>>> y=[3,2,6,9]
+>>> str(y)
+'[3, 2, 6, 9]'
+>>> tuple(y)
+(3, 2, 6, 9)
+>>> set(y)
+{9, 2, 3, 6}
+>>> frozenset(y)
+frozenset({9, 2, 3, 6})
+
+ex3:
+----
+>>> z=(5,3,7,2)
+>>> str(z)
+'(5, 3, 7, 2)'
+>>> list(z)
+[5, 3, 7, 2]
+>>> set(z)
+{2, 3, 5, 7}
+>>> frozenset(z)
+frozenset({2, 3, 5, 7})
+
+ex4:
+----
+>>> a={6,3,7,2}
+>>> a
+{2, 3, 6, 7}
+>>> str(a)
+'{2, 3, 6, 7}'
+>>> list(a)
+[2, 3, 6, 7]
+>>> tuple(a)
+(2, 3, 6, 7)
+>>> frozenset(a)
+frozenset({2, 3, 6, 7})
+
+ex5:
+----
+>>> b=frozenset([5,3,7,2])
+>>> b
+frozenset({2, 3, 5, 7})
+>>> str(b)
+'frozenset({2, 3, 5, 7})'
+>>> list(b)
+[2, 3, 5, 7]
+>>> tuple(b)
+(2, 3, 5, 7)
+>>> set(b)
+{2, 3, 5, 7}
+
+Dictionary datatype:
+--------------------
+in python, the dictionary datatype having 'dict' class.
+
+we can create a dict object by using {} or by calling dict()
+
+>>> x={}
+>>> x
+{}
+>>> type(x)
+<class 'dict'>
+
+>>> y=dict()
+>>> y
+{}
+>>> type(y)
+<class 'dict'>
+
+the dict object contains group of key-value pairs, each key-value pair we are calling as one item in our dict object.
+
+	{key:value,key:value,....,key:value}
+	 ---------,---------,....,---------
+	    |         |              |
+	  item_1    item_2        item_n
+
+from python3.4 versions onwards, the dict object act as a sequence object.
+
+the dict object is a mutable object but key's must be immutable and values are either mutable or immutable objects.
+
+>>> x={'name':'siva','age':32,'sal':30000.0}
+>>> x
+{'name': 'siva', 'age': 32, 'sal': 30000.0}
+>>> type(x)
+<class 'dict'>
+
+None Datatype:
+--------------
+in python, the None datatype having 'NoneType' class.
+
+ex:
+---
+>>> x=None
+>>> print(x)
+None
+>>> type(x)
+<class 'NoneType'>
+
+how to read the data from user-input/keyboard/console?
+------------------------------------------------------
+if we want to read the data from user-input/keyboard/console,
+
+	in c programming, we are using scanf() function
+	
+	in python2.x versions, we are using input() and raw_input() function
+
+	in python3.x versions, we are using input() function only.
+
+ex1:
+----
+write a C program to read two input values from the user and to perform the addition operation?
+
+	demo.c
+	-------
+#include<stdio.h>
+void main()
+{
+    int x,y,z;
+    printf("Enter x value: ");
+    scanf("%d",&x);
+    printf("Enter y value: ");
+    scanf("%d",&y);
+    z=x+y;
+    printf("%d",z);
+    
+}
+
+	output
+	-------
+Enter x value: 4
+Enter y value: 5
+9
+
+ex2:
+----
+write a python3.x program to read two input values from the user and to perform the addition operation?
+
+	demo.py
+	--------
+x=input("enter x value: ")
+y=input("enter y value: ")
+z=x+y
+print(z)
+
+	output
+	-------
+C:\Users\Lenovo\Desktop>python demo.py
+enter x value: 4
+enter y value: 5
+45
+
+note:
+----
+in python3.x versions, we can read any type of value from the user input by using input() function, by default that value will be treated as string format only.
+
+if we want to read the our required data as a input from the user, in that case we are using Type-Conversions/Type-Casting.
+
+what is Type Conversion/Type Casting?
+-------------------------------------
+the Type Conversion means to convert one type of data into another type of data.
+
+		(or)
+
+the Type Conversion means to convert one data type into another datatype.
+
+the type conversion can be categorized into 2 type's, they are
+	
+	1). Implicit Type Conversion
+
+	2). Explicit Type Conversion
+
+Implicit Type Conversion:
+-------------------------
+the type conversion will be done automatically without programmer/developer interaction by explicitly, is known as a Implicit Type Conversion.
+
+ex:
+---
+>>> x=10
+>>> y=2.3
+>>> z=x+y
+>>> z
+12.3
+>>> type(z)
+<class 'float'>
+
+Explicit Type Conversion:
+-------------------------
+the type conversion will be done with the help of programmer/developer interaction by explicitly, is known as a Explicit Type Conversion.
+
+ex:
+---
+>>> x=10
+>>> y=2.3
+>>> z=int(x+y)
+>>> z
+12
+>>> type(z)
+<class 'int'>
+
+ex3:
+----
+	demo.py
+	-------
+x=int(input("enter x value: "))
+y=int(input("enter y value: "))
+z=x+y
+print(z)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+enter x value: 4
+enter y value: 5
+9
+
+ex4:
+----
+C:\Users\Lenovo\Desktop>python demo.py
+enter x value: 4
+enter y value: 5
+9.0
+
+assignment-1:
+------------
+write a python program to read the radious of the circle from the user input and to claculate the area of the circle and perimeter(circumference) of the circle?
+
+	area of circle=πr2
+	perimeter of circle=2πr
+
+assignment-2:
+-------------
+write a python program to read the length and bredth of the rectangle from the user input and to calculate the area of the rectangle and perimeter of the rectangle?
+
+	area of rectangle= length × width
+	perimeter of rectangle=2( length + width )
+
+assignment-3:
+-------------
+write a python program to read the side value of the square from the user input and to calculate the area of the square and perimeter of the square?
+
+	area of square= side × side = side²
+	perimeter of square=4 x side
+
+assignment-4:
+-------------
+write a python program to read the base,height,side values of the triangle from the user input and to calculate the area of the triangle and perimeter of the triangle?
+
+	area of triangle= 1/2(b × h)
+	perimeter of triangle=a + b + c= side1+side2+side3
+
+
+

@@ -1,0 +1,150 @@
+Number Systems:
+---------------
+the Number System's are used to represent the numbers in a computer memory.
+
+the number system's can be categorized into 4 type's, they are
+
+	1). Binary Number System's
+
+	2). Octal Number System's
+
+	3). Decimal Number System's
+
+	4). Hexadecimal Number System's
+
+
+Binary Number System's:
+-----------------------
+the Binary Number System base value is 2
+
+it contains 0 to 1
+
+we can represent the Binary Number System's in python, that number system contains prefix with 0b.
+
+	ex: 0b1010
+
+Octal Number System's:
+-----------------------
+the Octal Number System base value is 8
+
+it contains 0 to 7
+
+we can represent the Octal Number System's in python, that number system contains prefix with 0o.
+
+	ex: 0o37
+
+Decimal Number System's:
+------------------------
+the Decimal Number System base value is 10
+
+it contains 0 to 9
+
+don't required any special charecter to represent the Decimal Number System's in python.
+
+in python, the decimal number system contains 0 but don't startswith 0.
+
+	ex: 39
+	    309
+	    039 #invalid
+
+Hexadecimal Number System's:
+----------------------------
+the Hexadecimal Number System base value is 16
+
+it contains 0 to 15(0123456789abcdef)
+
+we can represent the Hexadecimal Number System's in python, that number system contains prefix with 0x.
+
+	ex: 0x2c
+
+ex:
+---
+>>> x=0b1010 #binary
+>>> x
+10 #decimal
+
+>>> y=0o37 #octal
+>>> y
+31 #decimal
+
+>>> z=39 #decimal
+>>> z
+39 #decimal
+
+>>> p=0x2c #hexadecimal
+>>> p
+44 #decimal
+
+note:
+----
+in python, we can pass any number system as a input to the python interpreter by default our python interpreter to convert that number system into decimal number system only.
+
+if we want to our required number system as a output, in that case we are using number system conversions concept.
+
+Number System Conversions:
+--------------------------
+the Number System Conversions are used to convert the one number sytem into another number system.
+
+	1). to convert Binary into Decimal
+
+ex:
+---
+>>> x=0b1011 #binary
+>>> x
+11
+
+	2). to convert Decimal into Binary
+
+in python, we can convert any number system into Binary, in that case we are using bin() function.
+
+>>> y=19 #decimal
+>>> bin(y)
+0b10011 
+
+	3). to convert Octal into Decimal
+
+>>> x=0o37 #octal
+>>> x
+31
+
+	4). to convert Decimal into Octal
+
+in python, we can convert any number system into Octal number system, in that case we are using oct() function.
+
+>>> y=39 #decimal
+>>> oct(y)
+0o47
+
+	5). to convert Hexadecimal into Decimal
+
+>>> x=0x2c #hexadecimal
+>>> x
+44
+
+	6). to convert Decimal into Hexadecimal
+
+in python, to convert any number system into hexadecimal number system, in that case we are using hex() function.
+
+>>> y=62 #decimal
+>>> hex(y)
+0x3e
+
+	7). to convert Binary into Octal
+
+>>> x=0b1011 #binary
+>>> oct(x)
+0o13
+
+	8). to convert Octal into Binary
+
+>>> y=0o37 #octal
+>>> bin(y)
+0b11111
+
+
+
+
+
+
+
+

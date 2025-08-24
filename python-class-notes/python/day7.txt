@@ -1,0 +1,273 @@
+working with type() function:
+----------------------------
+the type() function is a one builtin function in both python2.x and python3.x versions.
+
+in python2.x versions, the type() function to return the type of the object.
+
+in python3.x versions, the type() function to return the class of the object.
+
+ex:
+---
+>>> x=10
+>>> type(x)
+<class 'int'>
+
+
+>>> y=2.3
+>>> type(y)
+<class 'float'>
+
+
+working with id() function:
+----------------------------
+to return the address of the object i.e., to identify an object in the memory.
+
+	ref fig: objects creation
+
+ex:
+---
+>>> x=10
+>>> id(x)
+140707904621272
+
+>>> y=2.3
+>>> id(y)
+2264884249360
+
+>>> z=20
+>>> id(z)
+140707904621592
+
+Data Types:
+-----------
+the datatypes are used to represent the type of the data.
+
+in generally, the datatypes can be categorized into 2 type's, they are
+
+	1).static Data type's
+
+	2).dynamic Data type's
+
+Python Data types:
+-------------------
+python is a dynamically typed language.
+
+in python, each and every data type having it's own class
+
+the python supported Datatype's are,
+
+	1).Numerical/Number Datatype's
+		a). integer
+		b). floating point number
+		c). complex number
+
+	2).Boolean Datatype's
+
+	3).Text Sequence Datatype's
+		a). string
+
+	4).Number Sequence Datatype's
+		a). list
+		b). tuple
+		c). range
+		d). xrange
+
+	5). set Datatype's
+		a). set
+		b). frozenset
+
+	6). Mapping datatype's
+		a). Dictionary
+
+	7). None Datatype's
+
+	8). Binary Sequence Datatype's
+
+		a). bytes
+		b). bytearray
+		c). memoryview
+
+
+
+Numerical/Number Datatype's:
+----------------------------
+the Numerical/Number Datatype's are used to store the numerical values.
+
+in python, teh Numerical/Number Datatype's can be categorized into 3 type's, they are
+
+	1). Integer Number Datatype's
+
+	2). Floating Point Number Datatype's
+
+	3). Complex Number Datatype's
+
+Integer Number Datatype's:
+---------------------------
+in python, the Integer Number Datatype having 'int' class
+
+ex:
+---
+>>> x=10
+>>> x
+10
+>>> type(x)
+<class 'int'>
+
+>>> y=20
+>>> y
+20
+>>> type(y)
+<class 'int'>
+
+in python, we can assign any number system as a integer object.
+
+	Binary number system's		--> 0b
+
+	Octal number system's		--> 0o
+
+	Decimal number system's
+
+	Hexadecimal number system's	--> 0x
+
+ex:
+---
+>>> x=0b1010 #binary
+>>> type(x)
+<class 'int'>
+
+>>> y=0o37 #octal
+>>> type(y)
+<class 'int'>
+
+>>> z=39 #decimal
+>>> type(z)
+<class 'int'>
+
+>>> p=0x2c #hexadecimal
+>>> type(p)
+<class 'int'>
+
+
+Floating Point Number Datatype's:
+----------------------------------
+in python, the Floating Point Number Datatype having 'float' class
+
+ex:
+---
+>>> x=2.3
+>>> x
+2.3
+>>> type(x)
+<class 'float'>
+
+>>> y=2.3e2
+>>> y
+230.0
+>>> type(y)
+<class 'float'>
+
+>>> z=2.3e-2
+>>> z
+0.023
+>>> type(z)
+<class 'float'>
+
+in python, we can assign only decimal number system as a floating point object.
+
+>>> x=0b1010.01 #binary
+SyntaxError: invalid syntax
+
+>>> y=0o37.3 #octal
+SyntaxError: invalid syntax
+
+>>> z=0x3d.5 #hexadecimal
+SyntaxError: invalid syntax
+
+>>> p=39.3 #decimal
+>>> p
+39.3
+>>> type(p)
+<class 'float'>
+
+Complex Number Datatype's:
+--------------------------
+in python, the Complex Number Datatype having 'complex' class.
+
+the complex number is a combination of both real and imaginary numbers.
+
+	c=a+bj
+
+ex:
+---
+>>> x=2+3j
+>>> x
+(2+3j)
+>>> type(x)
+<class 'complex'>
+
+>>> y=3j
+>>> y
+3j
+>>> type(y)
+<class 'complex'>
+
+>>> z=2+3J
+>>> z
+(2+3j)
+>>> type(z)
+<class 'complex'>
+
+>>> p=2+3k
+SyntaxError: invalid decimal literal
+
+>>> q=2+3i
+SyntaxError: invalid decimal literal
+
+note:
+-----
+int()		--> to convert any type of data into integer
+		--> by default return value is 0
+
+float()		--> to convert any type of data into floating point number
+		--> by default return value is 0.0
+
+complex()	--> to convert any type of data into complex
+		--> by default return value is 0j
+
+ex1:
+---
+>>> x=5 #int
+>>> float(x)
+5.0
+>>> complex(x)
+(5+0j)
+
+ex2:
+---
+>>> y=2.3 #float
+>>> int(y)
+2
+>>> complex(y)
+(2.3+0j)
+
+ex3:
+----
+>>> z=2+3j #complex
+>>> int(z)
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'complex'
+>>> float(z)
+TypeError: float() argument must be a string or a real number, not 'complex'
+
+ex4:
+----
+>>> x=int()
+>>> x
+0
+
+>>> y=float()
+>>> y
+0.0
+
+>>> z=complex()
+>>> z
+0j

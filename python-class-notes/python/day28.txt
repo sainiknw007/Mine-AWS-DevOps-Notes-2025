@@ -1,0 +1,255 @@
+ex1:
+----
+write a python program to check whether given number is prime number or not?
+
+	demo.py
+	------
+num=int(input("enter your number: "))
+if num>1:
+    for i in range(2,num):
+        if num%i==0:
+            print("Given number is not a prime number")
+            break
+    else:
+        print("Given number is a prime number")
+elif num==0 or num==1:
+    print("Given number is not a prime number")
+else:
+    print("enter positive integers only")
+
+output1:
+-------
+enter your number: 2
+Given number is a prime number
+
+output2:
+-------
+enter your number: 13
+Given number is a prime number
+
+output3:
+-------
+enter your number: 9
+Given number is not a prime number
+
+output4:
+-------
+enter your number: 0
+Given number is not a prime number
+
+output5:
+-------
+enter your number: -3
+enter positive integers only
+
+
+ex2:
+----
+write a python program to print the prime numbers from the given range of numbers?
+
+	demo.py
+	-------
+snum=int(input("enter your starting number: "))
+enum=int(input("enter your starting number: "))
+for num in range(snum,enum+1):
+    if num>1:
+        for i in range(2,num):
+            if num%i==0:                    
+                break
+        else:
+            print(num)
+
+output
+------
+enter your starting number: 1
+enter your starting number: 10
+2
+3
+5
+7
+
+ex3:
+---
+write a python program to print armstrong numbers from the given range of numbers?
+
+	demo.py
+	-------
+snum=int(input("enter your starting number: "))
+enum=int(input("enter your starting number: "))
+for num in range(snum,enum+1):
+    no_of_dig=len(str(num))
+    temp=num
+    s=0
+    while num>=1:
+        dig=num%10
+        s+=dig**no_of_dig
+        num//=10
+    if temp==s:
+        print(temp)
+
+output
+------
+enter your starting number: 1
+enter your starting number: 10000
+1
+2
+3
+4
+5
+6
+7
+8
+9
+153
+370
+371
+407
+1634
+8208
+9474
+
+ex4:
+----
+write a python program to print palindrom numbers from the given range of numbers?
+
+	demo.py
+	-------
+snum=int(input("enter your starting number: "))
+enum=int(input("enter your starting number: "))
+for num in range(snum,enum+1):    
+    temp=num
+    rev=0
+    while num>=1:
+        dig=num%10
+        rev=rev*10+dig
+        num//=10
+    if temp==rev:
+        print(temp)
+
+output:
+------
+enter your starting number: 1
+enter your starting number: 50
+1
+2
+3
+4
+5
+6
+7
+8
+9
+11
+22
+33
+44
+
+ex5:
+----
+write a python program to print strong numbers from the given range of numbers?
+
+	demo.py
+	-------
+snum=int(input("enter your starting number: "))
+enum=int(input("enter your starting number: "))
+for num in range(snum,enum+1):    
+    temp=num
+    s=0
+    while num>=1:
+        dig=num%10
+        i=1
+        f=1
+        while i<=dig:
+            f*=i
+            i+=1
+        s+=f    
+        num//=10
+    if temp==s:
+        print(temp)
+
+	output
+	------
+enter your starting number: 1
+enter your starting number: 100000
+1
+2
+145
+40585
+
+ex6:
+----
+write a python program to print perfect numbers from the given range of numbers?
+
+	demo.py
+	-------
+snum=int(input("enter your starting number: "))
+enum=int(input("enter your starting number: "))
+for num in range(snum,enum+1):    
+    i=1
+    s=0
+    while i<num:
+        if num%i==0:
+            s+=i
+        i+=1
+    if num==s:
+        print(num)
+
+	(or)
+
+snum=int(input("enter your starting number: "))
+enum=int(input("enter your starting number: "))
+for num in range(snum,enum+1):    
+    s=0
+    for i in range(1,num):
+        if num%i==0:
+            s+=i    
+    if num==s:
+        print(num)
+
+
+	output
+	------
+enter your starting number: 1
+enter your starting number: 10000
+6
+28
+496
+8128
+
+
+ex7:
+----
+write a python program to print '*'s in a square pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+r=1
+while r<=num:
+    c=1
+    while c<=num:
+        print("*",end=" ")
+        c+=1
+    print()
+    r+=1
+
+	(or)
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num+1):
+        print("*",end=" ")
+    print()
+
+

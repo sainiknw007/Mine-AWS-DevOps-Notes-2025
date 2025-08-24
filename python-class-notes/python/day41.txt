@@ -1,0 +1,202 @@
+intersection_update()
+---------------------
+Update a set with the intersection of itself and another.
+
+	setobj.intersection_update(setobj)
+
+ex:
+---
+>>> x={1,2,3,4}
+>>> y={3,4,5,6}
+>>> x
+{1, 2, 3, 4}
+>>> y
+{3, 4, 5, 6}
+>>> x.intersection(y)
+{3, 4}
+>>> x
+{1, 2, 3, 4}
+>>> y
+{3, 4, 5, 6}
+>>> x.intersection_update(y)
+>>> x
+{3, 4}
+>>> y
+{3, 4, 5, 6}
+
+difference_update()
+------------------
+Remove all elements of another set from this set.
+
+	setobj.difference_update(setobj)
+
+ex:
+---
+>>> x={1,2,3,4}
+>>> y={3,4,5,6}
+>>> x
+{1, 2, 3, 4}
+>>> y
+{3, 4, 5, 6}
+>>> x.difference(y)
+{1, 2}
+>>> x
+{1, 2, 3, 4}
+>>> y
+{3, 4, 5, 6}
+>>> x.difference_update(y)
+>>> x
+{1, 2}
+>>> y
+{3, 4, 5, 6}
+
+symmetric_difference_update()
+------------------------------
+Update a set with the symmetric difference of itself and another.
+
+	setobj.symmetric_difference_update(setobj)
+
+ex:
+---
+>>> x={1,2,3,4}
+>>> y={3,4,5,6}
+>>> x
+{1, 2, 3, 4}
+>>> y
+{3, 4, 5, 6}
+>>> x.symmetric_difference_update(y)
+>>> x
+{1, 2, 5, 6}
+>>> y
+{3, 4, 5, 6}
+
+set comprihension:
+------------------
+to generate the elements into set object dynamically by writeing some logic in that set object, is known as a set comprihension.
+
+we can implement the set comprihension to required minimum one for loop and one set object.
+
+ex1:
+---
+write a python program to generate 1 to N natural numbers into set object?
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+x=set()
+for i in range(1,num+1):
+    x.add(i)
+print(x)
+
+	(or)
+
+num=int(input("enter your number: "))
+print({i for i in range(1,num+1)})
+
+output:
+------
+enter your number: 10
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+ex2:
+---
+write a python program/script to generate even numbers from 1 to N natural numbers into set object?
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+x=set()
+for i in range(1,num+1):
+    if i%2==0:
+        x.add(i)
+print(x)
+
+	(or)
+
+num=int(input("enter your number: "))
+print({i for i in range(1,num+1) if i%2==0})
+
+output:
+-------
+enter your number: 10
+{2, 4, 6, 8, 10}
+
+ex3:
+---
+write a python program to remove all the duplicate elements from the list object.
+
+	demo.py
+	-------
+x=eval(input("Enter Your List: "))
+print(list(set(x)))
+
+	output
+	------
+Enter Your List: [10,20,30,10,30,40,20,10,30,20,10]
+[40, 10, 20, 30]
+
+assignment-1:
+--------------
+write a python program take the list object as a output and to convert that list into 2 sublists, first sublist contains even numbers in ascending order and second sublist contains odd numbers in descending order?
+
+sample input:
+	[6,3,9,12,21,7,4,8,5,13,10]
+
+expected output:
+	[[4,6,8,10,12],[21,13,9,7,5,3]]
+
+assignment-2:
+------------
+write a python program to move the zero's at the end of the list?
+
+sample input:
+	[5,3,0,2,6,0,12,9,8,0,4]
+
+expected output:
+	[5,3,2,6,12,9,8,4,0,0,0]
+
+assignment-3:
+---------------
+write a python program to print the second highest values from th given list object?
+
+sample input:
+	[5,3,7,2,6,9]
+
+expected output:
+	7
+
+assignment-4:
+---------------
+write a python program to print the second lowest values from th given list object?
+
+sample input:
+	[5,3,7,2,6,9]
+
+expected output:
+	3
+
+assignment-5:
+-------------
+write a python program to find the GCD/HCF of given two numbers?
+
+sample input:
+	6,12
+
+expected output:
+	6
+
+assignment-6:
+--------------
+write a python program to find the LCM of given two numbers?
+
+sample input:
+	3,5
+
+expected result:
+	15
+
+
+
+
+
+	

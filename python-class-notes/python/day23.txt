@@ -1,0 +1,152 @@
+Nested if:
+----------
+we can define a if block inside another if block, is known as a nested if.
+
+	syntax
+	-------
+	if(condition): #outer if
+		stmt_1
+		stmt_2
+		......
+		if(condition): #inner if
+			stmt_1
+			stmt_2
+			......
+
+ex1:
+----
+write a python program to check whether given charecter is alphabet or not, whether it is a alphabet to check whether that alphabet is either lowercase alphabet or uppercase alphabet?
+
+	demo.py
+	-------
+ch=input("enter your charecter: ")
+if ch>='a' and ch<='z' or ch>='A' and ch<='Z':
+    if ch>='a' and ch<='z':
+        print("Given charecter is a lowercase alphabet")
+    else:
+        print("Given charecter is a uppercase alphabet")
+else:
+    print("Given charecter is not a alphabet")
+
+
+	(or)
+
+ch=input("enter your charecter: ")
+if ch.isalpha():
+    if ch.islower():
+        print("Given charecter is a lowercase alphabet")
+    else:
+        print("Given charecter is a uppercase alphabet")
+else:
+    print("Given charecter is not a alphabet")
+
+
+output1:
+--------
+enter your charecter: e
+Given charecter is a lowercase alphabet
+
+output2:
+--------
+enter your charecter: 3
+Given charecter is not a alphabet
+
+output3:
+--------
+enter your charecter: U
+Given charecter is a uppercase alphabet
+
+output4:
+-------
+enter your charecter: @
+Given charecter is not a alphabet
+
+
+assignment-1:
+------------
+write a python program to read 6 subject marks from the user, if that student is pass in all subjects then only we want to find average marks and Grade of the student and filnally to print total marks,average marks and grade of that student otherwise to print Fail?
+
+	avg>=75				--> A+ Grade
+	avg 65 to 74			--> A grade
+	avg 55 to 64			--> B grade
+	avg 45 to 54			--> C grade
+	avg 35 to 44			--> Pass
+
+assignment-2:
+-------------
+write a python program to check whether given charecter is either alphabet or not, whether it is a alphabet to check that alphabet is either vowel or consonent?
+
+	input			output
+	-----			-------
+	t			consonent
+	e			vowel
+	A			vowel
+	D			consonent
+	6			not a alpahbet
+	@			not a alphabet
+
+ex2:
+----
+write a python program to check whether given two string objects are Anagram string's  or not?
+
+An anagram of a string is another string that contains the same characters, only the order of characters can be different. 
+
+		(or)
+
+Two strings are said to be anagram if we can form one string by arranging the characters of another string.
+
+	demo.py
+	-------
+s1=input("enter string_1: ")
+s2=input("enter string_2: ")
+if len(s1)==len(s2):
+    if sorted(s1)==sorted(s2):
+        print("Given two string objects are Anagram strings")
+    else:
+        print("Given two string objects are not a Anagram strings")
+else:
+    print("Given two string objects are not a Anagram strings")
+    
+output1:
+--------
+enter string_1: eat
+enter string_2: tea
+Given two string objects are Anagram strings
+
+output2:
+--------
+enter string_1: madam
+enter string_2: mad
+Given two string objects are not a Anagram strings
+
+output3:
+--------
+enter string_1: dad
+enter string_2: bad
+Given two string objects are not a Anagram strings
+
+output4:
+--------
+enter string_1: heart
+enter string_2: earth
+Given two string objects are Anagram strings
+
+assignment-3:
+-------------
+write a python program given 3 angles are triangle or not,if it is a triangle to check whether that triangle is eitheer right angle triangle or obtuse triangle or acute triangle or not?
+
+assignment-4:
+--------------
+write a python program to convert degrees into radians?
+
+	1Deg × π/180 = 0.01745Rad
+
+assignment-5:
+------------
+write a python program to convert radians into degrees?
+
+	1Rad × 180/π = 57.296Deg
+
+
+	
+	

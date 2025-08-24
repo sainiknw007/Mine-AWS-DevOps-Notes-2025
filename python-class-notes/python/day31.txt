@@ -1,0 +1,267 @@
+ex1:
+----
+write a python program to print 1 to N natural numbers in a square pattern?
+
+sample input:
+
+	num=5
+
+expected output:
+
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num+1):
+        print(c,end=" ")
+    print()
+
+ex2:
+----
+write a python program to print 1 to N natural numbers in a square pattern?
+
+sample input:
+
+	num=5
+
+expected output:
+
+1 1 1 1 1
+2 2 2 2 2
+3 3 3 3 3
+4 4 4 4 4
+5 5 5 5 5
+
+	demo.py
+	------
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num+1):
+        print(r,end=" ")
+    print()
+
+ex3:
+----
+write a python program to print 1 to N natural numbers in a right angle triangle pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r+1):
+        print(c,end=" ")
+    print()
+
+ex4:
+----
+write a python program to print 1 to N natural numbers in a right angle triangle pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+
+	demo.py
+	--------
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,r+1):
+        print(r,end=" ")
+    print()
+
+ex5:
+----
+write a python program to print 1 to N natural numbers in a inverted right angle triangle pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2
+1
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num-r+2):
+        print(c,end=" ")
+    print()
+
+ex6:
+----
+write a python program to print 1 to N natural numbers in a inverted right angle triangle pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+1 1 1 1 1
+2 2 2 2
+3 3 3
+4 4
+5
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num-r+2):
+        print(r,end=" ")
+    print()
+
+ex7:
+----
+write a python program to print 1 to N natural numbers in a floyd's triangle pattern?
+
+sample input:
+
+	num=5
+
+expected output:
+
+    1
+   1 2
+  1 2 3
+ 1 2 3 4
+1 2 3 4 5
+
+	demo.py
+	--------
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num-r+1):
+        print(' ',end="")
+    for c in range(1,r+1):
+        print(c,end=" ")
+    print()
+
+ex8:
+----
+write a python program to print 1 to N natural numbers in a floyd's diamond pattern?
+
+sample input:
+
+	num=5
+
+expected output:
+
+    1
+   2 2
+  3 3 3	  
+ 4 4 4 4
+5 5 5 5 5
+ 4 4 4 4
+  3 3 3
+   2 2
+    1
+
+	demo.py
+	--------
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num-r+1):
+        print(' ',end="")
+    for c in range(1,r+1):
+        print(r,end=" ")
+    print()
+for r in range(1,num):
+    for c in range(1,r+1):
+        print(" ",end="")
+    for c in range(1,num-r+1):
+        print(num-r,end=" ")
+    print()
+
+ex9:
+----
+write a python script/program to print 1 to N natural numbers in a pyramid pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+        1
+      2 1 2
+    3 2 1 2 3
+  4 3 2 1 2 3 4
+5 4 3 2 1 2 3 4 5
+
+	demo.py
+	-------
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num-r+1):
+        print(' ',end=" ")
+    for c in range(r,0,-1):
+        print(c,end=" ")
+    for c in range(2,r+1):
+        print(c,end=" ")
+    print()
+
+ex10:
+----
+write a python script/program to print 1 to N natural numbers in a pyramid diamond pattern?
+
+sample input:
+	num=5
+
+expected output:
+
+        1
+      2 2 2
+    3 3 3 3 3
+  4 4 4 4 4 4 4
+5 5 5 5 5 5 5 5 5
+  4 4 4 4 4 4 4
+    3 3 3 3 3
+      2 2 2
+        1
+
+
+num=int(input("enter your number: "))
+for r in range(1,num+1):
+    for c in range(1,num-r+1):
+        print(' ',end=" ")
+    for c in range(r,0,-1):
+        print(r,end=" ")
+    for c in range(2,r+1):
+        print(r,end=" ")
+    print()
+for r in range(1,num):
+    for c in range(1,r+1):
+        print(' ',end=" ")
+    for c in range(1,num-r+1):
+        print(num-r,end=" ")
+    for c in range(1,num-r):
+        print(num-r,end=" ")
+    print()
+

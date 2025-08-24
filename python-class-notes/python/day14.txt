@@ -1,0 +1,274 @@
+working with builtin functions:
+-------------------------------
+len()
+----
+to return the no.of charecters/elements/items from the given container/collection/iterable object.
+
+	len(iterableobj)
+
+ex:
+---
+>>> x="siva"
+>>> y=[6,3,7,2,9]
+>>> z={'m':56,'sc':21,'so':31}
+>>> a=345
+>>> len(x)
+4
+>>> len(y)
+5
+>>> len(z)
+3
+>>> len(a)
+TypeError: object of type 'int' has no len()
+
+ord()
+----
+to return the ASCII(American Standard Code for Information and Interchange) value of the given charecter.
+
+	ord(char)
+
+note:
+
+	a to z			--> 97 to 122
+
+	A to Z			--> 65 to 90
+	
+	0 to 9			--> 48 to 57
+
+ex:
+---
+>>> ord('a')
+97
+>>> ord('A')
+65
+>>> ord('9')
+57
+>>> ord('@')
+64
+>>> ord('ab')
+TypeError: ord() expected a character, but string of length 2 found
+
+chr()
+-----
+to return the charecter of the given ASCII value
+
+	chr(ASCIIvalue)
+
+ex:
+---
+>>> chr(97)
+'a'
+>>> chr(65)
+'A'
+>>> chr(64)
+'@'
+>>> chr(48)
+'0'
+>>> chr(9)
+'\t'
+
+min()
+-----
+to return the minimum value/charecter from the given iterable object.
+
+	min(iterableobj)
+
+ex:
+---
+>>> x='Siva@123'
+>>> y=[5,3,7,2]
+>>> z=456
+>>> min(x)
+'1'
+>>> min(y)
+2
+>>> min(z)
+TypeError: 'int' object is not iterable
+
+max()
+----
+to return the maximum value/charecter from the given iterable object.
+
+	max(iterableobj)
+
+ex:
+---
+>>> x='Siva@123'
+>>> y=[5,3,7,2]
+>>> z=456
+>>> max(x)
+'v'
+>>> max(y)
+7
+>>> max(z)
+TypeError: 'int' object is not iterable
+
+sorted()
+-------
+to return the elements/charecters in sorting order from the given iterable object.
+
+by default, the sorted() function to return the ascending order.
+
+the sorted() function always to return the output as list format only.
+
+	sorted(iterableobj, reverse=False)
+
+ex:
+---
+>>> x="Siva@123"
+>>> y=[6,3,7,9,2]
+>>> z=567
+>>> sorted(x)
+['1', '2', '3', '@', 'S', 'a', 'i', 'v']
+>>> sorted(y)
+[2, 3, 6, 7, 9]
+>>> sorted(z)
+TypeError: 'int' object is not iterable
+
+if we want to print the elements/charecters in descending order, in that case we are changeing the reverse attribute value False to True.
+
+	sorted(iterableobj, reverse=True)
+ex:
+---
+>>> x="Siva@123"
+>>> y=[6,3,7,9,2]
+>>> z=567
+>>> sorted(x,reverse=True)
+['v', 'i', 'a', 'S', '@', '3', '2', '1']
+>>> sorted(y,reverse=True)
+[9, 7, 6, 3, 2]
+>>> sorted(z,reverse=True)
+TypeError: 'int' object is not iterable
+
+reversed()
+---------
+to print the elements/charecters in reverse order fromthe given iterable object.
+
+the reversed() to return the output as reversed iterator object.
+
+	reversed(iterableobj)
+
+ex:
+---
+>>> x="Siva@123"
+>>> y=[6,3,7,9,2]
+>>> z=567
+>>> reversed(x)
+<reversed object at 0x000001FD36169330>
+>>> list(reversed(x))
+['3', '2', '1', '@', 'a', 'v', 'i', 'S']
+
+>>> reversed(y)
+<list_reverseiterator object at 0x000001FD35E9BC40>
+>>> list(reversed(y))
+[2, 9, 7, 3, 6]
+
+>>> reversed(z)
+TypeError: 'int' object is not reversible
+
+note:
+----
+if we want to display all the available methods of any class with syntax and descrition, in that case we are using help() function.
+
+	help(classname)
+
+		ex: help(str)
+		ex: help(list)
+
+	help(classname.methodname)
+
+		ex: help(str.upper)
+		    help(list.append)
+
+	help(functionname)
+
+		ex: help(len)
+
+if we want to display all the available methods of any class without syntax and description, in that case we are using dir() function.
+
+	dir(classname)
+
+		ex: dir(str)
+		ex: dir(list)
+
+note:
+----
+in python, by default every class having two types of methods, they are
+
+	1).Dunder/magic/special methods
+
+	2).Normal methods
+
+Dunder/magic/special methods:
+-----------------------------
+	any method name which contains both prefix(begening) and suffix(ending) double underscores(__), that type of methods are called Dunder/magic/special methods.
+
+	these methods are executed automatically whenever we are performeing that particular operation.
+
+example of str class dunder methods:
+------------------------------------
+ex1: string concatination
+---
+>>> x="siva"
+>>> y="krishna"
+>>> x+y
+'sivakrishna'
+>>> x.__add__(y)
+'sivakrishna'
+
+ex2: string multiplication
+---
+>>> x="siva"
+>>> z=3
+>>> x*z
+'sivasivasiva'
+>>> x.__mul__(z)
+'sivasivasiva'
+
+ex3: string comparissions
+----
+>>> x="siva"
+>>> y="krishna"
+>>> x==y
+False
+>>> x.__eq__(y)
+False
+>>> x!=y
+True
+>>> x.__ne__(y)
+True
+>>> x>y
+True
+>>> x.__gt__(y)
+True
+>>> x>=y
+True
+>>> x.__ge__(y)
+True
+>>> x<y
+False
+>>> x.__lt__(y)
+False
+>>> x<=y
+False
+>>> x.__le__(y)
+False
+
+ex4:
+---
+>>> x="siva"
+>>> len(x)
+4
+>>> x.__len__()
+4
+
+
+
+
+
+
+
+
+
+
+

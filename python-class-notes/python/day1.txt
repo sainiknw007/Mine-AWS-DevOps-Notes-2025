@@ -1,0 +1,171 @@
+what is Python?
+---------------
+Python is a General Purpose Programming Language
+Python is a High Level Programming Language
+Python is a Multi-Paradigm
+Python support both Interactve and Batch Mode Execution
+
+		or
+
+Python is a General Purpose,High Level,Interpreted,Interactive,Modular,Dynamically Typed,
+Garbage Collected,Procedure Oriented,Object Oriented and Scripting Programming Language.
+
+History of Python:
+-------------------
+the Python was Developed by the Guido Van Rossum in the year of 1991(actually this project implementation is started in the early of 1980's i.e., 1989)
+
+the name python was derived from the Guido Van Rossum's favourite TV fun show 'the complete monty python's flying circus'.
+
+he is a Dutch Programmer, best known as a Creator of the python programming language.
+
+currently he is working in microsoft.
+
+the python programming language implementation is influenced by two programming languages, they are
+
+	ABC
+	Modula3 
+
+Advantages of Python
+--------------------
+1). Simple Syntax
+
+	in python, there's no concept of ;,(),{}
+	python simply follows space indentation concept
+
+ex: if block representation
+---
+
+	C/C++/Java			Python
+	----------			-------
+	if(condition)			if condition:
+	{					stmt_1
+	   stmt_1;				stmt_2
+	     stmt_2;				......
+	   ......				stmt_n
+	 stmt_n;
+	}
+
+
+2). Less Code
+
+	python programs having Less Code when compared with other programming Languages programs code like C,C++,Java,....
+
+ex:
+---
+write a C program to print "hello world"?
+
+	demo.c
+	------
+#include<stdio.h>
+void main()
+{
+    printf("hello world");
+}
+
+write a Java program to print "hello world"?
+
+	demo.java
+	---------
+import java.io.*;
+class Test
+{
+    public static void main(String[] args)
+    {
+        System.out.println("hello world");
+    }
+        
+}
+
+write a Python program to print "hello world"?
+
+	demo.py
+	--------
+print("hello world")
+
+3). Dynamically Typed Language
+
+ex:
+---
+write a C program(Static Typed Language) to perform the addition operation on two different types of numerical values?
+
+	demo.c
+	------
+#include<stdio.h>
+void main()
+{
+    int x=10;
+    float y=2.3;
+    float z=x+y;
+    printf("%f",z);
+}
+
+
+write a Python program(Dynamically Typed Language) to perform the addition operation on two different types of numerical values?
+
+	demo.py
+	-------
+x=10
+y=2.3
+z=x+y
+print(z)
+
+4). Python provides N no.of Builtin Libraries/Packages/Modules
+
+Features of Python
+-------------------
+1). Easy-to-Learn
+2). Easy-to-Read
+3). Easy-to-Use
+4). Easy-to-Maintain
+5). Portable(it support all environment's)
+6). Scalable(easily we can add new feature's)
+7). Secure
+8). Flexible
+9). Extendable
+10). Robustness(it support exception handling)
+11). Platform Independent(write once run anywhere)
+12). Free and OpenSource
+13). Interpreted Language
+14). Garbage Collected Language
+15). Strongly Typed Language
+16). it support all types of database connections
+
+note
+----
+python is completely free and opensource project, it is maintained by PSF(Python Software Foundation) Team.
+
+Applications of Python:
+------------------------
+1). Data Science(Machine Learning,Deep Learning,NLP,Computer vision,....)
+2). Robotic Process Automation(RPA)
+3). Artificial Intelligence(AI)
+4). GenerativeAI
+5). Prompt Engineering
+6). Data Analytics
+7). BigData
+8). Web Application Development
+9). GUI(Graphical User Interface)/Desktop Application Development
+10). CLI(Command Line Interface) Application Development
+11). Mobile Application Development
+12). Games Development
+13). GIS(Geographical Information System's) Application Development
+14). ERP(Enterprise Resource Planning) Application Development
+15). Automation Testing(Selenium)
+16). DevOps
+17). Cloud Computing(AWS,Azure,GCP,Salesforce,...)
+18). MLOps
+19). Cyber Security
+20). Blockchain
+21). Admin Activities(DBA,Sys Admin,OS Admin,N/W Admin)
+22). Scientific Applications
+23). Networking Applications
+24). ETL(Extraction Transformation and Loading)
+25). BI(Business Intelligence)
+26). Medical Coding
+27). Web Scrapping
+	....
+	....etc.,
+
+
+
+

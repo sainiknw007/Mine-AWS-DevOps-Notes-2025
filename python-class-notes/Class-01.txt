@@ -1,0 +1,95 @@
+Types of Cloud:
+
+Public Cloud 
+Private Cloud and
+Hybrid Cloud.
+
+Public Cloud: 
+
+Anyone can use this cloud. AWS, Azure, GCP, IBM Cloud.
+Data center is in cloud provider premises.
+
+AWS https://aws.amazon.com
+Azure portal.azure.com
+Google Cloud Platform: 
+
+Public Cloud is hosted on cloud provider data centre.
+Hardware and software are managed by cloud provider.
+
+AWS DC: 
+
+Hybrid Cloud is comnibation of public and private cloud.
+Company uses both 
+
+50 Servers: 50 Lakhs 
+Start using Public cloud.
+
+Public cloud: New features are available.
+----------------------------------------------------------------------------------------
+Networking:
+
+OSI 
+TCP-IP Model: there are foud layes in TCP ip model
+
+TCP Transmission control protocol. This is connection based protocol.
+
+UDP : User datagram protocol. UDP is connection less protocol.
+
+
+FTP: 21
+File transfer protocol, it works on port number 21.
+This is used for file transfer.
+
+SMTP: 25
+Simple Mail Transfer Protocol. SMTP works on port 25. SMTP is used for exchaning mails.
+For Sending and recevieing mails.
+
+DNS: 53
+
+Domain Name System. It works on port number 53
+
+www.icicibank.com      192.68.32.34
+google.com             8.8.8.8
+
+DNS resolved domain name into ip address and ip address into domain name.
+
+HTTP: Port 80
+
+Hypertext transfer protocol. it workds on port number 80.
+      Internet protocol used for client server communication.
+
+HTTPS: is secure protocol. it works on 443
+
+RDP: Remote Desktop Protocol. It works on Port 3389.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

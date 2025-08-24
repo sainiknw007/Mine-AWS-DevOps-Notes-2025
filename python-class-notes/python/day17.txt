@@ -1,0 +1,307 @@
+join()
+------
+to join the elements/charecters from the given iterable objects with the help of our string object.
+
+	strobj.join(iterableobj)
+
+ex:
+---
+>>> x=" "
+>>> y="siva"
+>>> x.join(y)
+'s i v a'
+
+ex2:
+----
+>>> a="."
+>>> b=["D","Siva"]
+>>> a.join(b)
+'D.Siva'
+
+split()
+------
+to split the string into list of words from left to right based on given seperator/delimeter.
+
+by default space charecter is a seperator.
+
+	strobj.split(sep)
+
+ex1:
+---
+>>> x="hello siva krishna good morning"
+>>> x
+'hello siva krishna good morning'
+>>> x.split()
+['hello', 'siva', 'krishna', 'good', 'morning']
+>>> x.split(' ')
+['hello', 'siva', 'krishna', 'good', 'morning']
+
+ex2:
+----
+>>> y="hello,siva krishna,good morning"
+>>> y
+'hello,siva krishna,good morning'
+>>> y.split(",")
+['hello', 'siva krishna', 'good morning']
+>>> y.split()
+['hello,siva', 'krishna,good', 'morning']
+>>> y.split(".")
+['hello,siva krishna,good morning']
+
+rsplit()
+-------
+to split the string into list of words from right to left based on given seperator/delimeter.
+
+by default space charecter is a seperator.
+
+	strobj.rsplit(sep)
+
+ex1:
+---
+>>> x="hello siva krishna good morning"
+>>> x
+'hello siva krishna good morning'
+>>> x.rsplit()
+['hello', 'siva', 'krishna', 'good', 'morning']
+>>> x.rsplit(" ")
+['hello', 'siva', 'krishna', 'good', 'morning']
+
+ex2:
+----
+>>> y="hello,siva krishna,good morning"
+>>> y
+'hello,siva krishna,good morning'
+>>> y.rsplit(",")
+['hello', 'siva krishna', 'good morning']
+>>> y.rsplit()
+['hello,siva', 'krishna,good', 'morning']
+>>> y.rsplit(".")
+['hello,siva krishna,good morning']
+
+replace()
+---------
+Return a copy with all occurrences of substring old replaced by new.
+
+	strobj.replace(old,new,count=-1)
+
+here count is the Maximum number of occurrences to replace.
+
+-1 (the default value) means replace all occurrences.
+
+ex:
+---
+>>> x="hai siva krishna hai"
+>>> x
+'hai siva krishna hai'
+>>> x.replace('i','u')
+'hau suva krushna hau'
+>>> x
+'hai siva krishna hai'
+>>> x.replace('i','u',1)
+'hau siva krishna hai'
+>>> x
+'hai siva krishna hai'
+>>> x.replace('i','u',2)
+'hau suva krishna hai'
+>>> x
+'hai siva krishna hai'
+>>> x.replace('i','u',3)
+'hau suva krushna hai'
+>>> x
+'hai siva krishna hai'
+>>> x.replace('hai','hello')
+'hello siva krishna hello'
+>>> x
+'hai siva krishna hai'
+>>> x.replace('hai','hello',1)
+'hello siva krishna hai'
+>>> x
+'hai siva krishna hai'
+
+istitle()
+---------
+to check whether given string object is title cased string or not.
+
+	strobj.istitle()
+
+ex:
+---
+>>> x="Hello"
+>>> y="Hello RAMA"
+>>> z="Hello rama"
+>>> a="Hello Rama"
+>>> b="123rama"
+>>> c="123Rama"
+>>> x.istitle()
+True
+>>> y.istitle()
+False
+>>> z.istitle()
+False
+>>> a.istitle()
+True
+>>> b.istitle()
+False
+>>> c.istitle()
+True
+
+isspace()
+--------
+to check whether given string object contains only white-space charecters or not.
+
+	strobj.isspace()
+
+ex:
+---
+>>> x=""
+>>> y=" "
+>>> z=" siva "
+>>> a="\n\t"
+>>> x.isspace()
+False
+>>> y.isspace()
+True
+>>> z.isspace()
+False
+>>> a.isspace()
+True
+
+isalnum()
+---------
+to check whether our string object contains only alphabets or digits or both combination of alphabets and digits.
+
+	strobj.isalnum()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva123"
+>>> b="RAMA123"
+>>> c="siva@123"
+>>> d="123"
+>>> x.isalnum()
+True
+>>> y.isalnum()
+True
+>>> z.isalnum()
+True
+>>> a.isalnum()
+True
+>>> c.isalnum()
+False
+>>> d.isalnum()
+True
+
+isalpha()
+---------
+to check whether given string object contains only alphabet's or not.
+
+	strobj.isalpha()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva123"
+>>> b="RAMA123"
+>>> c="siva@123"
+>>> d="123"
+>>> x.isalpha()
+True
+>>> y.isalpha()
+True
+>>> z.isalpha()
+True
+>>> a.isalpha()
+False
+>>> b.isalpha()
+False
+>>> c.isalpha()
+False
+>>> d.isalpha()
+False
+
+islower()
+---------
+to check whether our string object contains the alphabets are only lowercase or not.
+
+	strobj.islower()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva123"
+>>> b="RAMA123"
+>>> c="siva@123"
+>>> d="123"
+>>> x.islower()
+True
+>>> y.islower()
+False
+>>> z.islower()
+False
+>>> a.islower()
+True
+>>> b.islower()
+False
+>>> c.islower()
+True
+>>> d.islower()
+False
+
+isupper()
+---------
+to check whether our string object contains the alphabets are only uppercase or not.
+
+	strobj.isupper()
+
+ex:
+---
+>>> x="siva"
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva123"
+>>> b="RAMA123"
+>>> c="siva@123"
+>>> d="123"
+>>> x.isupper()
+False
+>>> y.isupper()
+True
+>>> z.isupper()
+False
+>>> a.isupper()
+False
+>>> b.isupper()
+True
+>>> c.isupper()
+False
+>>> d.isupper()
+False
+
+isdigit()
+---------
+to check whether our string object contains only digits or not.
+
+	strobj.isdigit()
+
+ex:
+---
+>>> a="siva123"
+>>> b="RAMA123"
+>>> c="siva@123"
+>>> d="123"
+>>> a.isdigit()
+False
+>>> b.isdigit()
+False
+>>> c.isdigit()
+False
+>>> d.isdigit()
+True
+

@@ -1,0 +1,215 @@
+implementations of Python:
+---------------------------
+the python runtime environment is implemented by using 'C Programming', is known as a 'cpython'.
+
+the 'cpython' is a standrad,builtin and most widely used python implementation.
+
+the python runtime environment is implemented by using 'Java Programming', is known as a 'Jython'.
+
+the python runtime environment is implemented by using '.Net Frameworks', is known as a 'IronPython'.
+
+the python runtime environment is implemented by using 'Rust Programming', is known as a 'RustPython'.
+
+the python runtime environment is implemented by Anaconda Corporation, is known as a 'AnacondaPython'.
+
+the python runtime environment is implemented based on 'embeded systems', is known as a 'Embedded Python'.
+
+the python runtime environment is implemented by itself i.e., without using other programming language stack, is known as a 'StacklessPython/Stackless'.
+
+whenever we are adding the JIT(Just In Time) compiler to the CPython for faster execution, is known as a 'PYPY'.
+
+	......
+	......,ETC.,
+
+
+what is Comment?
+----------------
+A comment is a part of a program's source code that is ignored by the compiler or interpreter.
+
+A comment is basically a text note that gives an explanation about the source code.
+
+We can include the comments in our source code, to increase the readability of the program.
+
+how to represent the Comments in Python?
+----------------------------------------
+we can represents the comments in python, in two ways
+
+	1).single line comment
+
+		# comment_line
+
+	2).multi line comment
+
+		''' comment_line_1
+		    comment_line_2
+	                .....
+		    comment_line_n '''
+
+ex
+---
+	demo.py
+	------
+'''write a python program to perform arithmetic calculations:
+    1).Addition
+    2).Subtraction
+    3).Multiplication
+    4).Division '''
+
+#variable decleration
+x=10
+y=20
+print(x+y) #addition
+print(x-y) #subtraction
+print(x*y) #multiplication
+print(x/y) #division
+
+
+Versions of Python:
+------------------
+initially the python released into the market in the year of 1991.
+
+the python1.0 version is released into the market in the year of 1994.
+
+the python1.x(1.0,1.1,1.2,....) versions don't support Garbage Collector concept.
+
+the python2.0 version is released into the market in the year of 2000.
+
+from python2.0 version onwards the python language also support Garbage Collector concept.
+
+the python3.0 version is released into the market in the year of 2008.
+
+	python3.x	--> 3.0,3.1,3.2,....,3.12.6(6th sep 2024)
+
+note:
+-----
+the PSF(Python Software Foundation) Team completly to stop the python2.x versions.
+
+the python2.7.18(20th apr 2020) is the last release of python2.x versions.
+
+Python Environment Setup:
+------------------------
+the Python Environment Setup can be categorized into 3 parts, they are
+
+	1). Downloading Python Software
+
+	2). Install Python Software
+
+	3). Python Path Setup
+
+How to Downloading Python Software?
+------------------------------------
+	goto www.python.org
+		|
+	goto downloads
+		|
+	select our operating system
+	     (windows)
+		|
+	to download any one file related to that 
+	particular operating system bit number
+	(windows installer file)
+
+How to Install Python Software?
+--------------------------------
+	double click on Python3.x version related downloaded file
+			|
+	to enable admin priviliges and to select any one option(custom/installNow)
+			|
+	to enable all the optional features and click on next
+			|
+	to select installation location and click on install button
+			|
+		click on yes
+
+
+what is Path?
+--------------
+a path defines the location of a file or folder in a computer's file system
+
+The PATH environment variable, also referred to as just PATH or Path
+
+what is Python path?
+--------------------
+Python path is a special environment variable that provides guidance to the Python interpreter about where to find various libraries and applications.
+
+why we need to set the python path?
+-----------------------------------
+	after installation of python software by default we can access the python interpreter on top of that particular installtion location only.
+
+ex:
+---
+C:\Users\Lenovo>python
+	"python" is not recognized
+
+C:\Users\Lenovo>cd ..
+
+C:\Users>cd ..
+
+C:\>cd Python312
+
+C:\Python312>python
+Python 3.12.5 
+
+>>> print("hello world")
+hello world
+>>> ^Z  #ctrl+z
+
+
+C:\Python312>d:
+
+D:\>python
+	"python" is not recognized
+
+D:\>
+
+	
+	if we want to access the python interpreter on top of any location in our computer/system, in that case we need to set the python path.
+
+
+how to set the python path?
+----------------------------
+we can set the python path in two scenarios, they are
+
+	scenario-1: temporary purpose i.e., temporary path setup
+
+	scenario-2: permanent purpose i.e., permanent path setup
+
+temporary path setup:
+---------------------
+	if we want to set the python path temporarly, in that case we are using following command,
+
+	set path="python_installation_location"
+
+ex:
+---
+C:\Users\Lenovo>set path="C:\Python312"
+
+
+permanent path setup:
+--------------------
+	if we want to set the python path permanently, in that case we are follow the following steps,
+
+	goto ThisPC
+	     |
+	Right click on ThisPC
+	     |
+	click on Properties
+	     |
+	click on Advanced System Settings
+	     |
+	click on Environment variables
+	     |
+	goto system variables
+	     |
+	to select path variable and click on edit
+(windows8,10,11 versions, again click on edit text and click on ok)
+	     |
+	to put ; and to add our python installation location
+	     |
+	click on ok
+	     |
+	click on ok
+	     |
+	click on ok
+
+

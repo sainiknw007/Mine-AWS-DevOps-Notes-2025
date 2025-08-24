@@ -1,0 +1,303 @@
+the different immutable objects haveing the same data but referenceing to single object in the memory.
+
+	ref fig: immutable objects
+
+ex1:
+---
+	demo.py
+	------
+x=10
+y=10
+z=10
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+140707596995288
+140707596995288
+140707596995288
+
+ex2:
+----
+	demo.py
+	-------
+x="hai siva krishna"
+y="hai siva krishna"
+z="hai siva krishna"
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+2265362527536
+2265362527536
+2265362527536
+
+ex3:
+-----
+	demo.py
+	-------
+x=(1,2,3)
+y=(1,2,3)
+z=(1,2,3)
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	-------
+C:\Users\Lenovo\Desktop>python demo.py
+3075997336832
+3075997336832
+3075997336832
+
+the different mutable objects haveing the same data but referenceing to different objects in the memory.
+
+	ref fig: mutable objects
+
+ex:
+---
+	demo.py
+	-------
+x=[1,2,3]
+y=[1,2,3]
+z=[1,2,3]
+print(id(x))
+print(id(y))
+print(id(z))
+
+	output
+	------
+2569257177920
+2569214238464
+2569214235008
+
+		String Handling
+		----------------
+what is String?
+---------------
+a string is a charecter/collection of charecters/sequence of words.
+
+in python, the string datatype having 'str' class
+
+in python, the string object is a sequence,iterable and immutable object.
+
+how to represent the string objects in python?
+------------------------------------------------
+we can represent the string objects in python, in that case we are using following options,
+
+	1).single line string representations
+
+		a). by using single-single quote's
+			ex: 'siva'
+
+		b). by using single-double quote's
+			ex: "siva"
+
+	2).multi-line string representations
+		
+		a). by using tripple-single quote's
+			ex: '''siva'''
+
+		b). by using tripple-double quote's
+			ex: """siva"""
+
+
+ex1:
+----
+	demo.py
+	-------
+x='siva'
+y="krishna"
+z='''siva
+ameerpet
+hyderabad
+telangana
+500016'''
+a="""krishna
+guntur
+amaravathi
+andhrapradesh
+522646"""
+print(x)
+print("="*35)
+print(y)
+print("*"*35)
+print(z)
+print("-"*35)
+print(a)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+siva
+===================================
+krishna
+***********************************
+siva
+ameerpet
+hyderabad
+telangana
+500016
+-----------------------------------
+krishna
+guntur
+amaravathi
+andhrapradesh
+522646
+
+note:
+-----
+a quote inside same quote is not possible but a quote inside same quote is possible.
+
+ex2:
+----
+	demo.py
+	-------
+x='hai "siva" krishna'
+y="hai 'siva' krishna"
+z='''siva
+'ameerpet'
+"hyderabad"
+"""telangana"""
+500016'''
+a="""krishna
+'guntur'
+"amaravathi"
+'''andhrapradesh'''
+522646"""
+print(x)
+print("="*35)
+print(y)
+print("*"*35)
+print(z)
+print("-"*35)
+print(a)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+hai "siva" krishna
+===================================
+hai 'siva' krishna
+***********************************
+siva
+'ameerpet'
+"hyderabad"
+"""telangana"""
+500016
+-----------------------------------
+krishna
+'guntur'
+"amaravathi"
+'''andhrapradesh'''
+522646
+
+ex3:
+----
+	demo.py
+	-------
+x='hai 'siva' krishna'
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+
+SyntaxError: invalid syntax
+
+ex4:
+----
+	demo.py
+	-------
+x="hai "siva" krishna"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+
+SyntaxError: invalid syntax
+
+ex5:
+---
+	demo.py
+	-------
+x="""hai """siva""" krishna"""
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+
+SyntaxError: invalid syntax
+
+ex6:
+----
+	demo.py
+	-------
+x='''hai '''siva''' krishna'''
+print(x)
+
+	output
+	-------
+C:\Users\Lenovo\Desktop>python demo.py
+
+SyntaxError: invalid syntax
+
+ex7:
+----
+	demo.py
+	-------
+x='''hai """siva "krishna 'bye'""""'''
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+hai """siva "krishna 'bye'""""
+
+ex8:
+----
+	demo.py
+	-------
+x="hai\nsiva\nkrishna"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+hai
+siva
+krishna
+
+ex9:
+----
+	demo.py
+	-------
+x="hai\tsiva\tkrishna"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+hai     siva    krishna
+
+ex10:
+----
+	demo.py
+	-------
+x="hai\n\tsiva\n\t\tkrishna"
+print(x)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+hai
+        siva
+                krishna

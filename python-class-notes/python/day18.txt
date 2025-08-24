@@ -1,0 +1,223 @@
+casefold()
+----------
+if we want to perform the caseless comparissions, in that case we are using 	casefold() method.
+
+internally, the casefold() to convert the string into lowercase.
+
+	strobj.casefold()
+
+ex1:
+---
+>>> x="rama"
+>>> y="rama"
+>>> z="Rama"
+>>> x==y
+True
+>>> x==z
+False
+>>> x==z.casefold()
+True
+>>> x==z.lower()
+True
+
+ex2:
+----
+>>> z="Rama"
+>>> z.lower()
+'rama'
+>>> z.casefold()
+'rama'
+
+removeprefix()
+--------------
+Return a string with the given prefix string removed if present.
+
+If the string starts with the prefix string, return string[len(prefix):] Otherwise, return a copy of the original string.
+
+	strobj.removeprefix(chars)
+
+ex:
+---
+>>> x="aaabbaaa"
+>>> x
+'aaabbaaa'
+>>> x.lstrip('a')
+'bbaaa'
+>>> x
+'aaabbaaa'
+>>> x.removeprefix('a')
+'aabbaaa'
+>>> x.removeprefix('aa')
+'abbaaa'
+>>> x.removeprefix('aaa')
+'bbaaa'
+>>> x
+'aaabbaaa'
+>>> x.removeprefix('b')
+'aaabbaaa'
+
+removesuffix()
+--------------
+Return a string with the given suffix string removed if present.
+
+If the string ends with the suffix string and that suffix is not empty,return 	string[:-len(suffix)] Otherwise, return a copy of the original string.
+
+	strobj.removesuffix(chars)
+
+ex:
+---
+>>> x="aaabbaaa"
+>>> x
+'aaabbaaa'
+>>> x.rstrip('a')
+'aaabb'
+>>> x
+'aaabbaaa'
+>>> x.removesuffix('a')
+'aaabbaa'
+>>> x
+'aaabbaaa'
+>>> x.removesuffix('aa')
+'aaabba'
+>>> x
+'aaabbaaa'
+>>> x.removesuffix('aaa')
+'aaabb'
+>>> x
+'aaabbaaa'
+>>> x.removesuffix('b')
+'aaabbaaa'
+
+partition()
+------------
+Partition the string into three parts using the given separator.
+
+This will search for the separator in the string.  If the separator is found,returns a 3-tuple containing the part before the separator, the separator itself, and the part after it.
+
+If the separator is not found, returns a 3-tuple containing the original string
+and two empty strings.
+
+	strobj.partition(seperator)
+
+ex:
+---
+>>> x="hai siva krishna good afternoon"
+>>> x
+'hai siva krishna good afternoon'
+>>> x.partition(' ')
+('hai', ' ', 'siva krishna good afternoon')
+>>> x.partition(',')
+('hai siva krishna good afternoon', '', '')
+
+rpartition()
+------------
+Partition the string into three parts using the given separator.
+
+This will search for the separator in the string, starting at the end. If the separator is found, returns a 3-tuple containing the part before the separator, the separator itself, and the part after it.
+
+If the separator is not found, returns a 3-tuple containing two empty strings and the original string.
+
+	strobj.rpartition(seperator)
+
+ex:
+---
+>>> x="hai siva krishna good afternoon"
+>>> x
+'hai siva krishna good afternoon'
+>>> x.rpartition(" ")
+('hai siva krishna good', ' ', 'afternoon')
+>>> x
+'hai siva krishna good afternoon'
+>>> x.rpartition(",")
+('', '', 'hai siva krishna good afternoon')
+
+encode()
+-------
+Encode the string using the codec registered for encoding.
+
+	strobj.encode(encoding="utf-8")
+
+ex:
+---
+>>> x="siva@123"
+>>> x
+'siva@123'
+>>> type(x)
+<class 'str'>
+
+>>> y=x.encode()
+>>> y
+b'siva@123'
+>>> type(y)
+<class 'bytes'>
+
+>>> z=str(y,encoding="utf-8")
+>>> z
+'siva@123'
+>>> type(z)
+<class 'str'>
+
+>>> a=str(y)
+>>> a
+"b'siva@123'"
+>>> type(a)
+<class 'str'>
+
+format()
+--------
+Return a formatted version of String, using substitutions from args and kwargs.
+The substitutions are identified by curly-braces ('{' and '}').
+
+	strobj.format()
+
+ex:
+---
+>>> "".format("hai","siva","krishna")
+''
+
+>>> "{}{}".format("hai","siva","krishna")
+'haisiva'
+
+>>> "{1} {2}".format("hai","siva","krishna")
+'siva krishna'
+
+>>> "{0} {2}".format("hai","siva","krishna")
+'hai krishna'
+
+>>> "{} {} {}".format("hai","siva","krishna")
+'hai siva krishna'
+
+>>> "{1} {2} {0}".format("hai","siva","krishna")
+'siva krishna hai'
+
+>>> "{} {} {} {}".format("hai","siva","krishna")
+IndexError: Replacement index 3 out of range for positional args tuple
+
+>>> "{} {} {2}".format("hai","siva","krishna")
+ValueError: cannot switch from automatic field numbering to manual field specification
+
+>>> "{0} {} {}".format("hai","siva","krishna")
+ValueError: cannot switch from manual field specification to automatic field numbering
+
+ex:
+----
+	demo.py
+	-------
+name=input("enter your name: ")
+age=int(input("enter your age: "))
+print("hello",name,",you are",age,"year's old")
+print("hello %s,you are %d year's old"%(name,age))
+print("hello {},you are {} year's old".format(name,age))
+print(f"hello {name},you are {age} year's old")
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python demo.py
+enter your name: siva
+enter your age: 30
+hello siva ,you are 30 year's old
+hello siva,you are 30 year's old
+hello siva,you are 30 year's old
+hello siva,you are 30 year's old
+
+

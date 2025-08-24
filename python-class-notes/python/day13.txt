@@ -1,0 +1,159 @@
+in python, the string object support indexing concept.
+
+in python, the indexing can be categorized into 2 type's, they are
+
+	1).Forward/Positive Indexing
+
+	2).Backward/Negative Indexing
+
+
+		    Indexing
+		       |
+	---------------------------------
+	|                       	|
+Positive/Forward		Negative/Backward
+	|				|
+takes from left to right	takes from right to left
+	|				|
+by default starts with 0	by default starts with -1
+
+in string object, each and every charecter having unique indexing.
+
+by using indexing concept, we can retreive only one charecter from the string object at a time
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[2]
+'v'
+>>> x[4]
+' '
+>>> x[9]
+'h'
+>>> x[-3]
+'h'
+>>> x[-8]
+' '
+>>> x[-10]
+'v'
+>>> x[12]
+IndexError: string index out of range	
+
+the string object supporting slicing concept.
+
+by using slicing concept, we can retreive one or more charecters from the string object at a time.
+
+	scenario-1
+	-----------
+	if we want to retreive last-N charecters from the string object at a time, in that case we are using following syntax,
+
+	strobj[start:]
+
+	here the start index value is a inclusive value
+	     by default increment by 1
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[5:]
+'krishna'
+>>> x[-7:]
+'krishna'
+>>> x[-4:]
+'shna'
+
+	scenario-2
+	-----------
+	if we want to retreive first-N charecters from the string object at a time, in that case we are using following syntax,
+
+	strobj[:stop]
+
+	here the stop index value is a exclusive value
+	     by default increment by 1
+	     by default starts with 0
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[:4]
+'siva'
+>>> x[:-8]
+'siva'
+
+	scenario-3
+	-----------
+	if we want to retreive some middle charecters from the string object, in that case we are using following syntax
+
+	strobj[start:stop]
+
+	here the start index is a inclusive value
+	     the stop index is a exclusive value
+	     by default increment by 1
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[5:10]
+'krish'
+>>> x[-7:-2]
+'krish'
+>>> x[3:6]
+'a k'
+>>> x[-9:-6]
+'a k'
+>>> x[4:5]
+' '
+>>> x[4] #indexing
+' '
+
+ex:
+---
+>>> x="siva krishna"
+>>> x
+'siva krishna'
+>>> x[::2]
+'sv rsn'
+>>> x[::-2]
+'ahikai'
+>>> x[::1]
+'siva krishna'
+>>> x[::-1]
+'anhsirk avis'
+>>> x[::2]
+'sv rsn'
+>>> x[1::2]
+'iakiha'
+
+ex:
+---
+>>> x="siva krishna"
+>>> x[5::2]
+'kiha'
+>>> x[5:10:2]
+'kih'
+>>> x[5:10:2][::-1]
+'hik'
+
+ex:
+---
+>>> x="siva krishna"
+>>> x[0]
+'s'
+>>> x[-1]
+'a'
+>>> x[1:-1]
+'iva krishn'
+>>> x[-1]+x[1:-1]+x[0]
+'aiva krishns'
+
+
+
+

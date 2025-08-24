@@ -1,0 +1,275 @@
+if elif else statement
+------------------------
+	syntax
+	------
+	if condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	elif condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	else:
+	    stmt_1
+	    stmt_2
+            .....
+	    stmt_n
+
+flowchart:
+----------
+	ref fig: if elif else flowchart
+
+ex1:
+----
+write a python program to check whether given integer is either positive or negative or zero integer?
+
+	demo.py
+	------
+num=int(input("enter your number: "))
+if num>0:
+    print("Positive Integer")
+elif num<0:
+    print("Negative Integer")
+else:
+    print("Zero Integer")
+
+	(or)
+
+num=int(input("enter your number: "))
+if num>0:
+    print("Positive Integer")
+else:
+    if num<0:
+        print("Negative Integer")
+    else:
+        print("Zero Integer")
+
+	(or)
+
+num=int(input("enter your number: "))
+print("Positive Integer" if num>0 else "Negative Integer" if num<0 else "Zero Integer")
+
+output1:
+--------
+enter your number: 4
+Positive Integer
+
+output2:
+--------
+enter your number: -2
+Negative Integer
+
+output3:
+--------
+enter your number: 0
+Zero Integer
+
+assignment-1:
+------------
+write a python program to check whether given charecter is either alphabet or digit or special charecter, without using str class builtin methods like isalpha(),isdigit(),...,etc.,?
+
+	input			output
+	-----			-------
+	t			alphabet
+	R			alphabet
+	6			digit
+	@			spl charecter
+
+elif ladder:
+------------
+the elif ladder means to define single if with multiple elif blocks.
+
+in elif ladder, the else block is a optional.
+
+	syntax
+	------
+	if condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	elif condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	elif condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	elif condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	------
+	------
+	------
+	else:
+	    stmt_1
+	    stmt_2
+	    ......
+	    stmt_n
+
+ex:
+---
+	demo.py
+	-------
+p1=float(input("enter product_1 price: "))
+p2=float(input("enter product_2 price: "))
+p3=float(input("enter product_3 price: "))
+p4=float(input("enter product_4 price: "))
+p5=float(input("enter product_5 price: "))
+total_price=p1+p2+p3+p4+p5
+if total_price>=10000:
+    dis=(30/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst
+    print("Total Price: %.2f"%total_price)
+    print("Discount: %.2f"%dis)
+    print("Sub Total: %.2f"%sub_total)
+    print("GST: %.2f"%gst)
+    print("Total Bill: %.2f"%bill)
+elif total_price>=7000 and total_price<10000:
+    dis=(20/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst
+    print("Total Price: %.2f"%total_price)
+    print("Discount: %.2f"%dis)
+    print("Sub Total: %.2f"%sub_total)
+    print("GST: %.2f"%gst)
+    print("Total Bill: %.2f"%bill)
+elif total_price>=5000 and total_price<7000:
+    dis=(15/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst
+    print("Total Price: %.2f"%total_price)
+    print("Discount: %.2f"%dis)
+    print("Sub Total: %.2f"%sub_total)
+    print("GST: %.2f"%gst)
+    print("Total Bill: %.2f"%bill)
+elif total_price>=3000 and total_price<5000:
+    dis=(10/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst
+    print("Total Price: %.2f"%total_price)
+    print("Discount: %.2f"%dis)
+    print("Sub Total: %.2f"%sub_total)
+    print("GST: %.2f"%gst)
+    print("Total Bill: %.2f"%bill)
+elif total_price>=1000 and total_price<3000:
+    dis=(5/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst
+    print("Total Price: %.2f"%total_price)
+    print("Discount: %.2f"%dis)
+    print("Sub Total: %.2f"%sub_total)
+    print("GST: %.2f"%gst)
+    print("Total Bill: %.2f"%bill)
+else:
+    dis=(0/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst
+    print("Total Price: %.2f"%total_price)
+    print("Discount: %.2f"%dis)
+    print("Sub Total: %.2f"%sub_total)
+    print("GST: %.2f"%gst)
+    print("Total Bill: %.2f"%bill)
+    
+output:
+-------
+enter product_1 price: 456
+enter product_2 price: 3234
+enter product_3 price: 2145
+enter product_4 price: 327
+enter product_5 price: 5645
+Total Price: 11807.00
+Discount: 3542.10
+Sub Total: 8264.90
+GST: 413.25
+Total Bill: 8678.15
+
+eval()
+------
+to read one or more input values from the user input with homogenious and hetrogenious.
+
+in eval() function, our input values are must be seperated by "," only.
+
+ex:
+---
+	demo.py
+	-------
+p1,p2,p3,p4,p5=eval(input("enter product prices: "))
+total_price=p1+p2+p3+p4+p5
+if total_price>=10000:
+    dis=(30/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst    
+elif total_price>=7000 and total_price<10000:
+    dis=(20/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst    
+elif total_price>=5000 and total_price<7000:
+    dis=(15/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst    
+elif total_price>=3000 and total_price<5000:
+    dis=(10/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst    
+elif total_price>=1000 and total_price<3000:
+    dis=(5/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst    
+else:
+    dis=(0/100)*total_price
+    sub_total=total_price-dis
+    gst=(5/100)*sub_total
+    bill=sub_total+gst    
+    
+print("Total Price: %.2f"%total_price)
+print("Discount: %.2f"%dis)
+print("Sub Total: %.2f"%sub_total)
+print("GST: %.2f"%gst)
+print("Total Bill: %.2f"%bill)
+
+output:
+-------
+enter product prices: 456,3234,2145,327,5645
+Total Price: 11807.00
+Discount: 3542.10
+Sub Total: 8264.90
+GST: 413.25
+Total Bill: 8678.15
+
+assignment-2:
+-------------
+write a python program to find the maximum number among from given 3 numbers?
+
+	input			output
+	-----			------
+	x=5,y=3,z=1		x is a maximum number
+	x=3,y=5,z=2		y is a maximum number
+	x=2,y=4,z=5		z is a maximum number
+	x=5,y=5,z=5		all are equal numbers
+	x=5,y=5,z=3		x and y are maximum numbers
+	x=5,y=3,z=5		x and z are maximum numbers
+	x=3,y=5,z=5		y and z are maximum numbers
+
+
+	

@@ -1,0 +1,159 @@
+how to develop python applications/programs/projects:
+-----------------------------------------------------
+we can develop python applications/programs/projects in two modes, they are
+
+	1. Interactive Mode
+
+	2. Batch Mode
+
+Interactive Mode
+----------------
+	in Interactive mode, we can write the one by one python statements/instructions directly on python interpreter and executeing.
+
+how to working with Interactive Mode?
+-------------------------------------
+	goto cmd(command prompt)/terminal
+			|
+	by typing python and to press enter key
+
+
+ex:
+---
+C:\Users\Lenovo>python
+Python 3.12.6 
+
+>>> print('hello world')
+hello world
+>>>
+
+how to exit from python interactive mode?
+------------------------------------------
+if we want to exit from the python interactive mode, in that case we are using following command,
+
+	ctrl+z    or   exit()    or    quit()
+
+note:
+----
+the python interactive mode working mechanism is based on REPL rule.
+
+	Read Evaluate Print Loop
+
+
+ex:
+---
+C:\Users\Lenovo>python
+Python 3.12.6 
+
+>>> x=10
+>>> y=20
+>>> x+y
+30
+>>>
+
+problems in Interactive Mode
+-----------------------------
+	once we are exit from python interactive mode previous work-done will not be saved in anywhere because of that reason the python interactive mode is not suitable for development of the applications but it is suitable for only learning the python.
+
+Batch Mode
+----------
+	in Batch Mode, we can write the one or more python statements into a file, we can save that file with .py extension and executeing that file.
+
+how to implement the Batch Mode?
+--------------------------------
+we can implement the batch mode in two ways, they are
+
+	1. by using Editor's
+
+	2. by using IDE's
+
+what is Editor
+--------------
+Editor is an application software, which will provides Good environment to writeing the source code.
+
+	windows			--> notepad,notepad++,editplus,....
+
+	linux/mac		--> vi editor,nano editor,text editor,....
+
+
+how to working with Editor's
+-----------------------------
+	open any one editor in our computer
+			|
+	goto file menu and to select new file
+			|
+	to write the python statements into that file
+			|
+	to save that file with .py extension
+
+ex
+---		
+	C:\Users\Lenovo\Desktop\demo.py	
+	-------------------------------
+print('hello world')
+
+
+how to run python file/script through cmd/terminal
+---------------------------------------------------
+if we want to run python file/script through cmd/terminal by using following command
+
+	python filename.py
+
+ex
+---
+C:\Users\Lenovo>python demo.py
+python: can't open file 'C:\\Users\\Lenovo\\demo.py': [Errno 2] No such file or directory
+
+C:\Users\Lenovo>python C:\Users\Lenovo\Desktop\demo.py
+hello world
+
+	(or)
+
+C:\Users\Lenovo>cd Desktop
+
+C:\Users\Lenovo\Desktop>python demo.py
+hello world		
+
+ex2:
+----
+	D:\sivakrishna\siva_python\cal.py
+	----------------------------------
+x=10
+y=20
+print(x+y)
+print(x-y)
+print(x*y)
+print(x/y)
+
+	output
+	-------
+C:\Users\Lenovo>python D:\sivakrishna\siva_python\cal.py
+30
+-10
+200
+0.5
+
+	(or)
+
+C:\Users\Lenovo>d:
+
+D:\>cd sivakrishna
+
+D:\sivakrishna>cd siva_python
+
+D:\sivakrishna\siva_python>python cal.py
+30
+-10
+200
+0.5
+
+problems in Editor's
+--------------------
+in Editor's, the development of the application takes more time.
+
+the Editor's don't support automatic debugging concept.
+
+note:
+------
+to overcome the problems in Editor's in realtime/live scenarios we would use IDE's concept.
+
+

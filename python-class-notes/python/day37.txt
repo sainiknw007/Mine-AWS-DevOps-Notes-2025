@@ -1,0 +1,200 @@
+Assignment-1:
+-------------
+write a python program to read the list as a input from the user and to return the no.of elements in that list, without using len() function?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			4
+
+sol:
+----
+x=eval(input("enter your list: "))
+c=0
+for ele in x:
+    c+=1
+print(c)
+
+
+Assignment-2:
+-------------
+write a python program to read the list as a input from the user and to return the sum of the list object elements, without using sum() function?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			24
+
+sol:
+----
+x=eval(input("enter your list: "))
+s=0
+for ele in x:
+    s+=ele
+print(s)
+
+
+Assignment-3:
+-------------
+write a python program to read the list as a input from the user and to return the minimum element in that list, without using min() function?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			3
+
+sol:
+----
+x=eval(input("enter your list: "))
+m=x[0]
+for ele in x:
+    if ele<m:
+        m=ele
+print(m)
+
+
+Assignment-4:
+-------------
+write a python program to read the list as a input from the user and to return the maximum element in that list, without using max() function?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			9
+
+sol:
+----
+x=eval(input("enter your list: "))
+m=x[0]
+for ele in x:
+    if ele>m:
+        m=ele
+print(m)
+
+
+Assignment-5:
+-------------
+write a python program to read the list as a input from the user and to return the elements in ascending order, without using sorted() function and sort() method?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			[3,5,7,9]
+
+sol:
+----
+x=eval(input("enter your list: ")) 
+for i in range(len(x)):
+    for j in range(i+1,len(x)):
+        if x[i]>x[j]:
+            x[i],x[j]=x[j],x[i]
+        
+print(x)
+
+
+Assignment-6:
+-------------
+write a python program to read the list as a input from the user and to return the elements in descending order, without using sorted() function and sort() method?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			[9,7,5,3]
+
+sol:
+---
+x=eval(input("enter your list: ")) 
+for i in range(len(x)):
+    for j in range(i+1,len(x)):
+        if x[i]<x[j]:
+            x[i],x[j]=x[j],x[i]
+        
+print(x)
+
+
+Assignment-7:
+-------------
+write a python program to read the list as a input from the user and to return the elements in reverse order, without using reversed() function and reverse() method?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			[9,7,3,5]
+
+
+sol:
+----
+x=eval(input("enter your list: "))
+y=[]
+for i in range(len(x)-1,-1,-1):
+    y.append(x[i])
+        
+print(y)
+
+
+Assignment-8:
+-------------
+write a python program to read the list as a input from the user and to find the mean and median values?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			6.0(mean)
+					6.0(median)
+
+	[3,6,2,7,4]			4.4(mean)
+					4(median)		
+
+
+Mean is also known as the arithmetic mean of the given data.
+
+Median is the middlemost value of the given ungrouped data if the data is arranged in ascending order.
+
+sol:
+----
+x=eval(input("enter your list: "))
+mean=sum(x)/len(x)
+x.sort()
+if len(x)%2==0:
+    i=(len(x)//2)-1
+    j=i+1
+    median=(x[i]+x[j])/2
+else:
+    i=len(x)//2
+    median=x[i]
+print(mean)
+print(median)
+
+	(or)
+
+import pandas as pd
+a=[4,3,5,7,2]
+x=pd.Series(a)
+print(x)
+print(x.mean())
+print(x.median())
+b=[5,3,2,7,9,4]
+y=pd.Series(b)
+print(y)
+print(y.mean())
+print(y.median())
+
+Assignment-9:
+-------------
+write a python program to read the list as a input from the user and to return the accumulated sum of the list?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			[5,8,15,24]
+
+sol:
+----
+x=eval(input("enter your list: "))
+s=0
+y=[]
+for ele in x:
+    s+=ele
+    y.append(s)
+print(y)
+
+	(or)
+
+from itertools import accumulate
+x=eval(input("enter your list: "))
+print(list(accumulate(x)))
+
+
+
+

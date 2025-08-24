@@ -1,0 +1,404 @@
+set data structure/collection
+------------------------------
+in python, the set datatype having 'set' class
+
+we can create a set object by using {} or by calling set() or set(iterableobj)
+
+>>> x={}
+>>> x
+{}
+>>> type(x)
+<class 'dict'>
+
+>>> y=set()
+>>> y
+set()
+>>> type(y)
+<class 'set'>
+
+>>> z={6,4,8,9}
+>>> z
+{8, 9, 4, 6}
+>>> type(z)
+<class 'set'>
+
+>>> a=set([6,12,90,56])
+>>> a
+{56, 90, 12, 6}
+>>> type(a)
+<class 'set'>
+
+set object is a mutable object but it allows only immutable objects.
+
+>>> x={3,2.3,4j,False,'siva',(7,8)}
+>>> x
+{False, 2.3, 3, 'siva', 4j, (7, 8)}
+>>> type(x)
+<class 'set'>
+
+>>> y={3,2.3,4j,False,'siva',[7,8]}
+TypeError: unhashable type: 'list'
+
+in set object the insertion order is not preserved, bercause of that reason the set object is a non-sequence object.
+
+the set object dont allow the duplicate values, by mistakely we are trying to insert the duplicate elements it allows only first inserted elements.
+
+>>> x={5,3,7,5,9,12,7,5}
+>>> x
+{3, 5, 7, 9, 12}
+
+>>> y={False,0,1,True}
+>>> y
+{False, 1}
+
+>>> z={0,False,True,1}
+>>> z
+{0, True}
+
+the set object allows both homogenious and hetrogenious elements.
+
+	homogenious
+	-----------
+>>> a={4,3,7,9}
+>>> a
+{9, 3, 4, 7}
+
+	hetrogenious
+	------------
+>>> x={3,2.3,4j,False,'siva',(7,8)}
+>>> x
+{False, 2.3, 3, 'siva', 4j, (7, 8)}
+
+the set object dont support both indexing and slicing concept.
+
+>>> x={3,2.3,4j,False,'siva',(7,8)}
+>>> x
+{False, 2.3, 3, 'siva', 4j, (7, 8)}
+
+>>> x[0] #indexing
+TypeError: 'set' object is not subscriptable
+
+>>> x[:3] #slicing
+TypeError: 'set' object is not subscriptable
+
+
+the set object dont support nested set mechanism concept.
+
+>>> a={4,2.3,{'siva',3j},False}
+TypeError: unhashable type: 'set'
+
+working with builtin functions:
+-------------------------------
+>>> x={5,3,7,9}
+>>> x
+{9, 3, 5, 7}
+>>> len(x)
+4
+>>> min(x)
+3
+>>> max(x)
+9
+>>> sum(x)
+24
+>>> sorted(x)
+[3, 5, 7, 9]
+>>> sorted(x,reverse=True)
+[9, 7, 5, 3]
+>>> reversed(x)
+TypeError: 'set' object is not reversible
+
+note:
+----
+the reversed() is applicable only on sequence objects.
+
+working with set class methods:
+-------------------------------
+if we want to display all the available set class method names with syntax and description, in that case we are using help() function.
+
+	help(set)
+
+if we want to display the list of all the available set class method names without syntax and description, in that case we are using dir() function.
+
+	dir(set)
+
+add()
+-----
+Add an element to a set,This has no effect if the element is already present.
+
+	setobj.add(element)
+	
+	here the element must be immutable object
+
+ex:
+---
+>>> x={2.3,9,4j,'siva'}
+>>> x
+{'siva', 9, 2.3, 4j}
+>>> x.add((6,7))
+>>> x
+{2.3, 'siva', 9, 4j, (6, 7)}
+>>> x.add(5)
+>>> x
+{2.3, 5, 'siva', 9, 4j, (6, 7)}
+>>> x.add(True)
+>>> x
+{True, 2.3, 5, 'siva', 9, 4j, (6, 7)}
+>>> x.add(9)
+>>> x
+{True, 2.3, 5, 'siva', 9, 4j, (6, 7)}
+>>> x.add([7,4])
+TypeError: unhashable type: 'list'
+
+clear()
+-------
+to clear the set object i.e., to remove all the elements from this set object.
+
+	setobj.clear()
+
+ex:
+---
+>>> x={2.3,9,4j,'siva'}
+>>> x
+{'siva', 9, 2.3, 4j}
+>>> len(x)
+4
+>>> x.clear()
+>>> x
+set()
+>>> len(x)
+0
+
+pop()
+-----
+Remove and return an arbitrary set element,Raises KeyError if the set is empty.
+
+	setobj.pop()
+
+ex:
+---
+>>> x={2.3,9,4j,'siva'}
+>>> x
+{'siva', 9, 2.3, 4j}
+>>> x.pop()
+'siva'
+>>> x
+{9, 2.3, 4j}
+>>> x.pop(2.3)
+TypeError: set.pop() takes no arguments (1 given)
+>>> x.pop()
+9
+>>> x
+{2.3, 4j}
+>>> x.pop()
+2.3
+>>> x
+{4j}
+>>> x.pop()
+4j
+>>> x
+set()
+>>> x.pop()
+KeyError: 'pop from an empty set'
+
+remove()
+--------
+Remove an element from a set; it must be a member,If the element is not a member, raise a KeyError.
+
+	setobj.remove(element)
+
+ex:
+---
+>>> x={2.3,9,4j,'siva'}
+>>> x
+{'siva', 9, 2.3, 4j}
+>>> x.remove(9)
+>>> x
+{'siva', 2.3, 4j}
+>>> x.remove(10)
+KeyError: 10
+>>> x.remove()
+TypeError: set.remove() takes exactly one argument (0 given)
+
+discard()
+---------
+Remove an element from a set if it is a member.
+
+Unlike set.remove(), the discard() method does not raise an exception when an element is missing from the set.
+
+	setobj.discard(element)
+
+ex:
+---
+>>> x={2.3,9,4j,'siva'}
+>>> x
+{'siva', 9, 2.3, 4j}
+>>> x.discard(9)
+>>> x
+{'siva', 2.3, 4j}
+>>> x.discard(10)
+>>> x
+{'siva', 2.3, 4j}
+>>> x.discard()
+TypeError: set.discard() takes exactly one argument (0 given)
+
+copy()
+------
+to create a shallow copy of a set object
+
+	setobj.copy()
+
+ex:
+---
+>>> x={2.3,9,4j,'siva'}
+>>> x
+{'siva', 9, 2.3, 4j}
+>>> y=x.copy()
+>>> y
+{'siva', 9, 2.3, 4j}
+
+update()
+--------
+to update the set object
+
+	setobj.update(iterableobj)
+
+ex1:
+---
+>>> x={2.3,9,4j,'siva'}
+>>> y=[9,False,(6,4),2.3]
+>>> x.update(y)
+>>> x
+{False, 2.3, 'siva', 9, 4j, (6, 4)}
+>>> y
+[9, False, (6, 4), 2.3]
+
+ex2:
+----
+>>> x={2.3,9,4j,'siva'}
+>>> y="rama"
+>>> x.update(y)
+>>> x
+{2.3, 'm', 'siva', 9, 4j, 'r', 'a'}
+>>> y
+'rama'
+
+working with mathmatical set operations:
+----------------------------------------
+union()
+------
+eturn a new set with elements from the set and all others.
+
+	setobj.union(setobj)
+
+ex:
+---
+>>> x={1,2,3,4}
+>>> y={3,4,5,6}
+>>> x.union(y)
+{1, 2, 3, 4, 5, 6}
+>>> x|y
+{1, 2, 3, 4, 5, 6}
+
+intersection()
+--------------
+Return a new set with elements common to the set and all others.
+
+	setobj.intersection(setobj)
+
+ex:
+---
+>>> x={1,2,3,4}
+>>> y={3,4,5,6}
+>>> x.intersection(y)
+{3, 4}
+>>> x&y
+{3, 4}
+
+
+difference()
+-------------
+Return a new set with elements in the set that are not in the others.
+
+	setobj.difference(setobj)
+
+ex:
+---
+>>> x={1,2,3,4}
+>>> y={3,4,5,6}
+>>> x.difference(y)
+{1, 2}
+>>> x-y
+{1, 2}
+>>> y.difference(x)
+{5, 6}
+>>> y-x
+{5, 6}
+
+symmetric_difference()
+-----------------------
+Return a new set with elements in either the set or other but not both.
+
+	setobj.symmetric_difference(setobj)
+
+ex:
+---
+>>> x={1,2,3,4}
+>>> y={3,4,5,6}
+>>> x.symmetric_difference(y)
+{1, 2, 5, 6}
+>>> x^y
+{1, 2, 5, 6}
+>>> x-y|y-x
+{1, 2, 5, 6}
+
+issuperset()
+------------
+Report whether this set contains another set.
+
+	setobj.issuperset(setobj)
+
+ex:
+---
+>>> x={1,2,3,4,5}
+>>> y={1,3,5}
+>>> z={2,4,6}
+>>> x.issuperset(y)
+True
+>>> x.issuperset(z)
+False
+
+issubset()
+----------
+Report whether another set contains this set.
+
+	setobj.issubset(setobj)
+
+ex:
+---
+>>> x={1,2,3,4,5}
+>>> y={1,3,5}
+>>> z={2,4,6}
+>>> y.issubset(x)
+True
+>>> z.issubset(x)
+False
+
+isdisjoint()
+------------
+Return True if two sets have a null intersection.
+
+	setobj.isdisjoint(setobj)
+
+ex:
+---
+>>> a={1,2,3,4}
+>>> b={0,5,6}
+>>> c={4,7,8}
+>>> a.isdisjoint(b)
+True
+>>> a.isdisjoint(c)
+False
+>>> b.isdisjoint(c)
+True
+
+

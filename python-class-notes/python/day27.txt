@@ -1,0 +1,545 @@
+while else
+----------
+	syntax
+	------
+	while condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+	else:
+	    stmt_1
+	    stmt_2
+	    ......
+	    stmt_n
+
+flowchart:
+----------
+	ref fig: while else block flowchart
+
+ex1:
+----
+	demo.py
+	-------
+i=0
+while i<5:
+    print("hai",i)
+    i+=1
+else:
+    print("hello")
+print("bye")
+
+	output
+	------
+hai 0
+hai 1
+hai 2
+hai 3
+hai 4
+hello
+bye
+
+ex2:
+----
+	demo.py
+	--------
+i=0
+while i<5:
+    print("hai",i)
+    if i==2:
+        break
+    i+=1
+else:
+    print("hello")
+print("bye")
+
+	output
+	------
+hai 0
+hai 1
+hai 2
+bye
+
+ex3:
+----
+	demo.py
+	-------
+i=0
+while i<5:
+    i+=1
+    if i==2:
+        continue
+    print("hai",i)
+else:
+    print("hello")
+print("bye")
+
+	output
+	------
+hai 1
+hai 3
+hai 4
+hai 5
+hello
+bye
+
+For loop:
+---------
+the for loop is used to execute the block of statements repeatedly or repeated no.of times with respect to each and every element in our iterable object.
+
+	syntax
+	-------
+	for variable in iterableobj:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+
+note:
+-----
+if no-more elements in our iterable object then immediately the control will goto outside the for loop.
+
+
+ex:
+---
+	demo.py
+	-------
+x=[5,3,7,9]
+for i in x:
+    print("hai",i)
+print("bye")
+
+	output
+	------
+hai 5
+hai 3
+hai 7
+hai 9
+bye
+
+ex2:
+---
+	demo.py
+	-------
+x=[5,3,7,9]
+for _ in x:
+    print("hai",_)
+print("bye")
+
+	output
+	------
+hai 5
+hai 3
+hai 7
+hai 9
+bye
+
+ex3:
+----
+	demo.py
+	-------
+for j in "krishna":
+    print("hai",j)
+print("bye")
+
+	output
+	------
+hai k
+hai r
+hai i
+hai s
+hai h
+hai n
+hai a
+bye
+
+for else
+--------
+	syntax
+	-------
+	for variable in iterableobj:
+		stmt_1
+		stmt_2
+		......
+	        stmt_n
+	else:
+	    stmt_1
+	    stmt_2
+            ......
+	    stmt_n
+
+
+if no-more elements in our iterable object then immediately the control will goto else block and else block logic will be executed.
+
+ex:
+---
+	demo.py
+	-------
+for j in "krishna":
+    print("hai",j)
+else:
+    print("hello")
+print("bye")
+
+	output
+	------
+hai k
+hai r
+hai i
+hai s
+hai h
+hai n
+hai a
+hello
+bye
+
+ex2:
+---
+	demo.py
+	-------
+for j in "krishna":
+    print("hai",j)
+    if j=='s':
+        break
+else:
+    print("hello")
+print("bye")
+
+	output
+	-------
+hai k
+hai r
+hai i
+hai s
+bye
+
+ex3:
+----
+	demo.py
+	-------
+for j in "krishna":    
+    if j=='s':
+        continue
+    print("hai",j)
+else:
+    print("hello")
+print("bye")
+
+	output
+	-------
+hai k
+hai r
+hai i
+hai h
+hai n
+hai a
+hello
+bye
+
+working with range() function:
+------------------------------
+the range() function is a one builtin function in both python2.x and python3.x versions.
+
+in python3.x versions, the range() function to return the range object, the range object is a sequence,iterable and immutable object.
+
+	scenario-1
+	----------
+	range(stop)
+
+	here the stop value is a exclusive value
+	     by default starts with 0
+	     by default increment by 1
+
+ex:
+---
+>>> x=range(5)
+>>> x
+range(0, 5)
+>>> type(x)
+<class 'range'>
+>>> for i in x:
+       print(i)
+
+0
+1
+2
+3
+4
+
+>>> list(x)
+[0, 1, 2, 3, 4]
+
+>>> tuple(x)
+(0, 1, 2, 3, 4)
+
+	scenario-2
+	-----------
+	range(start,stop)
+
+	here the start value is a inclusive
+	     the stop value is a exclusive
+	     by default increment by 1
+
+ex:
+---
+>>> y=range(5,10)
+>>> y
+range(5, 10)
+>>> type(y)
+<class 'range'>
+>>> for j in y:
+       print(j)
+
+5
+6
+7
+8
+9
+>>> list(y)
+[5, 6, 7, 8, 9]
+>>> tuple(y)
+(5, 6, 7, 8, 9)
+
+	Scenario-3
+	----------
+	range(start,stop,step)
+
+	here the start value is a inclusive value
+	     the stop value is a exclusive value
+	     the step value is either increment/decrement
+
+ex:
+---
+>>> z=range(1,10,2)
+>>> z
+range(1, 10, 2)
+>>> type(z)
+<class 'range'>
+>>> for k in z:
+       print(k)
+
+1
+3
+5
+7
+9
+
+>>> list(z)
+[1, 3, 5, 7, 9]
+
+>>> tuple(z)
+(1, 3, 5, 7, 9)
+
+ex:
+---
+>>> a=range(10,1,-2)
+>>> a
+range(10, 1, -2)
+>>> type(a)
+<class 'range'>
+>>> for k in a:
+       print(k)
+
+10
+8
+6
+4
+2
+
+>>> list(a)
+[10, 8, 6, 4, 2]
+
+note:
+----
+the range() function always takes the integer object as a parameter, by mistakely we can pass boolean values internally that boolean values are converting into integers like True means 1 and False means 0.
+
+ex:
+---
+>>> x=range(5)
+>>> x
+range(0, 5)
+
+>>> y=range(True)
+>>> y
+range(0, 1)
+
+>>> z=range(2.3)
+TypeError: 'float' object cannot be interpreted as an integer
+
+>>> a=range(2+3j)
+TypeError: 'complex' object cannot be interpreted as an integer
+
+>>> b=range('siva')
+TypeError: 'str' object cannot be interpreted as an integer
+
+>>> c=range([6,3,7,9])
+TypeError: 'list' object cannot be interpreted as an integer
+
+>>> d=range((4,3,7,9))
+TypeError: 'tuple' object cannot be interpreted as an integer
+
+>>> e=range({5,3,7,9})
+TypeError: 'set' object cannot be interpreted as an integer
+
+>>> f=range(frozenset([5,3,9,12]))
+TypeError: 'frozenset' object cannot be interpreted as an integer
+
+>>> g=range({'m':45,'sc':67,'so':21})
+TypeError: 'dict' object cannot be interpreted as an integer
+
+
+in range() function we are passing same number as a both start and stop value, in that case the range() function to return the empty range object i.e., there's no elements/values from start and stop value.
+
+ex:
+---
+>>> x=range(5,10)
+>>> x
+range(5, 10)
+>>> len(x)
+5
+>>> list(x)
+[5, 6, 7, 8, 9]
+
+ex:
+----
+>>> y=range(5,5)
+>>> y
+range(5, 5)
+>>> len(y)
+0
+>>> list(y)
+[]
+
+working with xrange() function:
+--------------------------------
+the xrange() function is supported in python2.x versions only.
+
+in python2.x versions, the xrange() function to return the xrange object, the xrange object is a immutable object.
+
+	scenario-1
+	-----------
+	xrange(stop)
+
+	here the stop value is exclusive value
+	     by default startswith 0
+	     by default increment by 1
+
+	scenario-2
+	----------
+	xrange(start,stop)
+
+	here the start value is a inclusive value
+	     the stop value is a exclusive value
+	     by default increment by 1
+
+	scenario-3
+	-----------
+	xrange(start,stop,step)
+
+	here the start value is inclusive value
+	     the stop value is exclusive value
+	     the step value is either increment/decrement
+
+
+ex1:
+----
+write a python program to print 1 to N Natural numbers by using for loop?
+
+	demo.py
+	-------
+N=int(input("enter your number: "))
+for i in range(1,N+1):
+    print(i)
+
+	output
+	------
+enter your number: 10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+ex2:
+---
+	demo.py
+	-------
+N=int(input("enter your number: "))
+for i in range(1,N+1):
+    print(i,end=" ")
+
+	output
+	------
+enter your number: 10
+1 2 3 4 5 6 7 8 9 10 
+
+ex3:
+----
+write a python program to print the sum of odd numbers from 1 to N natural numbers?
+
+	demo.py
+	-------
+N=int(input("enter your number: "))
+s=0
+for i in range(1,N+1):
+    if i%2!=0:
+        s+=i
+print(s)
+
+	output
+	-------
+enter your number: 10
+25
+
+ex4:
+----
+write a python program to print the perfect squares of 1 to N natural numbers?
+
+	demo.py
+	--------
+N=int(input("enter your number: "))
+for i in range(1,N+1):
+    print(i*i,end=" ")
+
+	(or)
+
+N=int(input("enter your number: "))
+for i in range(1,N+1):
+    print(i**2,end=" ")
+
+	(or)
+
+N=int(input("enter your number: "))
+for i in range(1,N+1):
+    print(pow(i,2),end=" ")
+
+	output
+	------
+enter your number: 10
+1 4 9 16 25 36 49 64 81 100 
+
+assignment-1:
+-------------
+write a python program to print the sum of 1 to N natural numbers by using for loop?
+
+assignment-2:
+------------
+write a python program to print the even numbers from 1 to N natural numbers by using for loop?
+
+assignment-3:
+-------------
+write a python program to print the factors of the given number by using for loop?
+
+assignment-4:
+------------
+write a python program to check whether given string is palindrom or not by using for loop without using slicing notation and reversed() functions?
+
+assignment-5:
+-------------
+write a python program to print the multiplication table of the given number by using for loop.
+

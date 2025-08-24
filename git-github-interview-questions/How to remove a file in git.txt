@@ -1,0 +1,67 @@
+!#/bin/bash
+
+df -h 
+top -b -n 1 | grep "load average" > log.txt
+
+performance.sh
+
+-----------------
+
+./performance.sh
+
+---------------------------------------------------------------
+
+app.py
+
+
+
+print("welcome to python")
+
+---------------------
+mvn -v # to check mavin version on Linux server
+
+code checkout
+code test
+code analysis
+
+----------------------------------------------
+Q1. How to remove a file in git
+---------------------------------------------------------
+Solution:
+
+git rm filename.txt 
+# Removes the file from local repository and staging area
+
+#commit the changes
+git commit -m "Deleted filename.txt"
+
+#Push change to remote Repo
+git push .git url
+
+-----------------------------------
+
+sh (mvn build)
+
+
+
+
+
+
+
+
+
+code
+create a repo on GitHub
+git init
+git clone .git url
+git checkout -b feature
+
+SVN
+
+git add .
+git commit -m "update file"
+git push .git url
+
+authenticate GitHub  -- using classic token/ssh keygen
+
+

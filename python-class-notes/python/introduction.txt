@@ -1,0 +1,182 @@
+what is Programming Language?
+------------------------------
+	a language is a set of instructions to intend the computer/machine for performeing a one task, is known as a Programming Language.
+
+Level's of Programming Languages
+--------------------------------
+Generally the programming languages can be categorized into 2 level's,they are
+
+	1). Low Level Programming Languages
+
+	2). High Level Programming Languages
+
+Low Level Programming Languages
+-------------------------------
+	any programming language instructions directly understanding by the computer processor, that type of programming languages are called Low Level Programming Languages.
+
+	ex: 8086,8085,8051
+
+High Level Programming Languages
+---------------------------------
+	any programming language instructions directly understanding by the human-beings, that type of programming languages are called High Level Programming Languages.
+
+	ex: C,C++,Python,Java,.Net,php,ruby,go,rust,scala,shell-scripting,
+            javascript,perl,vb script,modula1,modula2,modula3,....
+
+
+types of High Level Programming Languages:
+------------------------------------------
+the high level programming languages can be categorized into 4 type's, they are
+
+	1. Procedure Oriented Programming Languages(POPL)
+
+	2. Object Oriented Programming Languages(OOPL)
+
+	3. Scripting Programming Languages(SPL)
+
+	4. Modular Programming Languages(MPL)
+
+
+Procedure Oriented Programming Languages(POPL):
+-----------------------------------------------
+	any high level programming Language which support Function's concept, that type of high level programming languages are called Procedure Oriented Programming Languages(POPL).
+
+	ex: C,Python
+
+Object Oriented Programming Languages(OOPL):
+---------------------------------------------
+	any high level programming language which support OOP's concept's/Principle's, that type of High Level Programming Languages are called Object Oriented Programming Languages(OOPL).
+
+	the OOP's(Object Oriented Programming Principle's) concept's are certain rules to developing an applications in object oriented fashion.
+
+	we can develop any one application according these OOP's concept's, in that case we will get some benefit's in that application.
+
+	the Benefit's of OOP's concept's are Security
+					     Reusability
+					     Flexibility.
+
+	the OOP's Principle's are Class
+				  Object
+				
+				  Encapsulation
+				  Inheritance
+				  Polymorphism
+			          Abstraction
+
+	ex: C++,Python,Java,.Net,...
+
+
+
+Scripting Programming Languages(SPL):
+-------------------------------------
+	any high level programming language which support both DDT(Dynamic Data Type's) and Interpreter Concept's, that type of High Level Programming Languages are called Scripting Programming Languages(SPL).
+
+	ex: Python, JavaScript, Shell-Scripting,Perl,VB Script,...
+
+
+Modular Programming Languages(MPL):
+------------------------------------
+	any high level programming language which support Module's concept, that type of high level programming languages are called Modular Programming Languages(MPL).
+
+	ex: modula1,modula2,modula3,python,...
+
+
+what is DataType?
+-----------------
+the Data Type means to representing the type of the data.
+
+in generally, the data types can be categorized into 2 types, they are
+
+	1). Static Datatype's
+
+	2). Dynamic Datatype's
+
+
+Static Datatype's
+------------------
+the programmer/developer to assign the datatype to the variables by explicitly at the time of declaring the variables, is known as a Static Datatype's concept.
+
+any high level programming language which support Static Datatype's concept, that type of high level programming languages are called Static Typed Languages.
+
+	ex: C,C++,Java,.Net,....
+
+example in C Programming
+-------
+#include<stdio.h>
+void main()
+{
+    int eid=101;
+    char ename[30]="siva";
+    float esal=30000.0;
+    printf("%d %s %f",eid,ename,esal);
+}
+
+Dynamic Datatype's:
+------------------
+the programmer/developer don't assign any datatype to the variables by explicitly at the time of declaring the variables but at run time automatically to assign the datatype to the variables based on the value of that variables, is known as a Dynamic Datatype's concept.
+
+any high level programming language which support Dynamic Datatype's cncept, that type of high level programming languages are called Dynamically Typed Languages.
+
+	ex: Python,JavaScript
+
+example in Python programming
+--------
+eid=101
+ename='siva'
+esal=30000.0
+print(eid,ename,esal)
+
+what is Compiler?
+-----------------
+	the Compiler is a one predefined program, which is used to convert the high level code(human understandable format) into machine level code(machine understandable format).
+
+	the compiler takes the entire source code as a input at a time and converting into machine code.
+
+	any high level programming language which support Compiler Concept, that type of high level programming languages are called Compiled Programming Languages.
+
+	ex: C,C++,Java,.Net,....
+
+what is Interpreter?
+-----------------
+	the Interpreter is a one predefined program, which is used to convert the high level code(human understandable format) into machine level code(machine understandable format).
+
+	the Interpreter takes the staement by statement source code as a input at a time and converting into machine code.
+
+	any high level programming language which support Interpreter concept, that type of high level programming languages are called Interpreted Languages.
+
+	ex: Python,JavaScript,Shell-Scripting,....
+
+what is Garbage Collector?
+--------------------------
+	the Garbage Collector is a one predefined program,which is used to deallocate the memory space for unused/unreferenced objects automatically.
+
+	once the Garbage collector is executed more memory space is available so that the rest of the program execution become fast.
+
+	any high level programming language which support Garbage collector concept, that type of high level programming languages are called Garbage Collected Languages.
+
+	ex: Java, Python, .Net,....
+
+
+what is Python?
+---------------
+Python is a General Purpose,High Level,Interpreted,Interactive,Modular,Dynamically Typed,
+Garbage Collected,Procedure Oriented,Object Oriented and Scripting Programming Language.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

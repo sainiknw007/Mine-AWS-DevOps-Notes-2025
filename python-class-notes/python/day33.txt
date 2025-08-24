@@ -1,0 +1,276 @@
+ex1:
+----
+write a python program to print '*'s in alphabet 'H' pattern?
+
+*       *
+*       *
+*       * 
+* * * * *
+*       *
+*       *
+*       *
+
+for r in range(1,8):
+    for c in range(1,6):
+        if c==1 or c==5 or r==4:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+ex2:
+----
+write a python program to print '*'s in alphabet 'A' pattern?
+
+  * * *
+*       *
+*       * 
+* * * * *
+*       *
+*       *
+*       *
+
+
+for r in range(1,8):
+    for c in range(1,6):
+        if (c==1 or c==5) and r!=1 or\
+           (r==1 or r==4) and (c==2 or c==3 or c==4):
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+	(or)
+
+for r in range(1,8):
+    for c in range(1,6):
+        if c in [1,5] and r!=1 or r in [1,4] and c in [2,3,4]:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+ex3:
+----
+write a python program to print '*'s in alphabet 'B' pattern?
+
+* * * *
+*       *
+*       * 
+* * * * 
+*       *
+*       *
+* * * *
+
+for r in range(1,8):
+    for c in range(1,6):
+        if c==1 or c==5 and r not in [1,4,7] or\
+           r in [1,4,7] and c in [2,3,4]:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+ex4:
+----
+write a python program to print '*'s in alphabet 'S' pattern?
+
+  * * * *
+*       
+*       
+  * * * 
+        *
+        *
+* * * *
+
+
+for r in range(1,8):
+    for c in range(1,6):
+        if c==1 and r in [2,3,7] or c==5 and r in [1,5,6] or\
+           r in [1,4,7] and c in [2,3,4]:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+
+ex5:
+----
+write a python program to print '*'s in digit '5' pattern?
+
+* * * * *
+*       
+*       
+  * * * 
+        *
+        *
+* * * *
+
+for r in range(1,8):
+    for c in range(1,6):
+        if c==1 and r in [1,2,3,7] or c==5 and r in [1,5,6] or\
+           r in [1,4,7] and c in [2,3,4]:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+ex6:
+----
+write a python program to print '*'s in digit '9' pattern?
+
+  * * * 
+*       *       
+*       *      
+  * * * *
+        *
+        *
+* * * *
+
+for r in range(1,8):
+    for c in range(1,6):
+        if c==1 and r in [2,3,7] or c==5 and r not in [1,7] or\
+           r in [1,4,7] and c in [2,3,4]:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+
+ex7:
+----
+write a python program to print given string object in a square pattern?
+
+sample input:
+	siva
+
+expected output:
+
+s i v a
+s i v a
+s i v a
+s i v a
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)):
+        print(x[c],end=" ")
+    print()
+
+ex8:
+----
+write a python program to print given string object in a square pattern?
+
+sample input:
+	siva
+
+expected output:
+
+s s s s
+i i i i
+v v v v
+a a a a
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)):
+        print(x[r],end=" ")
+    print()
+
+
+ex9:
+----
+write a python program to print given string object in a right angle triangle pattern?
+
+sample input:
+	siva
+
+expected output:
+
+s
+s i
+s i v
+s i v a
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(r+1):
+        print(x[c],end=" ")
+    print()
+
+
+ex10:
+----
+write a python program to print given string object in a inverted right angle triangle pattern?
+
+sample input:
+	siva
+
+expected output:
+
+s s s s
+i i i
+v v
+a
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)-r):
+        print(x[r],end=" ")
+    print()
+
+
+ex11:
+----
+write a python program to print given string object in a floyd's triangle pattern?
+
+sample input:
+	siva
+
+expected output:
+   s
+  s i
+ s i v
+s i v a
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)-r-1):
+        print(" ",end="")
+    for c in range(r+1):
+        print(x[c],end=" ")
+    print()
+
+ex12:
+----
+write a python program to print given string object in a floyd's diamond pattern?
+
+sample input:
+	siva
+
+expected output:
+
+   s
+  i i
+ v v v
+a a a a
+ v v v
+  i i
+   s
+
+
+x=input("enter your string: ")
+for r in range(len(x)):
+    for c in range(len(x)-r-1):
+        print(" ",end="")
+    for c in range(r+1):
+        print(x[r],end=" ")
+    print()
+for r in range(len(x)-2,-1,-1):
+    for c in range(len(x)-r-1):
+        print(" ",end="")
+    for c in range(r+1):
+        print(x[r],end=" ")
+    print()
+
+

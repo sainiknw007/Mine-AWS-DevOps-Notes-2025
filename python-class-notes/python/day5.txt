@@ -1,0 +1,126 @@
+what is Keyword?
+----------------
+a keyword is a special/reserved word for some special purpose, we can use that words only for that particular purpose.
+
+python2.x versions support 31 keywords
+
+python3.x(3.0 to 3.6.x) versions support 33 keywords
+
+python3.x(3.7.0 to 3.8.x) versions support 35 keywords
+
+python3.x(3.9.0 to 3.9.x) versions support 36 keywords
+
+python3.x(3.10.0 to 3.12.x) versions support 35 keywords
+
+ex1:
+----
+write a python script/program to print the list of keywords?
+
+	list_of_keywords.py
+	--------------------
+import keyword
+print(keyword.kwlist)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python list_of_keywords.py
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+ex2:
+----
+write a python script/program to print the No.of Keywords?
+
+	no_of_keywords.py
+	-----------------
+import keyword
+print(len(keyword.kwlist))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python no_of_keywords.py
+35
+
+
+how to find the python version in cmd/terminal?
+----------------------------------------------
+	if we want to get the python version in cmd/terminal, in that case we are using following commands,
+
+	python --version
+
+		(or)
+
+	python -V
+
+ex:
+---
+C:\Users\Lenovo\Desktop>python --version
+Python 3.12.6
+
+C:\Users\Lenovo\Desktop>python -V
+Python 3.12.6
+
+ex3:
+----
+write a python script/program to get the python version?
+
+	version_info.py
+	----------------
+import sys
+print(sys.version)
+
+	(or)
+
+import platform
+print(platform.python_version())
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python version_info.py
+3.12.6
+
+note:
+-----
+from python 3.10 versions onwards to introduce Soft keywords, these soft keywords are used to implement the match case concept in python.
+
+ex4:
+----
+write a python script/program to print the list of soft keywords?
+
+	list_of_softkeywords.py
+	-----------------------
+import keyword
+print(keyword.softkwlist)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python list_of_softkeywords.py
+['_', 'case', 'match', 'type']
+
+
+Identifiers:
+------------
+	an identifier is a name which may be a either variable name or function name or class name or method name ,....,etc.,
+
+in python, at the time of declare the identifiers we are follow the some rules, they are
+
+	1). the identifier contains alphabets(lower/upper/both),digits(0-9) and underscore(_) symbols only.
+
+	2). the identifier must begin with either alphabets or underscore(_) symbols
+
+			(or)
+
+	     the identifer should not begin with digits
+
+	3). dont assign any keyword as identifiers.
+
+
+note:
+-----
+in python, the identifiers are case sensitive because of that reason the python is a casesensitive language.
+
+
+
+
+
+
+	

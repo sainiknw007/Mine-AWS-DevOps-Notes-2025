@@ -1,0 +1,261 @@
+infinite while loop:
+---------------------
+infinite while loop means our while condition is always True.
+
+	syntax
+	-------
+	while condition:
+		stmt_1
+		stmt_2
+		......
+		stmt_n
+
+flowchart:
+-----------
+	ref fig: infinite while loop flowchart
+
+ex1:
+----
+	demo.py
+	-------
+while True:
+    print("hai")
+
+	output
+	------
+hai
+hai
+hai
+hai
+hai
+....
+...., keep on executeing upto sufficient memory
+
+ex2:
+----
+	demo.py
+	-------
+while 1:
+    print("hai")
+
+
+	output
+	------
+hai
+hai
+hai
+hai
+hai
+....
+...., keep on executeing upto sufficient memory
+
+ex3:
+---
+	demo.py
+	-------
+while 3<5:
+    print("hai")
+
+	output
+	------
+hai
+hai
+hai
+hai
+hai
+....
+...., keep on executeing upto sufficient memory
+
+
+Jumping/Transform statements:
+-----------------------------
+the python supported Jumping/Transform statements are,
+
+	1).break
+	2).continue
+	3).pass
+
+break statement:
+-----------------
+the break is a keyword in python, which is used in the looping statements.
+
+if we want to exit from the loop execution at the time of middle of the loop execution, in that case we are using break statement.
+
+ex:
+---
+	demo.py
+	-------
+i=0
+while True:
+    print("hai",i)
+    if i==3:
+        break
+    i+=1
+print("bye")
+
+	output
+	------
+hai 0
+hai 1
+hai 2
+hai 3
+bye
+
+note:
+-----
+once the control reach the break statement then immediately the control will comeout from that loop i.e., the control will goto out side the loop.
+
+continue statement:
+-------------------
+the continue is a keyword in python, which is used in the looping statement.
+
+if we want to skip the execution of one particular iteration, in that case we are using continue statement.
+
+ex:
+---
+	demo.py
+	-------
+i=0
+while i<5:
+    i+=1
+    if i==3:
+        continue
+    print("hai",i)
+print("bye")
+
+	output
+	------
+hai 1
+hai 2
+hai 4
+hai 5
+bye
+
+note:
+-----
+once the control reach the continue statement then immediately the control will goto main loop statement i.e., to skip the execution of remaing statements in our loop body.
+
+ex:
+---
+	demo.py
+	--------
+u_c=p_c=0
+while True:
+    uname=input("enter your user name: ")
+    if uname=='siva':
+        while True:
+            pwd=input("enter your password: ")
+            if pwd=='krish@123':
+                break
+            else:
+                p_c+=1
+                if p_c==3:
+                    break
+                else:
+                    print("Wrong Password")
+                    continue
+    else:
+        u_c+=1
+        if u_c==3:
+            break
+        else:
+            print("Wrong UserName")
+            continue
+                
+    break
+if uname=='siva':
+    if pwd=='krish@123':
+        print("Successfully Login")
+    else:
+        print("sorry, you are enter maximum no.of times wrong password\
+,try again after sometime")
+else:
+    print("sorry, you are enter maximum no.of times wrong username\
+,try again after sometime")
+
+	output1
+	--------
+enter your user name: abc
+Wrong UserName
+enter your user name: pqr
+Wrong UserName
+enter your user name: xyz
+sorry, you are enter maximum no.of times wrong username,try again after sometime
+
+	output2
+	--------
+enter your user name: siva
+enter your password: abc@123
+Wrong Password
+enter your password: siva@123
+Wrong Password
+enter your password: krishna
+sorry, you are enter maximum no.of times wrong password,try again after sometime
+
+	output3
+	-------
+enter your user name: siva
+enter your password: krish@123
+Successfully Login
+
+pass statement:
+---------------
+pass is a keyword in python, which is used to create a empty block i.e., empty if block, else block,while block,for block,function block,class block and method block in python.
+
+	c programming			Python programming
+	---------------			------------------
+	if(condition)			if condition:
+	{					pass
+
+	}				(or)
+
+					if condition:
+						...
+
+ex:
+---
+	demo.py
+	--------
+print("hai")
+if 3<5:
+  pass  
+print("bye")
+
+	(or)
+
+print("hai")
+if 3<5:
+  ...  
+print("bye")
+
+output:
+------
+hai
+bye
+
+assignment-1:
+--------------
+write a python program to print the total no.of charecters,total no.of alphabets,total no.of lowercase alphabets,total no.of uppercase alphabets,total no.of digits and total no.of special charecters from the given string object?
+
+	input				output
+	-----				-------
+	Siva Krishna@143		total no.of charecters=16
+					total no.of alphabets=11
+					total no.of lowercase alphabets=9
+					total no.of uppercase alphabets=2
+					total no.of digits=3
+					total no.of special charecters=2
+
+
+assignment-2:
+--------------
+write a python program to print the total no.of charecters,total no.of alphabets,total no.of vowels and total no.of uppercase consonents from the given string object?
+
+	input				output
+	-----				-------
+	Siva Krishna@143		total no.of charecters=16
+					total no.of alphabets=11
+					total no.of vowels=4
+					total no.of consonents=7
+
+

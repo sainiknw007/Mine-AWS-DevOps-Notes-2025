@@ -1,0 +1,274 @@
+Normal Methods:
+---------------
+these methods dont contains both prefix and suffix double underscores(__).
+
+these methods are not executed automatically.
+
+Working with str class normal methods:
+-------------------------------------
+capitalize()
+-------------
+Return a capitalized version of the string.
+More specifically, make the first character have upper case and the rest lowercase.
+
+	strobj.capitalize()
+
+ex:
+---
+>>> x="hello"
+>>> y="Hello Siva Krishna"
+>>> z="hello SIVA krishna GOOD Morning"
+>>> a="hello siva krishna good morning"
+>>> b="123rama"
+>>> x.capitalize()
+'Hello'
+>>> y.capitalize()
+'Hello siva krishna'
+>>> z.capitalize()
+'Hello siva krishna good morning'
+>>> a.capitalize()
+'Hello siva krishna good morning'
+>>> b.capitalize()
+'123rama'
+
+title()
+------
+Return a version of the string where each word is titlecased.
+
+More specifically, words start with uppercased characters and all remaining cased characters have lower case.
+
+	strobj.title()
+
+ex:
+---
+>>> x="hello"
+>>> y="Hello Siva Krishna"
+>>> z="hello SIVA krishna GOOD Morning"
+>>> a="hello siva krishna good morning"
+>>> b="123rama"
+>>> x.title()
+'Hello'
+>>> y.title()
+'Hello Siva Krishna'
+>>> z.title()
+'Hello Siva Krishna Good Morning'
+>>> a.title()
+'Hello Siva Krishna Good Morning'
+>>> b.title()
+'123Rama'
+
+count()
+------
+Return the number of non-overlapping occurrences of substring/charecter in our string object.
+
+	strobj.count(char/substr,[start,stop])
+
+	Optional arguments start and end are interpreted as in slice notation.
+
+ex:
+----
+>>> x="hai siva krishna hai"
+>>> x.count('a')
+4
+>>> x.count('s')
+2
+>>> x.count('h')
+3
+>>> x.count('H')
+0
+>>> x.count('k')
+1
+>>> x.count('hai')
+2
+>>> x.count('haI')
+0
+>>> x.count('a',5)
+3
+>>> x.count('a',5,12)
+1
+>>> x.count('a',5,17)
+2
+>>> x.count('a',5,19)
+3
+>>> x.count('a',5,18)
+2
+
+center()
+--------
+Return a centered string of length width.
+
+Padding is done using the specified fill character (default is a space).
+
+	strobj.center(width,fillchar)
+
+	the fillchar must be one charecter long only
+
+ex:
+---
+>>> x="siva"
+>>> x
+'siva'
+>>> x.center(4)
+'siva'
+>>> x.center(9)
+'   siva  '
+>>> x.center(13,'@')
+'@@@@@siva@@@@'
+>>> x.center(13,'a')
+'aaaaasivaaaaa'
+>>> x.center(13,'9')
+'99999siva9999'
+>>> x.center(13,'ab')
+TypeError: The fill character must be exactly one character long
+
+ljust()
+-------
+ljust means left justification.
+
+Return a left-justified string of length width.
+
+Padding is done using the specified fill character (default is a space).
+
+	strobj.ljust(width,fillchar)
+
+	the fillchar must be one charecter long only
+
+ex:
+---
+>>> x="siva"
+>>> x
+'siva'
+>>> x.ljust(0)
+'siva'
+>>> x.ljust(9)
+'siva     '
+>>> x.ljust(13,'a')
+'sivaaaaaaaaaa'
+>>> x.ljust(13,'@')
+'siva@@@@@@@@@'
+>>> x.ljust(13,'7')
+'siva777777777'
+>>> x.ljust(13,'ab')
+TypeError: The fill character must be exactly one character long
+
+rjust()
+-------
+rjust means right justification
+
+Return a right-justified string of length width.
+
+Padding is done using the specified fill character (default is a space).
+
+	strobj.rjust(width,fillchar)
+
+ex:
+---
+>>> x="siva"
+>>> x
+'siva'
+>>> x.rjust(1)
+'siva'
+>>> x.rjust(9)
+'     siva'
+>>> x.rjust(13,'s')
+'ssssssssssiva'
+>>> x.rjust(13,'@')
+'@@@@@@@@@siva'
+>>> x.rjust(13,'2')
+'222222222siva'
+>>> x.rjust(13,'ab')
+TypeError: The fill character must be exactly one character long
+
+zfill()
+-------
+Pad a numeric string with zeros on the left, to fill a field of the given width.
+
+The string is never truncated.
+
+	strobj.zfill(width)
+
+ex:
+---
+>>> x="siva"
+>>> x
+'siva'
+>>> x.zfill(0)
+'siva'
+>>> x.zfill(9)
+'00000siva'
+
+lower()
+--------
+Return a copy of the string converted to lowercase.
+
+	strobj.lower()
+
+ex:
+---
+>>> x='siva'
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.lower()
+'siva'
+>>> y.lower()
+'rama'
+>>> z.lower()
+'krishna'
+>>> a.lower()
+'siva@123'
+>>> b.lower()
+'rama@123'
+
+upper()
+-------
+Return a copy of the string converted to uppercase.
+
+	strobj.upper()
+
+ex:
+---
+>>> x='siva'
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.upper()
+'SIVA'
+>>> y.upper()
+'RAMA'
+>>> z.upper()
+'KRISHNA'
+>>> a.upper()
+'SIVA@123'
+>>> b.upper()
+'RAMA@123'
+
+swapcase()
+----------
+Convert uppercase characters to lowercase and lowercase characters to uppercase.
+
+	strobj.swapcase()
+
+ex:
+---
+>>> x='siva'
+>>> y="RAMA"
+>>> z="KrIsHnA"
+>>> a="siva@123"
+>>> b="RAMA@123"
+>>> x.swapcase()
+'SIVA'
+>>> y.swapcase()
+'rama'
+>>> z.swapcase()
+'kRiShNa'
+>>> a.swapcase()
+'SIVA@123'
+>>> b.swapcase()
+'rama@123'
+
+
+
+

@@ -1,0 +1,257 @@
+Variables:
+----------
+a variable is a name, which is referenceing to an object in the memory.
+
+the variables are used to store the data for future reference/use.
+
+	syntax
+	------
+	variablename=value
+
+examples:
+---------
+>>> x=10
+>>> x
+10
+
+>>> My_Name_123='siva'
+>>> My_Name_123
+'siva'
+
+>>> _y=56
+>>> _y
+56
+
+>>> __z=90
+>>> __z
+90
+
+>>> __in__=78
+>>> __in__
+78
+
+>>> 2c=90
+SyntaxError: invalid decimal literal
+
+>>> and=78
+SyntaxError: invalid syntax
+
+>>> break=90
+SyntaxError: invalid syntax
+
+>>> Break=90
+>>> Break
+90
+
+if we want to assign the single value to multiple variables at a time, in that case we are using following syntax,
+
+	var_1=var_2=....=var_n=value
+
+ex:
+---
+>>> x=y=z=10
+>>> x
+10
+>>> y
+10
+>>> z
+10
+
+if we want to assign the different values to different variables at a time, in that case we are using following syntax,
+
+	var_1,var_2,....,var_n=value_1,value_2,...,value_n
+
+ex:
+----
+>>> a,b,c=10,20,30
+>>> a
+10
+>>> b
+20
+>>> c
+30
+
+if we want to assign the multiple values to single variable at a time, in that case we are using following syntax,
+
+	var=value_1,value_2,....,value_n
+
+ex:
+----
+>>> p=3,2,6
+>>> p
+(3, 2, 6)
+
+ex:
+---
+>>> q,r,s=7
+TypeError: cannot unpack non-iterable int object
+
+>>> q,r,s=9,4
+ValueError: not enough values to unpack (expected 3, got 2)
+
+>>> q,r,s=9,4,7,5
+ValueError: too many values to unpack (expected 3)
+
+>>> q,r,s=p
+>>> q
+3
+>>> r
+2
+>>> s
+6
+
+ex:
+----
+>>> x=0
+>>> x
+0
+
+>>> y=00000
+>>> y
+0
+
+>>> z=10,000
+>>> z
+(10, 0)
+
+>>> a=10000
+>>> a
+10000
+
+>>> b=10_000
+>>> b
+10000
+
+>>> c=_10000
+NameError: name '_10000' is not defined
+
+>>> d=10000_
+SyntaxError: invalid decimal literal
+
+ex1:
+---
+write a python script/program to perform the swapping of two numbers with the help of third/temporary variable?
+
+	swapping.py
+	-----------
+x,y=10,20
+print("Before swapping:",x,y)
+z=x
+x=y
+y=z
+print("After swapping:",x,y)
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python swapping.py
+Before swapping: 10 20
+After swapping: 20 10
+
+note:
+-----
+	%d	--> int
+	%f	--> float
+	%s	--> str
+
+ex2:
+----
+	swapping.py
+	------------
+x,y=10,20
+print("Before swapping x=%d and y=%d"%(x,y))
+z=x
+x=y
+y=z
+print("After swapping x=%d and y=%d"%(x,y))
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python swapping.py
+Before swapping x=10 and y=20
+After swapping x=20 and y=10
+
+ex3:
+----
+write a python script/program to perform the swapping of two numbers without help of third/temporary variable?
+
+	swapping.py
+	-----------
+x,y=10,20
+print("Before swapping x=%d and y=%d"%(x,y))
+x=x+y
+y=x-y
+x=x-y
+print("After swapping x=%d and y=%d"%(x,y))
+
+	(or)
+
+x,y=10,20
+print("Before swapping x=%d and y=%d"%(x,y))
+x,y=y,x
+print("After swapping x=%d and y=%d"%(x,y))
+
+
+	output
+	------
+C:\Users\Lenovo\Desktop>python swapping.py
+Before swapping x=10 and y=20
+After swapping x=20 and y=10
+
+working with print() function:
+-----------------------------
+the print() function is a one builtin function in python3.x versions
+
+the print() function is used to print the value to the output screen/output window.
+
+	syntax
+	------
+	print(*values,sep=" ",end="\n",file=sys.stdout,flush=False)
+
+			(or)
+
+	print(value_1,value_2,...,value_n, sep=" ",end="\n",file=sys.stdout,flush=False)
+
+ex1:
+-----
+	demo.py
+	--------
+print("hai")
+print("hai","siva")
+print("hai","siva","krishna")
+print("hai","siva","krishna",sep=",")
+print("hai","siva","krishna",sep=":")
+print("hai","siva","krishna",sep="\t")
+
+	output
+	------
+hai
+hai siva
+hai siva krishna
+hai,siva,krishna
+hai:siva:krishna
+hai	siva	krishna
+
+ex2:
+----
+	demo.py
+	-------
+print("hai")
+print("siva")
+print("krishna")
+print("hai",end=" ")
+print("siva",end=" ")
+print("krishna")
+print("hai",end="\t")
+print("siva",end="\t")
+print("krishna")
+
+	output
+	------
+hai
+siva
+krishna
+hai siva krishna
+hai	siva	krishna
+
+
+

@@ -1,0 +1,281 @@
+insert()
+-------
+to insert an element into list object at any position based on indexing.
+
+	listobj.insert(index,value)
+
+ex:
+---
+>>> x=[10,20,30,40,50]
+>>> x
+[10, 20, 30, 40, 50]
+>>> x.insert(0,5)
+>>> x
+[5, 10, 20, 30, 40, 50]
+>>> x.insert(2,25)
+>>> x
+[5, 10, 25, 20, 30, 40, 50]
+>>> x.insert(x.index(30),35)
+>>> x
+[5, 10, 25, 20, 35, 30, 40, 50]
+>>> x.insert(-1,55)
+>>> x
+[5, 10, 25, 20, 35, 30, 40, 55, 50]
+>>> x.insert(len(x),45)
+>>> x
+[5, 10, 25, 20, 35, 30, 40, 55, 50, 45]
+>>> x.insert(10000,39)
+>>> x
+[5, 10, 25, 20, 35, 30, 40, 55, 50, 45, 39]
+>>> x.index(39)
+10
+
+pop()
+-----
+to remove an particular element from the list object based on indexing concept.
+
+	listobj.pop(index=-1)
+
+ex:
+---
+>>> x=[10,20,30,40,50,60,70]
+>>> x
+[10, 20, 30, 40, 50, 60, 70]
+>>> x.pop(1)
+20
+>>> x
+[10, 30, 40, 50, 60, 70]
+>>> x.pop(x.index(50))
+50
+>>> x
+[10, 30, 40, 60, 70]
+>>> x.pop()
+70
+>>> x
+[10, 30, 40, 60]
+>>> x.pop(5)
+IndexError: pop index out of range
+>>> x
+[10, 30, 40, 60]
+>>> x.pop(-2)
+40
+>>> x
+[10, 30, 60]
+
+	
+remove()
+--------
+to remove an particular element from the list object.
+
+	listobj.remove(element)
+
+in our list object, the duplicate elements are there in that case the remove() to remove the only first occurence of that element from left to right.
+
+ex1:
+----
+>>> x=[10,20,30,40,50,60,70]
+>>> x
+[10, 20, 30, 40, 50, 60, 70]
+>>> x.remove(10)
+>>> x
+[20, 30, 40, 50, 60, 70]
+>>> x.remove(50)
+>>> x
+[20, 30, 40, 60, 70]
+>>> x.remove(70)
+>>> x
+[20, 30, 40, 60]
+>>> x.remove(100)
+ValueError: list.remove(x): x not in list
+>>> x.remove()
+TypeError: list.remove() takes exactly one argument (0 given)
+
+ex2:
+----
+>>> y=[10,20,30,10,40,30,10,20,30,10]
+>>> y
+[10, 20, 30, 10, 40, 30, 10, 20, 30, 10]
+>>> y.remove(10)
+>>> y
+[20, 30, 10, 40, 30, 10, 20, 30, 10]
+>>> y.remove(30)
+>>> y
+[20, 10, 40, 30, 10, 20, 30, 10]
+
+ex3:
+---
+write a python program to remove all the occurencess of given element in a list object?
+
+	demo.py
+	-------
+x=eval(input("enter your list object: "))
+ele=eval(input("enter your element: "))
+y=[]
+for i in x:
+    if i==ele:
+        pass
+    else:
+        y.append(i)
+print(y)
+
+output1:
+--------
+enter your list object: [10,20,30,10,30,20,10,40,30,10]
+enter your element: 10
+[20, 30, 30, 20, 40, 30]
+
+output2:
+--------
+enter your list object: [10,20,30,10,10,20,30,30,20,40,10,20,20]
+enter your element: 10
+[20, 30, 20, 30, 30, 20, 40, 20, 20]
+
+sort()
+------
+to return the list object elements in sorting order.
+
+by default, the sort() to return the ascending order.
+
+the sort() to perform the inplace order i.e., the result will be storeing into same variable.
+
+	listobj.sort(reverse=False)
+
+ex1:
+---
+>>> x=[4,3,7,5]
+>>> x
+[4, 3, 7, 5]
+>>> sorted(x)
+[3, 4, 5, 7]
+>>> x
+[4, 3, 7, 5]
+>>> x.sort()
+>>> x
+[3, 4, 5, 7]
+
+ex2:
+---
+>>> x=[4,3,7,5]
+>>> x
+[4, 3, 7, 5]
+>>> sorted(x,reverse=True)
+[7, 5, 4, 3]
+>>> x
+[4, 3, 7, 5]
+>>> x.sort(reverse=True)
+>>> x
+[7, 5, 4, 3]
+
+reverse()
+--------
+to return the list object elements in reverse order.
+
+the reverse() to perform the inplace order operation.
+
+	listobj.reverse()
+
+ex:
+---
+>>> x=[4,3,7,5]
+>>> x
+[4, 3, 7, 5]
+>>> reversed(x)
+<list_reverseiterator object at 0x000001A6155417E0>
+>>> list(reversed(x))
+[5, 7, 3, 4]
+>>> x
+[4, 3, 7, 5]
+>>> x.reverse()
+>>> x
+[5, 7, 3, 4]
+
+Assignment-1:
+-------------
+write a python program to read the list as a input from the user and to return the no.of elements in that list, without using len() function?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			4
+
+
+Assignment-2:
+-------------
+write a python program to read the list as a input from the user and to return the sum of the list object elements, without using sum() function?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			24
+
+Assignment-3:
+-------------
+write a python program to read the list as a input from the user and to return the minimum element in that list, without using min() function?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			3
+
+Assignment-4:
+-------------
+write a python program to read the list as a input from the user and to return the maximum element in that list, without using max() function?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			9
+
+Assignment-5:
+-------------
+write a python program to read the list as a input from the user and to return the elements in ascending order, without using sorted() function and sort() method?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			[3,5,7,9]
+
+Assignment-6:
+-------------
+write a python program to read the list as a input from the user and to return the elements in descending order, without using sorted() function and sort() method?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			[9,7,5,3]
+
+
+Assignment-7:
+-------------
+write a python program to read the list as a input from the user and to return the elements in reverse order, without using reversed() function and reverse() method?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			[9,7,3,5]
+
+
+Assignment-8:
+-------------
+write a python program to read the list as a input from the user and to find the mean and median values?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			6.0(mean)
+					6.0(median)
+
+	[3,6,2,7,4]			4.4(mean)
+					4(median)		
+
+
+Mean is also known as the arithmetic mean of the given data.
+
+Median is the middlemost value of the given ungrouped data if the data is arranged in ascending order.
+
+
+Assignment-9:
+-------------
+write a python program to read the list as a input from the user and to return the accumulated sum of the list?
+
+	input				output
+	-----				-------
+	[5,3,7,9]			[5,8,15,24]
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+Dockerfile
+
+# Use official image nodejs 
+FROM node:18-alpine
+
+#Set working directory inside the container
+WORKDIR /app
+
+#Copy package.json and package-lock.json file for dependencies installation
+COPY package*.json ./
+
+#Install dependencies
+RUN npm install
+
+#Copy rest of the code files
+COPY . .
+
+#Expose port in the container
+EXPOSE 8000
+
+#Run the application
+CMD ["npm", "start"]
