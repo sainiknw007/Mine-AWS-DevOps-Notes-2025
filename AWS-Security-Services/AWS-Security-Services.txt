@@ -1,0 +1,87 @@
+1.Identity & Access Management (IAM)
+
+AWS IAM – Manage users, groups, roles, and permissions.
+
+AWS SSO (IAM Identity Center) – Centralized access to multiple AWS accounts and applications.
+
+AWS Organizations – Manage multiple AWS accounts with Service Control Policies (SCPs).
+
+AWS Cognito – User authentication, sign-up/sign-in, and access for web/mobile apps.
+
+2. Threat Detection & Monitoring
+
+Amazon GuardDuty – Intelligent threat detection (malware, crypto-mining, unauthorized access).
+
+Amazon Inspector – Automated vulnerability management and security assessment.
+
+Amazon Macie – Detects sensitive data (like PII) using ML.
+
+AWS Detective – Helps investigate security issues and suspicious activity.
+
+AWS Security Hub – Centralized view of security findings across AWS accounts.
+
+3. Data Protection & Encryption
+
+AWS KMS (Key Management Service) – Create and manage encryption keys.
+
+AWS CloudHSM – Dedicated hardware-based key storage (FIPS 140-2 compliant).
+
+AWS Certificate Manager (ACM) – Provision and manage SSL/TLS certificates.
+
+S3 Object Lock & Encryption – Protects objects with WORM and encryption.
+
+4. Network Security
+
+AWS VPC Security – Security groups, NACLs, routing rules.
+
+AWS Shield – DDoS protection (Standard is free, Advanced is paid).
+
+AWS WAF (Web Application Firewall) – Protects against SQLi, XSS, bot attacks.
+
+AWS Network Firewall – Managed firewall to filter inbound/outbound VPC traffic.
+
+Route 53 Resolver DNS Firewall – Prevents DNS-based threats.
+
+5. Logging, Monitoring & Compliance
+
+AWS CloudTrail – Logs all API calls for auditing.
+
+Amazon CloudWatch – Monitoring, alarms, and logging.
+
+AWS Config – Monitors AWS resource compliance with policies.
+
+AWS Audit Manager – Automates compliance evidence collection.
+
+Access Analyzer (IAM & S3) – Detects overly permissive resource policies.
+
+6. Incident Response & Governance
+
+AWS Incident Detection & Response – Managed incident response service.
+
+AWS Service Catalog – Enforces governance and compliance in resource provisioning.
+
+AWS Control Tower – Sets up secure multi-account AWS environments.
+
+7. Application Security
+
+AWS Secrets Manager – Securely store and rotate secrets (DB passwords, API keys).
+
+AWS Parameter Store (SSM) – Manage configuration data and secrets.
+
+CodeGuru Security – Automated security code review.
+
+Amazon Inspector (for containers & EC2) – Scans for vulnerabilities in workloads.
+
+✅ In short:
+
+Access control → IAM, Cognito, SSO, Organizations
+
+Threat detection → GuardDuty, Inspector, Macie, Detective, Security Hub
+
+Data security → KMS, HSM, ACM, S3 Encryption
+
+Network security → Shield, WAF, Network Firewall, Security Groups
+
+Monitoring & compliance → CloudTrail, Config, CloudWatch, Audit Manager
+
+Secrets & governance → Secrets Manager, Parameter Store, Control Tower
