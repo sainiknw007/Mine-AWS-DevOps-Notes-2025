@@ -1,0 +1,34 @@
+Q1. How to delete tfstate file ?
+
+Ways to Delete tfstate
+
+1.Delete Locally (not recommended unless reset needed)
+
+rm -f terraform.tfstate terraform.tfstate.backup
+
+This removes the state file from your local system. After this, Terraform will think no resources exist, so a terraform apply will try to recreate everything. ⚠️ Dangerous if resources still exist in cloud.
+
+2. If Using Remote Backend (e.g., S3, Azure, GCS)
+You’d need to delete it from the backend storage:
+
+S3: Go to the S3 bucket → delete terraform.tfstate.
+
+Terraform CLI:
+
+terraform state rm <resource_address>
+
+
+(removes a resource from state without destroying it).
+
+3. Safer Alternatives Instead of Full Deletion
+
+Remove specific resources from state:
+
+terraform state rm aws_instance.my_ec2
+
+
+This makes Terraform “forget” the resource without deleting it in AWS.
+
+Re-initialize backend state:
+
+terraform init -reconfigure

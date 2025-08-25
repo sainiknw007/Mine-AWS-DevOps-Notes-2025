@@ -1,0 +1,117 @@
+a practical Terraform example using count and count.index to provision AWS resources step by step.
+
+🛠 Practical Example: Create Multiple EC2 Instances with count
+Variables
+variable "instance_count" {
+  description = "Number of EC2 instances to create"
+  type        = number
+  default     = 3
+}
+
+variable "ami_id" {
+  description = "AMI ID for the instances"
+  type        = string
+  default     = "ami-1234567890abcdef0"  # Replace with a real AMI
+}
+
+Security Group
+resource "aws_security_group" "example_sg" {
+  name        = "example-sg"
+  description = "Allow SSH"
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+EC2 Instances with count
+resource "aws_instance" "example" {
+  count         = var.instance_count
+  ami           = var.ami_id
+  instance_type = "t2.micro"
+  vpc_security_group_ids = [aws_security_group.example_sg.id]
+
+  tags = {
+    Name = "example-instance-${count.index}"
+  }
+}
+
+🔍 Explanation
+
+count = var.instance_count
+
+Controls how many EC2 instances to create.
+
+If instance_count = 3, Terraform creates 3 instances.
+
+count.index
+
+A 0-based index assigned to each resource.
+
+First instance → index 0
+
+Second instance → index 1
+
+Third instance → index 2
+
+→ Useful for unique naming or assigning different values.
+
+Example tag output:
+
+example-instance-0
+
+example-instance-1
+
+example-instance-2
+
+Scaling Up/Down
+
+If you change instance_count = 5, Terraform adds 2 more instances (3 and 4).
+
+If you reduce it, Terraform destroys extra ones.
+
+⚡ More Advanced: Different Subnets per Instance
+
+You can also use count.index to spread instances across subnets:
+
+variable "subnets" {
+  default = ["subnet-aaa", "subnet-bbb", "subnet-ccc"]
+}
+
+resource "aws_instance" "example" {
+  count         = length(var.subnets)
+  ami           = var.ami_id
+  instance_type = "t2.micro"
+  subnet_id     = var.subnets[count.index]
+
+  tags = {
+    Name = "instance-${count.index}"
+  }
+}
+
+
+👉 Here:
+
+Instance 0 goes to subnet-aaa
+
+Instance 1 goes to subnet-bbb
+
+Instance 2 goes to subnet-ccc
+
+✅ Summary
+
+count → controls how many resources are created.
+
+count.index → gives each resource a unique index (0, 1, 2, …).
+
+Perfect for scaling, naming, and distributing resources.

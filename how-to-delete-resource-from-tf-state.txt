@@ -1,0 +1,51 @@
+Command to Remove Resource from State
+
+terraform state rm <resource_address>
+
+
+<resource_address> is the identifier of the resource in Terraform config (from terraform plan or .tf files).
+
+Example:
+
+terraform state rm aws_instance.my_ec2
+
+
+→ This removes the aws_instance.my_ec2 entry from the state, but does not destroy the actual EC2 instance in AWS.
+
+🔹 Steps
+
+Check the state first:
+
+terraform state list
+
+
+→ Shows all resources currently tracked.
+
+Identify the resource address (like aws_s3_bucket.my_bucket).
+
+Run the remove command:
+
+terraform state rm aws_s3_bucket.my_bucket
+
+
+Verify:
+
+terraform state list
+
+
+→ Confirm it’s no longer in the state.
+
+🔹 Alternative: terraform import (if needed later)
+
+If you accidentally removed a resource, you can re-import it:
+
+terraform import aws_s3_bucket.my_bucket bucket-name
+
+
+⚠️ Be careful:
+
+Removing from state = Terraform “forgets” about the resource.
+
+If you run terraform apply afterward and the resource is still defined in .tf files, Terraform may try to recreate it.
+
+👉 Best practice: also remove the resource definition from your .tf files if you don’t want Terraform to manage it anymore.

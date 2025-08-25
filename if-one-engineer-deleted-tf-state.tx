@@ -1,0 +1,71 @@
+If state is deleted:
+
+Best case: restore from backend versioning (S3/GCS/Azure/TF Cloud).
+
+If no backup: use terraform import to rebuild state resource by resource.
+
+Prevent it by always storing state remotely with versioning + locking.
+
+--------------------------------------------
+
+🔹 1. Check If You Have a Backup
+
+If you use a remote backend (S3, GCS, Azure Blob, Terraform Cloud):
+
+Most backends keep history/versioning of state files.
+
+You can restore the previous version easily.
+
+Example: AWS S3 with versioning enabled → restore the last terraform.tfstate.
+
+👉 This is the best-case scenario.
+
+🔹 2. If No Backup (Local State Lost)
+
+You have to rebuild state manually so Terraform can manage existing resources again.
+
+Two options:
+Option A: terraform import
+
+Use the terraform import command to bring existing resources back into state.
+
+Example:
+
+terraform import aws_instance.my_ec2 i-0abcd1234ef567890
+
+
+aws_instance.my_ec2 → resource in .tf code
+
+i-0abcd1234ef567890 → actual resource ID in AWS
+
+👉 Repeat this for each resource.
+
+Option B: Refresh + Fix Drift
+
+Run:
+
+terraform refresh
+
+
+→ This updates state based on resources it can find.
+
+Then run:
+
+terraform plan
+
+
+→ Check what Terraform thinks is missing vs what exists.
+
+If resources show as “to be created” but they already exist → you need to import them.
+
+If resources show as “to be destroyed” but you still need them → fix .tf code or import.
+
+🔹 3. Prevent Future State Loss
+
+Always use remote state (backend "s3", backend "gcs", etc.)
+
+Enable versioning/locking (e.g., S3 + DynamoDB for locks).
+
+Restrict who can delete state.
+
+Automate backups

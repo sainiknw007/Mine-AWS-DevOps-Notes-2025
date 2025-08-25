@@ -1,0 +1,62 @@
+Great question 🙌 — this is a classic Terraform pattern for conditionally creating resources with count and count.index.
+
+🔹 Using count in Terraform
+
+count lets you create 0, 1, or many resources depending on a condition or variable.
+
+Each instance gets an index (count.index), starting from 0.
+
+🔹 Example: Create EC2 only if ami_id is provided
+variable "ami_id" {
+  type    = string
+  default = ""   # empty by default
+}
+
+resource "aws_instance" "my_ec2" {
+  count         = var.ami_id != "" ? 1 : 0   # if ami_id is empty → no instance
+  ami           = var.ami_id
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "my-instance-${count.index}"
+  }
+}
+
+🔍 Explanation
+
+count = var.ami_id != "" ? 1 : 0
+→ If ami_id is not empty, create 1 instance; otherwise, create 0 instances (nothing).
+
+${count.index}
+→ Useful if you create multiple instances. For example, if count = 3, indexes will be 0,1,2.
+
+🔹 Example with Multiple Instances
+
+If you want to create N instances (controlled by a variable):
+
+variable "instance_count" {
+  default = 3
+}
+
+resource "aws_instance" "my_ec2" {
+  count         = var.instance_count
+  ami           = var.ami_id
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "my-instance-${count.index}"
+  }
+}
+
+
+👉 Creates 3 instances: my-instance-0, my-instance-1, my-instance-2.
+
+✅ Summary
+
+Use count to control how many instances to create.
+
+Use count.index to uniquely identify each instance.
+
+To conditionally create resources (like only if ami_id is set), use a ternary:
+
+count = var.ami_id != "" ? 1 : 0
