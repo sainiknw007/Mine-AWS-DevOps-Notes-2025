@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kubernetes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #004d99;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background: #0066cc;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      color: #004d99;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kubernetes</h1>
+  </header>
+
+  <nav>
+    <a href="kubernetes.html">Kubernetes</a>
+    <a href="terraform.html">Terraform</a>
+    <a href="aws.html">AWS</a>
+    <a href="docker.html">Docker</a>
+    <a href="devops.html">DevOps</a>
+    <a href="python.html">Python</a>
+  </nav>
+
+  <div class="container">
+    <h2>Architecture</h2>
+    <p><b>Components of Kubernetes (k8s) cluster</b></p>
+
+    <h3>Control Plane Components</h3>
+    <ul>
+      <li>Make decisions about the cluster.</li>
+      <li>Can run on any machine in the cluster.</li>
+      <li>Highly Available (HA) by using multiple machines.</li>
+      <li>Components:
+        <ul>
+          <li>kube-apiserver</li>
+          <li>etcd</li>
+          <li>kube-scheduler</li>
+          <li>kube-controller-manager</li>
+          <li>kube-cloud-controller-manager</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Node Components</h3>
+    <ul>
+      <li>Run on every node, maintaining Pods & runtime environment.</li>
+      <li>Applications run on nodes.</li>
+      <li>Components:
+        <ul>
+          <li>kubelet</li>
+          <li>kube-proxy</li>
+          <li>Container runtime</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Kube-apiserver</h3>
+    <p>
+      The API server is the frontend of Kubernetes, exposing the Kubernetes API.  
+      Handles communication between control plane and nodes.  
+      To achieve HA, we can horizontally scale the API server.  
+      Users interact with it via REST API (JSON) or <code>kubectl</code>.
+    </p>
+
+    <h3>etcd</h3>
+    <p>
+      A distributed, strongly-consistent key-value store.  
+      Stores all cluster data. Handles leader elections & tolerates failures.
+    </p>
+
+    <h3>kube-scheduler</h3>
+    <p>Assigns Pods to nodes based on resource availability.</p>
+
+    <h3>kube-controller-manager</h3>
+    <p>
+      Runs controllers (Node, Job, Endpoints, etc.).  
+      Each is separate but run in a single process for simplicity.
+    </p>
+
+    <h3>cloud-controller-manager</h3>
+    <p>Embeds cloud-specific logic (AWS, Azure, GCP, etc.).</p>
+
+    <h3>Kubelet</h3>
+    <p>Agent running on each node. Receives requests to create Pods.</p>
+
+    <h3>Kube-proxy</h3>
+    <p>Network proxy on each node. Routes cluster traffic & maintains rules.</p>
+
+    <h3>Container Runtime</h3>
+    <p>
+      Kubernetes supports Containerd, CRI-O, Docker (via CRI).  
+      Provides the environment to run containers inside Pods.
+    </p>
+
+    <h2>Basic Workflow</h2>
+    <ul>
+      <li>Interact programmatically using REST API (JSON)</li>
+      <li>Use <code>kubectl</code> with YAML manifests (Declarative approach)</li>
+      <li><b>Cattle mindset:</b> Containers/Pods are replaceable, not pets.</li>
+    </ul>
+
+    <h2>Pods in Kubernetes</h2>
+    <p>
+      The smallest unit of Kubernetes. Each Pod has containers + volumes.  
+      Shares IP/port/hostname. Ideally, one container per Pod.  
+    </p>
+
+    <h3>Kubectl Cheatsheet</h3>
+    <pre>
+kubectl get pods
+kubectl describe pod pod-name
+kubectl run hello-pod --image jenkins/jenkins:lts-jdk11
+kubectl delete pod hello-pod
+    </pre>
+
+    <h2>Kubernetes Services</h2>
+    <p>
+      Expose Pods via ClusterIP, NodePort, or LoadBalancer.  
+      Uses label selectors to match Pods. Provides stable DNS.  
+    </p>
+    <h3>Probes</h3>
+    <ul>
+      <li><b>Readiness Probe:</b> Checks if Pod is ready to serve traffic.</li>
+      <li><b>Liveness Probe:</b> Checks if container is running. Restarts on failure.</li>
+    </ul>
+
+    <h2>Deployments</h2>
+    <p>
+      Manage ReplicaSets & Pods. Provide rolling updates, rollbacks, and scaling.  
+      Kubernetes ensures applications remain self-healing and HA.
+    </p>
+
+    <h2>Storage Solutions</h2>
+    <ul>
+      <li><b>Volumes:</b> Lifecycle tied to Pod.</li>
+      <li><b>Persistent Volumes (PV):</b> Independent lifecycle.</li>
+      <li><b>Persistent Volume Claims (PVC):</b> Request storage from PVs.</li>
+      <li><b>StatefulSets:</b> Provide stable, persistent storage per Pod.</li>
+    </ul>
+
+    <h2>Helm</h2>
+    <p>
+      Helm is the package manager for Kubernetes.  
+      Applications are packaged as <b>Helm charts</b> for easier deployment.
+    </p>
+  </div>
+</body>
+</html>
