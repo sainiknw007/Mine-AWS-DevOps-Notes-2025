@@ -1,0 +1,50 @@
+🔹 What is AppDynamics?
+
+AppDynamics (often called AppD) is a tool from Cisco that helps companies monitor and manage their applications and infrastructure.
+
+Think of it like a CCTV camera for your apps 🖥️📊 — it shows you what’s happening inside your software, servers, databases, and cloud in real time.
+
+🔹 What does it do?
+
+Application Monitoring
+
+Checks if your app is slow, crashing, or facing errors.
+
+Example: A shopping app checkout taking 10 seconds instead of 2 seconds.
+
+Infrastructure Monitoring
+
+Monitors servers, containers, Kubernetes, cloud services.
+
+Example: If CPU or memory usage spikes, AppD alerts you.
+
+Business Transaction Monitoring
+
+Tracks user journeys (like login → add to cart → payment).
+
+Helps find where exactly users face issues.
+
+Alerting & Troubleshooting
+
+Sends alerts if something breaks (e.g., high latency, server down).
+
+Shows the root cause → database issue, code bug, network delay, etc.
+
+Integration with DevOps & Cloud
+
+Works with AWS, Azure, GCP, Kubernetes, Jenkins.
+
+Helps DevOps/SRE teams keep applications reliable and fast.
+
+🔹 Why companies use AppDynamics?
+
+Detect problems before customers complain.
+
+Improve performance and user experience.
+
+Reduce downtime (saves money 💰).
+
+Helps both developers (fix code) and operations teams (monitor infra).
+
+👉 In short:
+AppDynamics = A smart monitoring + troubleshooting tool that shows you how your app and infrastructure are performing, and helps you fix problems quickly.
