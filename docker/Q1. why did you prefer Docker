@@ -1,0 +1,37 @@
+In your last project, how did you use Docker in the CI/CD pipeline, and why did you prefer Docker over a normal VM-based deployment?
+
+Lightweight & fast startup
+
+Efficient resource usage
+
+Highly portable
+
+Scales easily (especially with Kubernetes)
+
+Excellent ecosystem & tooling for CI/CD
+
+Great for microservices & cloud-native apps
+
+>>>>>>>>>>>>>>>>>>>>>>>>> 1.  Docker container is Lightweight 
+A Docker container only includes:
+>Your application
+>Its dependencies (libraries, configs, binaries)
+The container shares the host OS kernel, so it doesn’t need its own OS.
+So the Result is Smaller size, it consumes less CPU/RAM usage.
+Docker containers start in seconds. like 
+
+Docker: Starting a container = starting a process → milliseconds to seconds.
+
+Docker image are Small Image Size.
+Faster to build, ship, and run.
+
+>>>>>>>>>>>>>>>> 2. Resource Efficiency 
+Containers share system resources dynamically. You can run more containers than VMs on the same hardware.
+>>>>>>>>>>>>>>>>3. Portability >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Docker: Containers are portable across any system that supports Docker (Linux, Windows, Mac, cloud, on-prem).
+>>>>>>>>>>>>>>>>4.  Speed of Deployment 
+Pull an image and spin up a container instantly.
+Faster CI/CD pipelines and quicker rollbacks.
+>>>>>>>>>>>>>>>>5. Scalability & Microservices 
+Perfect fit for microservices, allowing you to scale individual components independently.
+
