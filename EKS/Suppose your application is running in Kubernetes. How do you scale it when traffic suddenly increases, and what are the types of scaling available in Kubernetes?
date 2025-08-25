@@ -1,0 +1,25 @@
+Answer (Kubernetes Scaling):
+“In Kubernetes, applications run inside Pods. When traffic increases, we can scale the number of Pods to handle the load. Scaling in Kubernetes can be done in three ways:
+
+Manual Scaling – Using the kubectl scale command, for example:
+
+kubectl scale deployment my-app --replicas=5
+
+
+This increases or decreases the number of Pods in the Deployment.
+
+Horizontal Pod Autoscaler (HPA) – Kubernetes automatically adjusts the number of Pods based on metrics like CPU or memory usage. For example, if average CPU usage exceeds 70%, Kubernetes can add more Pods.
+
+Vertical Pod Autoscaler (VPA) – Instead of adding Pods, Kubernetes can increase the CPU/memory resources allocated to existing Pods.
+
+Cluster Autoscaler – If the cluster itself runs out of resources, Cluster Autoscaler can provision new worker nodes in AWS EKS, GKE, or AKS.
+
+In my project, we implemented HPA in AWS EKS. For a Node.js application, we configured the HPA to scale Pods between 2 and 10 replicas based on CPU utilization. This ensured high availability during traffic spikes while optimizing cost by scaling down automatically when load decreased.”
+
+👉 This answer shows:
+
+You know different scaling options (manual, HPA, VPA, Cluster Autoscaler).
+
+You gave a real project example (Node.js app with HPA in EKS).
+
+You connected it with business value (cost optimization + high availability).
