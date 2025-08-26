@@ -4,3 +4,6 @@ Kubectl inspect command
 how do you manage Kubernetes pod autoscaling
 How to create Kubernetes Cluster 
 What are type of services in kubernetes
+What is Persistent Volume 
+Service for Cluster IP and node port
+  
