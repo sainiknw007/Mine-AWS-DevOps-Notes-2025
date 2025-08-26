@@ -6,4 +6,4 @@ How to create Kubernetes Cluster
 What are type of services in kubernetes
 What is Persistent Volume 
 Service for Cluster IP and node port
-  
+What are secretes in AWS EKS and how do you manage secrets
