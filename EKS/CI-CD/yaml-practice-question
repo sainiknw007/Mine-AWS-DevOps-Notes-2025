@@ -1,0 +1,40 @@
+We have updated the /home/bob/playbooks/practice.yaml file to add some more details. Now, add the pay information. Remember, while address is a dictionary, payslips is an array of month and amount.
+
+
+payslips
+
+month	amount
+june	1400
+july	2400
+august	3400
+
+-------------
+employee:
+  name: john
+  gender: male
+  age: 24
+  address:
+    city: 'edison'
+    state: 'new jersey'
+    country: 'united states'
+----------------
+
+Solution:
+employee:
+  name: john
+  gender: male
+  age: 24
+  address:
+    city: 'edison'
+    state: 'new jersey'
+    country: 'united states'
+
+  payslips:
+    - month: june
+      amount: 1400
+    - month: july
+      amount: 2400
+    - month: august
+      amount: 3400
+~                                                                                            
+~                    
