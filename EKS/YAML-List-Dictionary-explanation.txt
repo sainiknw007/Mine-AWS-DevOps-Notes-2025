@@ -53,6 +53,7 @@ Grapes:
 	Fat: 0.3g
 	Carbs: 16m
 
+Each fruite nutrition /properties should have equal number of space...hence ye batayge ki vah dictionary of Banana.
 Check space before items, check equal number of space between all items so they are all aligned together..
 number of space between all properties are key..
 
