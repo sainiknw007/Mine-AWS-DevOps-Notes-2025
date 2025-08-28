@@ -1,0 +1,186 @@
+What is YAML ?
+YAML- Yet another markup language
+
+YAML: file is used to represent data , in Kubernetes
+      it is used to represent configuration data.
+
+How you represent Key-value Pair in YAML
+
+
+Key-Value Pair: Data in simplest form 
+Key and value separated by colun: and space
+
+-----------------------
+Fruit: Apple
+Vegetable: Carrot
+Liquid: Water
+Meat: Chicken
+
+: separated by space Key and value
+Fruit is a key and value is Apple
+Vegetable is key and value is Carrot
+---------------------------------------
+
+Array/List representation:
+
+we want to represent some fruites and vegetable
+
+Fruits:
+-  Orange
+-  Apple
+-  Banana
+
+Fruit is an array and - (dash)represent it is an elements of array.
+
+Vegetable:
+-  Carrot
+-  Cauliflower
+-  Tomato
+
+Vegetable is an array and - represent their elements.
+
+--------------
+Dictionary: A Dictionary is a set of properties  group together under an item.
+Example: we tried to represent nutrition information about 2 fruits.
+
+Banana:
+   Calories: 105
+   Fat: 0.4g
+   Carbs: 27m
+
+Grapes:
+	Calories: 62	
+	Fat: 0.3g
+	Carbs: 16m
+
+Check space before items, check equal number of space between all items so they are all aligned together..
+number of space between all properties are key..
+
+If you give space in Fat and Carbs, it will give you syntax error
+
+
+--------------------
+
+List containing Fruits, Fruits are banana and Grapes
+
+each fruit has its dictionary
+
+each 
+
+Key-Value/Dictionary/List
+Fruit:
+  Banana:	
+     Calories: 105
+     Fat: 0.4g
+     Carbs: 27m
+  
+  Grapes:
+     Calories: 62
+     Fat: 0.3g
+     Carbs: 16m
+
+ 
+
+Dictionary is an unordered collection while 
+list is an ordered collection
+
+----------------------------
+
+All XML, JSON AND YAML are used to represent data,
+
+Dictionary vs List vs List of Dictionary
+
+Color: Blue
+Price: $20,000
+Model: 
+  Name: Corvette
+  Year: 1995
+
+Transmission: Manual
+So, this is a dictionary and dictionary inside dictionary.
+
+Store name of 6 car, each name has color followed by model.
+to store this we use, List/array as multiple items of same type.
+
+List of array
+
+- Blue Corvette
+- Grey Corvette
+- Red Corvette
+- Green Corvette
+- Blue Corvette
+- Black Corvette
+
+Now want to store about all information about each car...like
+each car color, model, transmission ..
+
+
+- Color: Blue
+  Model:
+    Name: Corvette
+    Year: 1995
+  Transmission: Manual
+  Price: $20,000
+
+- Color: Grey
+  Model: 
+    Name: Corvette
+    Year: 1995
+  Transmission: Manual
+  Price: $22,000
+
+- Color: Red
+  Model:
+     Name: Corvette
+     Year: 1995
+  Transmission: Automatic
+  Price: $20,000 
+
+- Green Corvette
+- Blue Corvette
+- Black Corvette
+
+
+Dictionary are unordered collection.
+
+Dictionary/Map
+
+Dictionary 1:
+
+Banana: 		
+  Calories: 105
+  Fat: 0.4 g
+  Carbs: 27 g
+
+Dictionary 2
+
+Banana:
+  Calories: 105
+  Carbs: 27 g
+  Fat: 0.4 g
+
+Pehle m Fat properties h then Carbs.. and in second: 
+Pehle carbs and phir Fat. Since, Dictionary is unordered colcetion
+Hence both are same, if order is different
+
+Array/List
+
+Fruits:
+- Orange
+- Apple
+- Banana
+
+Array/List 2 
+
+Fruits:
+- Orange
+- Banana
+- Apple
+
+Both are different, as List is ordered collection..
+
+# List of Fruits 
+# any line with # is command it is ignored and comment.
+
+List are ordered.
+  
