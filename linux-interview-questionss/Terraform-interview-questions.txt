@@ -4,6 +4,9 @@ Q.Created aws resouces using terraform, 10 resources are there, now want to keep
 may---> 
 Q. What terraform import Does
 Q.if-one-engineer-deleted-tf-state.tx
+Q.how-to-delete-resource-from-tf-state.txt
+Q. How to create EC2 machine using terraform when it matches ami-id == dsfdssf232, else do not create ?
+Q. what are terraform meta arguments ? how to use count , index, depends_on ?
 
 
 
