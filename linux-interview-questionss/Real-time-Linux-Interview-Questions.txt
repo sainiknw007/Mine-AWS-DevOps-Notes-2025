@@ -1,10 +1,12 @@
-Q1.how to get Linux shell script performance monitor on CloudWatch
+Q1.how to get Linux shell script performance monitor on CloudWatch ?
 Q2.how to give user permission in Linux
 Q3.Write a shell script to check the process for my app is running or not.
 Q4.Write a script to check Linux syste performance.
 Q5.Write a script to check webserver nginx health check and check site is working or not?
 Q6. grep egrep fgrep command in linux
-What is cron and at command what is difference between them ?
+Q7.What is cron and at command what is difference between them ?
+Q8. How to check linux system cpu utilzation ?
+Q9. There is a vulnearability file, and there are vulnearabilities like critical, error write a script to fine number critical vulnerability, error, and if not return 0 vulnearability.
 Purpose: cron job
 Schedule repetitive tasks at fixed intervals (daily, weekly, monthly, etc.).
 
