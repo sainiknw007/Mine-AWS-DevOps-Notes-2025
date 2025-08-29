@@ -2,12 +2,63 @@ Q.What is Hashicorp vault ?
 Q.What are implicit and explicit dependencies ?
 Q.Created aws resouces using terraform, 10 resources are there, now want to keep only database and delete all other resources , what are different ways to delete
 may---> 
+Q. What terraform import Does
+
+
+
+What terraform import Does
+Brings an existing resource in the real world (AWS, Azure, GCP, etc.) into Terraform state.
+Does not create or modify the resource — it only tells Terraform “this resource already exists, manage it from now on.”
+
+Needed if:
+Someone created resources manually outside Terraform.
+State file was deleted/lost.
+
+Migrating existing infrastructure to Terraform.
+🔹 Command Syntax
+terraform import <resource_address> <resource_id>
+
+<resource_address> → How the resource is defined in your .tf code (e.g., aws_instance.my_ec2).
+<resource_id> → The real-world ID of the resource in the cloud (e.g., EC2 ID, S3 bucket name).
+
+🔹 Example 1: Import an AWS EC2 Instance
+Terraform code:
+resource "aws_instance" "my_ec2" {
+  ami           = "ami-12345678"
+  instance_type = "t2.micro"
+}
+If an EC2 instance already exists with ID i-0abcd1234ef567890:
+terraform import aws_instance.my_ec2 i-0abcd1234ef567890
+👉 Now Terraform state knows that aws_instance.my_ec2 = that existing EC2 instance.
+🔹 Example 2: Import an S3 Bucket
+Terraform code:
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "my-example-bucket"
+}
+
+If the bucket already exists in AWS:
+
+terraform import aws_s3_bucket.my_bucket my-example-bucket
+👉 The bucket is added to terraform.tfstate.
+🔹 Example 3: Import with Modules
+If the resource is inside a module:
+terraform import module.ec2.aws_instance.my_ec2 i-0abcd1234ef567890
+🔹 Workflow After Import
+Write the resource in .tf file.
+Run terraform import to map the existing resource into state.
+Run terraform plan to check for drift between .tf config and actual infra.
+Fix .tf config if needed until Terraform shows no changes.
+✅ Summary
+terraform import maps existing infra → Terraform state.
+Syntax:
+terraform import <resource_address> <resource_id>
+Commonly used for recovery or migration.
 
 
 
 
 
-
+Answer: Implicit Dependencies and Explicit Dependencies
 
 Terraform manages resource creation order through dependencies, categorized as implicit or explicit.
 Implicit Dependencies:
