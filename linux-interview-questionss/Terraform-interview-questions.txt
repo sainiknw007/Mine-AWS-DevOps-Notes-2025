@@ -1,1 +1,25 @@
-What is Hashicorp vault ?
+Q.What is Hashicorp vault ?
+Q.What are implicit and explicit dependencies ?
+Q.Created aws resouces using terraform, 10 resources are there, now want to keep only database and delete all other resources , what are different ways to delete
+may---> 
+
+
+
+
+
+
+
+Terraform manages resource creation order through dependencies, categorized as implicit or explicit.
+Implicit Dependencies:
+These are automatically inferred by Terraform when one resource's configuration references attributes of another resource.
+For example, if a virtual machine resource's network interface configuration references the ID of a previously defined virtual network, Terraform understands that the virtual network must be created before the virtual machine.
+Implicit dependencies are generally preferred as they keep the configuration cleaner and allow Terraform to optimize the execution plan more efficiently.
+Explicit Dependencies:
+These are declared manually using the depends_on meta-argument within a resource block.
+Explicit dependencies are used when Terraform cannot automatically infer a dependency, typically when a resource relies on another resource's existence or state, but there's no direct attribute reference in the configuration.
+For instance, if an application deployed on a virtual machine requires a specific database to be fully operational before it can start, and there's no direct attribute link between the VM and the database resource in Terraform, an explicit depends_on can be used on the VM resource to ensure the database is created and ready first.
+While useful in specific scenarios, overusing depends_on can make the configuration less readable and potentially create unnecessary sequential execution, hindering parallelization.
+Summary:
+Implicit dependencies: are automatically detected through attribute references, promoting cleaner code and efficient planning.
+Explicit dependencies: are manually declared using depends_on for scenarios where automatic inference is not possible, providing control over resource creation order when necessary.
+Prioritizing implicit dependencies and using explicit dependencies only when truly required is a best practice for managing Terraform configurations.
