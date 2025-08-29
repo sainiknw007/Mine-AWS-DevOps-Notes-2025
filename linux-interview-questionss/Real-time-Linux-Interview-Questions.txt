@@ -7,6 +7,11 @@ Q6. grep egrep fgrep command in linux
 Q7.What is cron and at command what is difference between them ?
 Q8. How to check linux system cpu utilzation ?
 Q9. There is a vulnearability file, and there are vulnearabilities like critical, error write a script to fine number critical vulnerability, error, and if not return 0 vulnearability.
+Q10. how to create service in linux ?
+Q11. how to perform linux system patching , like pre check pre steps, backaup snapshot, app backup and update and then post upate steps?
+Q12. how to update a partical rpm package/repo ?
+Q13. There is a vulnearability in python/packge, how to remove vulnearabilty for that package. all steps 
+
 Purpose: cron job
 Schedule repetitive tasks at fixed intervals (daily, weekly, monthly, etc.).
 
