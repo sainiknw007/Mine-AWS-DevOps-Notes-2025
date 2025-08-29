@@ -20,7 +20,7 @@ Schedule repetitive tasks at fixed intervals (daily, weekly, monthly, etc.).
 
 Purpose: Schedule a one-time task at a specific time.
 
-How it works: Uses the atd daemon to run the command once at the specified time.
+Q7. How it works: Uses the atd daemon to run the command once at the specified time.
 
 Usage:
 
@@ -29,7 +29,7 @@ at> /home/user/backup.sh
 at> <Ctrl+D>   # To save
 
 using which command will check cpu utilization ?
-what is difference between df - h and du -sh ?
+Q8. what is difference between df - h and du -sh ?
 Ans:9). 
 $ du -sh /var/log
 1.2G    /var/log
@@ -41,3 +41,8 @@ Filesystem      Size  Used Avail Use% Mounted on
 Command	What it Measures	Output Example	Use Case
 du -sh <directory>	Disk Usage – shows how much space a directory (and its contents) is consuming. -s = summary, -h = human-readable (KB, MB, GB).	500M /home/user	Check how much space a folder or project is taking. Useful for cleaning up directories.
 df -h	Disk Free – shows the total, used, and available space on mounted filesystems. -h = human-readable.	Filesystem Size Used Avail Use% Mounted on /dev/sda1 50G 20G 28G 42% /	Check overall filesystem space. Useful for monitoring disk usage of partitions or drives.
+
+Q9.There is a file with vulnearability there , critical , error write a script to get number of critical vulnearability, error and total vulnearability.
+if there are no that means 0 hence, return 0 vulnearabilities.
+
+
