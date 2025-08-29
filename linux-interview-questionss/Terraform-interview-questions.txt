@@ -8,7 +8,11 @@ Q.how-to-delete-resource-from-tf-state.txt
 Q. How to create EC2 machine using terraform when it matches ami-id == dsfdssf232, else do not create ?
 Q. what are terraform meta arguments ? how to use count , index, depends_on ?
 Q. How to delete tfstate file ?
-Q. how to get terraform debug logs ? TF_LOG=DEBUG terraform plan > debug.log
+Q. how to get terraform debug logs ? TF_LOG=DEBUG terraform plan > debug.log / How to debut code with terraform plan command ?
+Q. Write Terraform VPC code
+Q. Write Terraform code to create EKS Cluster ?
+Q. How to lock and unlock state file ? / Q. when state is locked, how to troubleshoot ?
+
 
 
 
