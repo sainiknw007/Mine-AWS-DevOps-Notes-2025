@@ -1,0 +1,3 @@
+Q. What is Maven ?
+Q1.What are mavin life cycle ?
+Q2.What are maven command to build a project?
