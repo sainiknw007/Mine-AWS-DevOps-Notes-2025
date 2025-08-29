@@ -1,4 +1,9 @@
 Q. What is Kubernetes cluster and explain all components ?
-Q.Explain autosaclingin AWS EKS ?
+Q.How  AWS EKS autoscaling works ?
 Q.what is deployment and replicate set ?
 Q.what are services type in kubernets ?
+Q. How eks knows about metrix like CPU, memory usage?
+Q. Steps to create autoscaling in AWS EKS
+Q. how to migreate pod form 1 node to another node 
+Q. How EKS authenticates to Jenkins ? / Q. configure authenticatation between jenkins server and eks ?
+
