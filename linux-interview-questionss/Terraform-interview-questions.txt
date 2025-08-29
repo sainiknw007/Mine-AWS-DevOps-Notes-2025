@@ -3,6 +3,8 @@ Q.What are implicit and explicit dependencies ?
 Q.Created aws resouces using terraform, 10 resources are there, now want to keep only database and delete all other resources , what are different ways to delete
 may---> 
 Q. What terraform import Does
+Q.if-one-engineer-deleted-tf-state.tx
+
 
 
 
