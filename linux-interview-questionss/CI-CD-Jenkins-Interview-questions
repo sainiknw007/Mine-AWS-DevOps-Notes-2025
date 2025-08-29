@@ -1,5 +1,5 @@
-Q.What is use of Jenkins Master Node configuration, why do you requried slave nodes ?
-Q.how do you configure parameterized pipeline in jenkins ?
-Q.How will you write a declaritve pipeline ?
+Q. What is use of Jenkins Master Node configuration, why do you requried slave nodes ?
+Q. how do you configure parameterized pipeline in jenkins ?
+Q. How will you write a declaritve pipeline ?
 Q. How GitHub athenticates Jenkins ? Ans: classic token, using credentials, explan ssh keygen..
 
