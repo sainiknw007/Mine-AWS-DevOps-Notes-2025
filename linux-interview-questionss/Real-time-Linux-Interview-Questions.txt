@@ -5,5 +5,39 @@ Q4.Write a script to check Linux syste performance.
 Q5.Write a script to check webserver nginx health check and check site is working or not?
 Q6. grep egrep fgrep command in linux
 What is cron and at command what is difference between them ?
+Purpose: cron job
+Schedule repetitive tasks at fixed intervals (daily, weekly, monthly, etc.).
+
+* * * * * command_to_run
+| | | | |
+| | | | ----- Day of week (0-7) (Sunday=0 or 7)
+| | | ------- Month (1-12)
+| | --------- Day of month (1-31)
+| ----------- Hour (0-23)
+------------- Minute (0-59)
+
+2. at Command
+
+Purpose: Schedule a one-time task at a specific time.
+
+How it works: Uses the atd daemon to run the command once at the specified time.
+
+Usage:
+
+at 14:30
+at> /home/user/backup.sh
+at> <Ctrl+D>   # To save
+
 using which command will check cpu utilization ?
 what is difference between df - h and du -sh ?
+Ans:9). 
+$ du -sh /var/log
+1.2G    /var/log
+
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        50G   20G   28G  42% /
+
+Command	What it Measures	Output Example	Use Case
+du -sh <directory>	Disk Usage – shows how much space a directory (and its contents) is consuming. -s = summary, -h = human-readable (KB, MB, GB).	500M /home/user	Check how much space a folder or project is taking. Useful for cleaning up directories.
+df -h	Disk Free – shows the total, used, and available space on mounted filesystems. -h = human-readable.	Filesystem Size Used Avail Use% Mounted on /dev/sda1 50G 20G 28G 42% /	Check overall filesystem space. Useful for monitoring disk usage of partitions or drives.
