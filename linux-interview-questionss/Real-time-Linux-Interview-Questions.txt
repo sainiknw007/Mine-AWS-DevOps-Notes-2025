@@ -3,3 +3,7 @@ Q2.how to give user permission in Linux
 Q3.Write a shell script to check the process for my app is running or not.
 Q4.Write a script to check Linux syste performance.
 Q5.Write a script to check webserver nginx health check and check site is working or not?
+Q6. grep egrep fgrep command in linux
+What is cron and at command what is difference between them ?
+using which command will check cpu utilization ?
+what is difference between df - h and du -sh ?
