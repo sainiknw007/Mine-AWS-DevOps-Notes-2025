@@ -6,4 +6,13 @@ Q. How eks knows about metrix like CPU, memory usage?
 Q. Steps to create autoscaling in AWS EKS
 Q. how to migreate pod form 1 node to another node 
 Q. How EKS authenticates to Jenkins ? / Q. configure authenticatation between jenkins server and eks ?
+How to check Kubernetes logs. 
+How to check Pod logs. 
+Kubectl inspect command
+how do you manage Kubernetes pod autoscaling
+How to create Kubernetes Cluster 
+What are type of services in kubernetes
+What is Persistent Volume 
+Service for Cluster IP and node port
+What are secretes in AWS EKS and how do you manage secrets
 
