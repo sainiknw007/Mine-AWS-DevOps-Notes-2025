@@ -53,4 +53,16 @@ df -h	Disk Free – shows the total, used, and available space on mounted filesy
 Q9.There is a file with vulnearability there , critical , error write a script to get number of critical vulnearability, error and total vulnearability.
 if there are no that means 0 hence, return 0 vulnearabilities.
 
+When there is a Security issue/compliance with python version on red hate Linux.
+Red hat enterprise Linux 9 security hardening ?
+how to update a particular rpm in redhate Linux
+how to create kms image
+how to create snapshot on vm in VMware
+how to take backup of application running on Linux
+how to create a service in Linux ubuntu/Redhate
+how to update and upgrade Linux system
+-  pre check/pre steps
+-  update and upgrade
+-  post upgrade.
+Security hardening in Linux
 
