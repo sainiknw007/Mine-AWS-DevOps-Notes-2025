@@ -6,3 +6,22 @@ please tell me autosacling how to conifugure
 how would you manage infrastructure consistency. 
 how would you manage if production site has latency ?
 How to create Secure, Reliable, HA infrastructure ?
+
+What is Session affinity
+What is Pod affinity
+What is Terraform drip
+What is Terraform tent command
+what is for_each in terraform.
+What are Routing policy in Route 53.
+what is maximum size of subnets in VPC.
+What is a Service Account in Kubernetes?
+Multiple edged in RDS
+Edge location
+what are types on instances
+EC2 types
+STS security Token Service Policy
+S3 storage tier types.
+
+Types of Load Balancer
+What is Gateway Load Balancer
+
