@@ -1,0 +1,11 @@
+FQDN = Hostname + Domain name.
+
+It uniquely identifies a system on the internet or a network.
+
+Example:
+
+Hostname = server1
+
+Domain = example.com
+
+FQDN = server1.example.com
