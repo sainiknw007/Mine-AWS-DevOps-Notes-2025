@@ -12,6 +12,7 @@ Q. how to get terraform debug logs ? TF_LOG=DEBUG terraform plan > debug.log / H
 Q. Write Terraform VPC code
 Q. Write Terraform code to create EKS Cluster ?
 Q. How to lock and unlock state file ? / Q. when state is locked, how to troubleshoot ?
+Q. Command to Remove Resource from State
 
 
 
