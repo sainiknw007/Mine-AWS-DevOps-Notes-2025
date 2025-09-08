@@ -1,1 +1,126 @@
 what is proxy server, why it is used ?
+
+What is a Proxy Server?
+
+A proxy server sits between a client and a backend server.
+
+It forwards requests from the client → backend server.
+
+Types:
+
+Forward Proxy → client → proxy → internet (used for filtering, caching, anonymity).
+
+Reverse Proxy → client → proxy → backend servers (used for load balancing, caching, SSL termination).
+
+🔹 Proxy Server as a Load Balancer (Reverse Proxy)
+
+When used as a reverse proxy, the proxy server can act as a load balancer by distributing incoming traffic across multiple backend servers.
+
+How it works:
+
+Clients send requests to the proxy server.
+
+Proxy decides which backend server should handle the request.
+
+Distributes requests based on algorithms like:
+
+Round Robin (even distribution)
+
+Least Connections (send to server with fewer active connections)
+
+IP Hash (same client always hits same server)
+
+Sends the response back to the client.
+
+🔹 Example Setup
+          Client
+            |
+            v
+   +-------------------+
+   |   Proxy Server    |  ← acts as reverse proxy + load balancer
+   | (NGINX / HAProxy) |
+   +-------------------+
+      |        |        |
+      v        v        v
+  Server 1   Server 2  Server 3
+
+
+The client thinks it’s only talking to the proxy.
+
+The proxy balances load across backend servers.
+
+🔹 Real-world Tools
+
+NGINX (reverse proxy + load balancer)
+
+HAProxy (high-performance load balancer)
+
+Envoy (modern proxy, used in service meshes like Istio)
+
+Apache HTTP Server (can also load balance with modules)
+
+🔹 Benefits
+
+Scalability → distribute traffic across multiple servers.
+
+High Availability → if one server fails, proxy reroutes traffic.
+
+Security → hides backend servers’ IPs, central SSL termination.
+
+Performance → can cache static content, compress responses.
+
+✅ In short:
+A proxy server becomes a load balancer when it doesn’t just forward traffic, but also intelligently distributes requests across multiple backend servers.
+
+Would you like me to also give you a sample NGINX config file that shows how to set it up as a load balancer?
+
+You said:
+proxy server
+ChatGPT said:
+
+Got it 👍 let’s go simple and clear.
+
+🔹 What is a Proxy Server?
+
+A proxy server is an intermediate server that sits between a client and the destination server.
+When you request a webpage, file, or resource:
+
+Your request first goes to the proxy server.
+
+The proxy forwards it to the destination server (internet or internal server).
+
+The response comes back to the proxy → then to you.
+
+So, the proxy server acts as a gateway.
+
+🔹 Types of Proxy Servers
+
+Forward Proxy
+
+Used by clients to access the internet indirectly.
+
+Example: Company proxy that filters and monitors employee internet use.
+
+Hides client identity (IP address).
+
+Reverse Proxy
+
+Used in front of servers.
+
+Example: NGINX, HAProxy.
+
+Hides server identity and can also load balance traffic.
+
+🔹 Why Use a Proxy Server?
+
+Security → hides internal network details.
+
+Privacy/Anonymity → mask client IP.
+
+Access Control → block or allow certain sites.
+
+Load Balancing → distribute traffic across servers.
+
+Caching → speed up repeated requests.
+
+SSL Termination → handle encryption at proxy instead of backend.
